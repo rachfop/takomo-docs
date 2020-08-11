@@ -1,4 +1,0 @@
----
-id: organization
-title: Organization
----

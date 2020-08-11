@@ -22,24 +22,31 @@ module.exports = {
       "stacks/dependencies-between-stacks",
       "stacks/hooks",
       "stacks/templating-with-handlebars",
-      "stacks/deploy-stacks",
-      "stacks/undeploy-stacks",
-      "stacks/list-stacks",
       "stacks/secrets",
+      "stacks/command-line-usage",
     ],
     "Organizations": [
-      "organizations/introduction"
+      "organizations/introduction",
+      "organizations/getting-started",
+      "organizations/trusted-aws-services",
+      "organizations/organizational-units",
+      "organizations/member-accounts",
+      "organizations/policies",
+      "organizations/creating-member-accounts",
+      "organizations/deploying-organization",
+      "organizations/deploying-member-accounts",
     ],
     "Deployment Targets": [
       "deployment-targets/introduction"
     ],
-    "CLI Commands": [
-      "cli/common-options",
-      "cli/project",
-      "cli/stacks",
-      "cli/stack-secrets",
-      "cli/organization",
-      "cli/deployment-targets",
+    "Command Line Usage": [
+      "command-line-usage/common-options",
+      "command-line-usage/project",
+      "command-line-usage/stacks",
+      "command-line-usage/stack-secrets",
+      "command-line-usage/organization",
+      "command-line-usage/organization-accounts",
+      "command-line-usage/deployment-targets",
     ],
     "Config File Reference": [
       "config-reference/project",

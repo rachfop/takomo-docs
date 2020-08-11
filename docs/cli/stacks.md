@@ -1,4 +1,0 @@
----
-id: stacks
-title: Stacks
----
