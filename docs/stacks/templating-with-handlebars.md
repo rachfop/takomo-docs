@@ -220,6 +220,10 @@ The following variables are available in stack group configuration files.
 | env | object |Environment variables. |
 | context | object | An object containing context variables. |
 | context.projectDir | string | Current project directory. |
+| stackGroup | object | An object representing the current stack group. |
+| stackGroup.path | string | Path of the stack group. |
+| stackGroup.pathSegments | string[] | Path of the stack group split into an array using `/` as a separator. |
+| stackGroup.name | string | Name of the stack group. |
 
 ### Stack Configuration
 
@@ -233,6 +237,7 @@ The following variables are available in stack configuration files.
 | context.projectDir | string | Current project directory. |
 | stackGroup | object | An object representing the stack group where the stack belongs to. |
 | stackGroup.path | string | Path of the stack group. |
+| stackGroup.pathSegments | string[] | Path of the stack group split into an array using `/` as a separator. |
 | stackGroup.name | string | Name of the stack group. |
 | stackGroup.project | string | Project of the stack group. |
 | stackGroup.regions | string | Regions of the stack group. |

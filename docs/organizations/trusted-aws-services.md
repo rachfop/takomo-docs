@@ -39,13 +39,6 @@ Allowed values:
 - sso.amazonaws.com
 - tagpolicies.tag.amazonaws.com
 
-## Deploying Trusted AWS Services
-
-When the organization is deployed, Takomo compares trusted AWS services found from the local configuration to the ones existing in the organization.
-
-- Disable the service in the organization if it is enabled in the organization but not found from the local configuration
-- Enable the service in the organization if it is enabled in the local configuration but disabled in the organization
-
 ## See also
 
 - [Config reference > trustedServices](docs/config-reference/organization#trustedawsservices)

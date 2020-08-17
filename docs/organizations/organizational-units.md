@@ -12,7 +12,7 @@ An organizational unit path is formed by collecting all parents of the organizat
 
 The Root organizational unit is always required and the maximum depth of the hierarchy is 5.
 
-#### Example: Defining an empty Root organizational unit:
+### Example: Defining an empty Root organizational unit:
 
 In YAML, you use `{}` to specify an empty object.
 
@@ -21,7 +21,7 @@ organizationalUnits:
   Root: {}
 ```
 
-#### Example: A root organizational unit with some child organizational units under it:
+### Example: A root organizational unit with some child organizational units under it:
 
 A more complex hierarchy might look like this:
 

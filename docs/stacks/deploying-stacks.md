@@ -1,6 +1,6 @@
 ---
-id: command-line-usage
-title: Command Line Usage
+id: deploying-stacks
+title: Deploying Stacks
 ---
 
 CloudFormation stacks described in the local configuration are managed with CLI commands. All commands first load the local configuration and then compare it to the current AWS infrastructure state in order to build an execution plan. The plan can then be reviewed to see what changes are to be executed.
@@ -61,31 +61,9 @@ Undeploy only /dev/vpc.yml stack and its dependants:
 tkm stacks undeploy /dev/vpc.yml
 ```
 
-## Listing Stacks
-
-List stacks within the given command path.
-
-#### Examples
-
-List all stacks:
-
-```
-tkm stacks list
-```
-
-List stacks within the given command path:
-
-```
-tkm stacks list /prod
-```
-
-## Managing Secrets
-
-
 ## See Also
 
 Commands are documented in detail in command line usage.
 
-- [Deploy stacks command](docs/command-line-usage/stacks#deploy-stacks)
-- [Undeploy stacks command](docs/command-line-usage/stacks#undeploy-stacks)
-- [List stacks command](docs/command-line-usage/stacks#list-stacks)
+- [Command line usage > Deploy stacks](docs/command-line-usage/stacks#deploy-stacks)
+- [Command line usage > Undeploy stacks](docs/command-line-usage/stacks#undeploy-stacks)

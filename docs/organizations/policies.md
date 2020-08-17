@@ -24,7 +24,7 @@ There are four policy types. Policies for each policy type are configured under 
 
 By default all policy types are disabled. To enable a policy type, you just need to configure at least one policy for it and the policy type is automatically enabled when the organization is deployed. If you don't have policies configured but still want to enable the policy type, you can set `true` for its value.
 
-#### Example: Enabling a Policy Type
+### Example: Enabling a Policy Type
 
 Here's how to enable tag policies with a boolean value without configuring actual policies:
 
@@ -36,7 +36,7 @@ tagPolicies: true
 
 A policy type is disabled if it doesn't have any policies configured. So, to disable a policy that has policies in it, you just need to remove policy type's configuration from `organization.yml` file and the policy type is disabled when the organization is deployed. You can also disable a policy type by setting `false` to its value. 
 
-#### Example: Disabling a Policy Type
+### Example: Disabling a Policy Type
 
 Here's how to disable backup policies with a boolean value:
 
@@ -55,7 +55,7 @@ A policy object has the following keys:
 | description | yes | string  | Mandatory description for the policy |
 | awsManaged  | no  | boolean | A boolean indicating if the policy is managed by AWS |
 
-#### Example: Configuring Policies
+### Example: Configuring Policies
 
 Here's how to configure some policies:
 
@@ -76,7 +76,7 @@ In the above example, we configure two service control policies and one tag poli
 
 For each policy defined in the policy configuration, there must be a corresponding `.json` file with the same name containing the actual policy in the policy file directory.
 
-#### Example: Adding policy files
+### Example: Adding policy files
 
 Let's continue from the previous example where we defined some service control and tag policies. To make the configuration valid, we need to have the following policy files in place:
 
@@ -97,7 +97,7 @@ As you can see, we have created the policy files under the correct policy type d
 
 There is a default service control policy that is managed by AWS and named as `FullAWSAccess`. You can't provide your own policy with this name. You can still use this policy with your organizational units and accounts by defining it with `awsManaged: true`. Because the policy is managed by AWS, you donn't need to provide a policy file for it.
 
-#### Example: Configure the AWS managed default policy 
+### Example: Configure the AWS managed default policy 
 
 Here's how to configure the default AWS managed service control policy.
 
@@ -129,7 +129,7 @@ There's one important difference between service control policies and other poli
 
 To be able to satisfy this requirement, while keeping the configuration simple, Takomo processes service control policies using different logic than with the other policy types. If an organizational unit or a member account doesn't have any directly attached service control policies, Takomo attaches the first inherited service control policy to it.
 
-#### Example: Attaching policies to organizational units
+### Example: Attaching policies to organizational units
 
 Here, we have some policies which we attach to organizational units.
 
@@ -152,7 +152,7 @@ organizationalUnits:
       - rdsBackups
 ```
 
-#### Example: Attaching policies to member accounts
+### Example: Attaching policies to member accounts
 
 You can attach policies to member accounts, too.
 
@@ -176,7 +176,7 @@ organizationalUnits:
           - myTaggingPolicy
 ```
 
-#### Example: Inheriting policies
+### Example: Inheriting policies
 
 In this example we have service control and backup policies.
 

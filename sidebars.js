@@ -22,8 +22,8 @@ module.exports = {
       "stacks/dependencies-between-stacks",
       "stacks/hooks",
       "stacks/templating-with-handlebars",
-      "stacks/secrets",
-      "stacks/command-line-usage",
+      "stacks/managing-secrets",
+      "stacks/deploying-stacks",
     ],
     "Organizations": [
       "organizations/introduction",
@@ -34,7 +34,7 @@ module.exports = {
       "organizations/policies",
       "organizations/creating-member-accounts",
       "organizations/deploying-organization",
-      "organizations/deploying-member-accounts",
+      "organizations/deploying-stacks-to-member-accounts",
     ],
     "Deployment Targets": [
       "deployment-targets/introduction"
