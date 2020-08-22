@@ -32,4 +32,4 @@ If you want to remove regions, you must first undeploy the stack from the region
 
 ## See Also
 
-- [regions property in config reference](docs/config-reference/stacks#regions)
+- [regions property in config reference](/docs/config-reference/stacks#regions)

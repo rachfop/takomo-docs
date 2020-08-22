@@ -50,5 +50,5 @@ templateBucket:
 
 ## See Also
 
-- [template property in config reference](docs/config-reference/stacks#template)
-- [templateBucket property in config reference](docs/config-reference/stacks#templatebucket)
+- [template property in config reference](/docs/config-reference/stacks#template)
+- [templateBucket property in config reference](/docs/config-reference/stacks#templatebucket)

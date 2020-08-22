@@ -7,7 +7,7 @@ When you have an organization with a number of member accounts you soon want to 
 
 ## Configuring Stacks
 
-You configure the stacks to be deployed to your organization’s member accounts the same way you would normally configure stacks with Takomo, i.e. you create stack groups, stack configurations and templates. If you are unfamiliar with how to do this, you might want to consult [the documentation](docs/stacks/introduction) before moving on.
+You configure the stacks to be deployed to your organization’s member accounts the same way you would normally configure stacks with Takomo, i.e. you create stack groups, stack configurations and templates. If you are unfamiliar with how to do this, you might want to consult [the documentation](/docs/stacks/introduction) before moving on.
 
 ## Config Sets
 
@@ -81,17 +81,39 @@ organizationalUnits:
 
 We attached **logging** config set to **Root** organizational unit from where it's inherited by all organizational units and member accounts. Our second config set **baseNetwork** we attach to **Root/Application** organizational unit from where it's inherited by the accounts **111111111111** and **888888888888**, but not by **222222222222**.
 
-## Command Line Usage
+## Setting Deployment Role
 
-The config sets are deployed to member accounts with [deploy accounts](docs/command-line-usage/organization-accounts#deploy-accounts) command.
+When config sets are deployed to member accounts, Takomo assumes a role from each account and uses that for deployment. By default, Takomo attempts to assume a role named **OrganizationAccountAccessRole** which is the default role created for each account when the account is itself created and added to the organization.
 
+You can set the deployment role name in many places within the organization configuration. When config sets are deployed to a member account, the deployment role is looked in the following order:
+
+1. `accountAdminRoleName` key under the current account
+2. `accountAdminRoleName` key under the current organizational unit
+3. `accountAdminRoleName` key at the top-level of the organization configuration
+4. `accountCreation.defaults.roleName` key in the account creation configuration 
+
+If none of the above is defined, the default role name **OrganizationAccountAccessRole** is used.
+
+It's important to notice that the role name must not be a full IAM role ARN.
+
+### Example: Setting the deployment role
+
+Here are all the places where you can set the deployment role.
+
+```yaml title="organization.yml"
+accountCreation:
+  defaults:
+    roleName: MyRole
+
+accountAdminRoleName: FooBar
+
+organizationalUnits:
+  Root:
+    accountAdminRoleName: AnotherRole
+    accounts:
+      - id: "111111111111"
+        accountAdminRoleName: YetAnotherRole
 ```
-tkm org accounts deploy
-```
-
-You can review the deployment plan and decide whether you want to proceed with the deployment.
-
-Refer to [command line usage guide](docs/command-line-usage/organization-accounts#deploy-accounts) for detailed documentation of this command and its supported options.
 
 ## Controlling Deployment Order
 
@@ -99,9 +121,57 @@ When the config sets are deployed, the organization hierarchy is traversed recur
 
 You can use `priority` property to control the order organizational unit's children are processed. It accepts a number that is used to sort the children to ascending order. Organizational units without `priority` are sorted by their name and processed after the ones with `priority` set.
 
+### Example: Setting organizational unit priority
 
+Because **Root/Website** has its priority set, the organizational units are processed in this order: Root, Root/Website, Root/Application. Otherwise the order would be Root, Root/Application, Root/Website.
 
+```yaml title="organization.yml"
+organizationalUnits:
+  Root:
+    configSets:
+      - foobar
+  Root/Application: {}
+  Root/Website:
+    priority: 1
+```
 
-## Ignoring Member Accounts
+## Excluding Member Accounts from Deployment
 
+Sometimes you might want to exclude some member accounts from deployment. You can exclude an account from deployment by setting its `status` to `disabled`. You can also exclude a whole organizational unit and all its children by setting the organizational unit `status` to `disabled`. 
 
+### Example: Excluding member accounts
+
+In this example, we have disabled organization unit **Root/Environments/Dev** which prevents deployment to its accounts **111111111111** and **222222222222**. We have also disabled account **444444444444**.
+
+```yaml title="organization.yml"
+organizationalUnits:
+  Root:
+    configSets:
+      - foobar
+  Root/Environments/Dev:
+    status: disabled
+    accounts:
+      - "111111111111"
+      - "222222222222"
+  Root/Environments/Prod:
+    accounts:
+      - "333333333333"
+      - id: "444444444444"
+        status: disabled
+```
+
+## Command Line Usage
+
+The config sets are deployed to member accounts with [deploy accounts](/docs/command-line-usage/organization-accounts#deploy-accounts) command.
+
+```
+tkm org accounts deploy
+```
+
+You can review the deployment plan and decide whether you want to proceed with the deployment.
+
+Refer to [command line usage guide](/docs/command-line-usage/organization-accounts#deploy-accounts) for detailed documentation of this command and its supported options.
+
+## See Also
+
+- [Command line usage > Deploy accounts](/docs/command-line-usage/organization-accounts#deploy-accounts)

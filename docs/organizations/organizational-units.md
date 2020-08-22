@@ -50,4 +50,4 @@ As seen in this example, you don't have to explicitly provide configuration for 
 
 ## See also
 
-- [Config reference > organizationalUnits](docs/config-reference/organization#organizationalUnits)
+- [Config reference > organizationalUnits](/docs/config-reference/organization#organizationalUnits)

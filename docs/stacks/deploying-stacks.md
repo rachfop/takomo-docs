@@ -65,5 +65,5 @@ tkm stacks undeploy /dev/vpc.yml
 
 Commands are documented in detail in command line usage.
 
-- [Command line usage > Deploy stacks](docs/command-line-usage/stacks#deploy-stacks)
-- [Command line usage > Undeploy stacks](docs/command-line-usage/stacks#undeploy-stacks)
+- [Command line usage > Deploy stacks](/docs/command-line-usage/stacks#deploy-stacks)
+- [Command line usage > Undeploy stacks](/docs/command-line-usage/stacks#undeploy-stacks)

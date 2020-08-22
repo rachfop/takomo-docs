@@ -42,5 +42,5 @@ Once a stack is created, i.e. it exists in an AWS account, its name can’t be c
 
 ## See Also
 
-- [name property in config reference](docs/config-reference/stacks#name)
-- [project property in config reference](docs/config-reference/stacks#project)
+- [name property in config reference](/docs/config-reference/stacks#name)
+- [project property in config reference](/docs/config-reference/stacks#project)

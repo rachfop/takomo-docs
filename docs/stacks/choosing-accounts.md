@@ -40,5 +40,5 @@ accountIds:
 ```
 ## See Also
 
-- [commandRole property in config reference](docs/config-reference/stacks#commandRole)
-- [accountIds property in config reference](docs/config-reference/stacks#accountIds)
+- [commandRole property in config reference](/docs/config-reference/stacks#commandRole)
+- [accountIds property in config reference](/docs/config-reference/stacks#accountIds)

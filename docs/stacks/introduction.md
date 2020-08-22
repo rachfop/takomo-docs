@@ -2,7 +2,7 @@
 id: introduction
 title: Introduction to Stacks
 ---
-Stack management provides commands to deploy, undeploy and list stacks. The other two Takomo's core features - [Organizations](docs/organizations/introduction) and [Deployment Targets](docs/deployment-targets/introduction) - are built on top of it.
+Stack management provides commands to deploy, undeploy and list stacks. The other two Takomo's core features - [Organizations](/docs/organizations/introduction) and [Deployment Targets](/docs/deployment-targets/introduction) - are built on top of it.
 
 ## How It Works?
 

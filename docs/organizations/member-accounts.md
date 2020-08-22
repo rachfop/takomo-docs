@@ -27,7 +27,7 @@ organizationalUnits:
       - id: "222222222222"
 ```
 
-## Additional Information
+## Additional Configuration
 
 When configuring accounts with key-value objects, you can provide additional information that helps you identify the account and its purpose. Takomo uses this information also to validate that operations targeting the accounts are executed against the correct account. 
 
@@ -81,7 +81,23 @@ organizationalUnits:
         email: acme-prod@acme.com
 ```
 
+### Status
 
+Account `status` is used to control whether the account should be included in organization operations.
+
+If an account is [closed](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/close-account.html) but is still shown in the organization, its `status` needs to be set to `suspended`. This will exclude the account from all operations. Closed accounts will disappear from the organization after some days and can then be removed from the organization configuration.
+
+If you don't want to [deploy stacks to the account](/docs/organizations/deploying-stacks-to-member-accounts), you can set its `status` to `disabled`.
+
+#### Example: Setting account status
+
+```yaml title="organization.yml"
+organizationalUnits:
+  Root:
+    accounts:
+      - id: "123456789012"
+        status: disabled
+```
 
 
  

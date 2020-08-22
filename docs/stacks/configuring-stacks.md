@@ -13,7 +13,7 @@ Takomo uses **.yml** file extension with YAML files.
 You can create more directories under `stacks` directory to group stacks by environment, region or by some other criterion. These directories are treated as stack groups and can be used to provide common configuration for stacks that belong to them by placing a `config.yml` file into the directory. Individual stacks can override some or all of the configuration they inherit from their stack group.
 
 :::note
-There are some stack properties, like stack name and template, that can't be defined at the stack group level. Where each property can be defined is documented in [the configuration reference](docs/config-reference/stacks).
+There are some stack properties, like stack name and template, that can't be defined at the stack group level. Where each property can be defined is documented in [the configuration reference](/docs/config-reference/stacks).
 :::
 
 You can also nest stack groups to create a tree-like hierarchy where child stack groups inherit configuration from their parent, and just like the stacks, can override configuration they inherit. 
@@ -78,4 +78,4 @@ Let's continue from the previous example and say that the root stack configurati
 
 ## Available Properties
 
-All properties available in stack configuration are documented in [stacks config file reference](docs/config-reference/stacks).
+All properties available in stack configuration are documented in [stacks config file reference](/docs/config-reference/stacks).

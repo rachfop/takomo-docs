@@ -155,4 +155,4 @@ When executed, the hook exposes string **"Did some debugging"** in the mutable v
 
 ## See Also
 
-- [hooks property in config reference](docs/config-reference/stacks#hooks)
+- [hooks property in config reference](/docs/config-reference/stacks#hooks)

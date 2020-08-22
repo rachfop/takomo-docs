@@ -33,7 +33,7 @@ In many cases it's not wise or even possible to hard code all parameter values. 
 
 You use `resolver` property to specify which parameter resolver should be used to resolve the value for a parameter.
 
-Below, you can find some examples of built-in parameter resolvers. In [the next section](docs/stacks/parameter-resolvers) we'll learn more about parameter resolvers. 
+Below, you can find some examples of built-in parameter resolvers. In [the next section](/docs/stacks/parameter-resolvers) we'll learn more about parameter resolvers. 
 
 #### Example: Reading Value for a Parameter from Another Stack's Outputs
 
@@ -73,5 +73,5 @@ parameters:
 
 ## See Also
 
-- [parameters property in config reference](docs/config-reference/stacks#parameters)
-- [Parameter resolvers](docs/stacks/parameter-resolvers)
+- [parameters property in config reference](/docs/config-reference/stacks#parameters)
+- [Parameter resolvers](/docs/stacks/parameter-resolvers)

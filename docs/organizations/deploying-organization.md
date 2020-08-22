@@ -3,7 +3,7 @@ id: deploying-organization
 title: Deploying Organization
 ---
 
-You use [deploy organization](docs/command-line-usage/organization#deploy-organization) command to deploy the local configuration defined in `organization.yml` file. This includes policies, trusted aws services, organizational units hierarchy and member accounts’ placement in it.
+You use [deploy organization](/docs/command-line-usage/organization#deploy-organization) command to deploy the local configuration defined in `organization.yml` file. This includes policies, trusted aws services, organizational units hierarchy and member accounts’ placement in it.
 
 ## Command Line Usage
 
@@ -15,7 +15,7 @@ tkm org deploy
 
 You can review the deployment plan and decide if you want to proceed with the deployment.
 
-Refer to [command line usage guide](docs/command-line-usage/organization#deploy-organization) for detailed documentation of this command and its supported options.
+Refer to [command line usage guide](/docs/command-line-usage/organization#deploy-organization) for detailed documentation of this command and its supported options.
 
 ## What Happens During the Deployment?
 
@@ -35,4 +35,4 @@ The deployment process is divided in the following phases that are executed sequ
 
 ## See Also
 
-- [Command line usage > Deploy organization](docs/command-line-usage/organization#deploy-organization)
+- [Command line usage > Deploy organization](/docs/command-line-usage/organization#deploy-organization)

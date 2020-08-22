@@ -24,7 +24,7 @@ aws_access_key_id = XXXXXXXXXXXXXXXXXXXX
 aws_secret_access_key = YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
 ```
 
-You can also provide credentials using some other method described [here](docs/general/credentials), but rest of this quick start guide assumes that you are using the **takomo-example** profile.
+You can also provide credentials using some other method described [here](/docs/general/credentials), but rest of this quick start guide assumes that you are using the **takomo-example** profile.
 
 :::tip Initializing a new Takomo project using CLI
 
@@ -95,4 +95,4 @@ npx tkm stacks undeploy --profile takomo-example
 
 ## Next steps
 
-Continue to [the next section](docs/general/directory-structure) to learn the basics of how Takomo works. 
+Continue to [the next section](/docs/general/directory-structure) to learn the basics of how Takomo works. 

@@ -41,5 +41,5 @@ Allowed values:
 
 ## See also
 
-- [Config reference > trustedServices](docs/config-reference/organization#trustedawsservices)
+- [Config reference > trustedServices](/docs/config-reference/organization#trustedawsservices)
 - [AWS documentation > Enabling trusted access with other AWS services](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html)

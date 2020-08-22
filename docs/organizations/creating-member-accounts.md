@@ -3,7 +3,7 @@ id: creating-member-accounts
 title: Creating Member Accounts
 ---
 
-You can create new accounts with [create account](docs/command-line-usage/organization-accounts#create-account) command. Once an account has been created, it must be added manually to the organization configuration file under the appropriate organizational unit.
+You can create new accounts with [create account](/docs/command-line-usage/organization-accounts#create-account) command. Once an account has been created, it must be added manually to the organization configuration file under the appropriate organizational unit.
 
 #### Example: Creating new account
 
@@ -42,5 +42,5 @@ accountCreation:
 
 ## See Also
 
-- [Command line usage > Create account](docs/command-line-usage/organization-accounts#create-account)
-- [Config reference > accountCreation](docs/config-reference/organization#accountcreation)
+- [Command line usage > Create account](/docs/command-line-usage/organization-accounts#create-account)
+- [Config reference > accountCreation](/docs/config-reference/organization#accountcreation)

@@ -35,8 +35,8 @@ depends:
 
 ## Dependencies from Parameter Resolvers
 
-Parameter resolvers can also introduce dependencies between stacks. A good example is [stack-output parameter resolver](docs/stacks/parameter-resolvers#stack-output) that reads value from stack output and then passes it as input parameter for another stack. When a parameter resolver creates the dependency between stacks, there's no need to specify it using `depends` property.
+Parameter resolvers can also introduce dependencies between stacks. A good example is [stack-output parameter resolver](/docs/stacks/parameter-resolvers#stack-output) that reads value from stack output and then passes it as input parameter for another stack. When a parameter resolver creates the dependency between stacks, there's no need to specify it using `depends` property.
 
 ## See Also
 
-- [depends property in config reference](docs/config-reference/stacks#depends)
+- [depends property in config reference](/docs/config-reference/stacks#depends)

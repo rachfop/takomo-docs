@@ -35,6 +35,7 @@ module.exports = {
       "organizations/creating-member-accounts",
       "organizations/deploying-organization",
       "organizations/deploying-stacks-to-member-accounts",
+      "organizations/bootstrapping-member-accounts",
     ],
     "Deployment Targets": [
       "deployment-targets/introduction"
