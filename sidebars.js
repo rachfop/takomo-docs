@@ -38,7 +38,9 @@ module.exports = {
       "organizations/bootstrapping-member-accounts",
     ],
     "Deployment Targets": [
-      "deployment-targets/introduction"
+      "deployment-targets/introduction",
+      "deployment-targets/deployment-configuration",
+      "deployment-targets/deploying-stacks-to-targets",
     ],
     "Command Line Usage": [
       "command-line-usage/common-options",
@@ -56,8 +58,8 @@ module.exports = {
       "config-reference/deployment-targets",
     ],
     "Upgrade Guide": [
-
+      "upgrade-guide/from-1-to-2",
+      "upgrade-guide/from-0-to-1",
     ]
-    //Features: ['mdx'],
   },
 };

@@ -1,0 +1,25 @@
+name: Default build
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1.1.0
+        with:
+          version: 14.4.0
+      - uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: npm-${{ hashFiles('yarn.lock') }}
+      - run: yarn
+      - run: yarn build
+      - run: ./ci/publish.sh
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.DOCS_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.DOCS_AWS_SECRET_ACCESS_KEY }}
