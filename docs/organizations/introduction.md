@@ -1,6 +1,10 @@
 ---
 id: introduction
 title: Introduction to Organizations
+description: With Takomo Organizations you can manage your AWS organization, including organizational units, authorization and management policies, trusted AWS services, and accounts that belong to the organization
+keywords:
+  - Takomo
+  - organization
 ---
 With Takomo Organizations you can manage your AWS organization, including organizational units, authorization and management policies, trusted AWS services, and accounts that belong to the organization. Takomo Organizations builds on top of Takomo Stacks, so you can deploy infrastructure to your organization accounts using the standard Takomo configuration and features.
 

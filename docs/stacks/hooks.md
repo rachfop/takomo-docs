@@ -1,6 +1,10 @@
 ---
 id: hooks
 title: Hooks
+description: Hooks are used to perform actions in different stages of stack operations
+keywords:
+  - Takomo
+  - hooks
 ---
 
 Hooks are used to perform actions in different stages of stack operations. You can use them for example to compile and package lambda functions or notify whenever a deployment completes.

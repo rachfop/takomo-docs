@@ -1,6 +1,11 @@
 ---
 id: stack-parameters
 title: Stack Parameters
+description: Input parameter for stacks
+keywords:
+  - Takomo
+  - paramaters
+  - stack
 ---
 
 Input parameters for a CloudFormation stack are given with `parameters` property. It's an object of key-value pairs where the keys are parameter names and the values are configuration for the parameter value. The value configuration can be a single static value, an object or a list of the two aforementioned types. The object form is used when the parameter value is resolved at deployment time using a parameter resolver.

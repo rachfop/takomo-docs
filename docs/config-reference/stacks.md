@@ -1,6 +1,10 @@
 ---
 id: stacks
 title: Stacks
+description: Configuration reference for stacks
+keywords:
+  - Takomo
+  - configuration
 ---
 
 This page describes properties available in stack configuration files.

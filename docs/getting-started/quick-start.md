@@ -1,6 +1,9 @@
 ---
 id: quick-start
 title: Quick Start
+description: How to create a simple CloudFormation stack with Takomo
+keywords:
+  - Takomo
 ---
 
 Before diving deeper into the documentation, Let's first see how to create a simple CloudFormation stack using Takomo.

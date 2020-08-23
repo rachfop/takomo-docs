@@ -1,6 +1,10 @@
 ---
 id: organizational-units
 title: Organizational Units
+description: Configuring organizational units
+keywords:
+  - Takomo
+  - organization
 ---
 Organizational units are configured using `organizationalUnits` property. The configuration is an object where keys are organizational unit paths and values are configuration for the corresponding organizational unit.
 

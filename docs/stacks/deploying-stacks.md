@@ -1,6 +1,11 @@
 ---
 id: deploying-stacks
 title: Deploying Stacks
+description: Deploying stacks
+keywords:
+  - Takomo
+  - stacks
+  - deploy
 ---
 
 CloudFormation stacks described in the local configuration are managed with CLI commands. All commands first load the local configuration and then compare it to the current AWS infrastructure state in order to build an execution plan. The plan can then be reviewed to see what changes are to be executed.

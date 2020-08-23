@@ -1,6 +1,10 @@
 ---
 id: deploying-organization
 title: Deploying Organization
+description: Deploying policies, organizational units and trusted services to AWS organization
+keywords:
+  - Takomo
+  - organization
 ---
 
 You use [deploy organization](/docs/command-line-usage/organization#deploy-organization) command to deploy the local configuration defined in `organization.yml` file. This includes policies, trusted aws services, organizational units hierarchy and member accounts’ placement in it.

@@ -1,6 +1,10 @@
 ---
 id: deploying-stacks-to-member-accounts
 title: Deploying Stacks to Member Accounts
+description: Deploying stacks to organization member accounts
+keywords:
+  - Takomo
+  - organization
 ---
 
 When you have an organization with a number of member accounts you soon want to deploy some common infrastructure like VPCs and transit gateway routings across the accounts. To accomplish this, Takomo provides config sets that let you choose which stacks should be deployed and to which accounts. Config sets build on top of Takomo’s standard stack configuration and deployment features. 

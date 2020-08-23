@@ -1,6 +1,10 @@
 ---
 id: getting-started
 title: Getting Started
+description: Getting started with Takomo organizations
+keywords:
+  - Takomo
+  - organization
 ---
 
 Takomo can be used to manage any existing AWS organization. You can also create a new organization using CLI.

@@ -1,6 +1,9 @@
 ---
 id: parameter-resolvers
 title: Parameter Resolvers
+description: Parameter resolvers are used to get values for stack parameters at deployment time
+keywords:
+  - Takomo
 ---
 
 Parameter resolvers are used to get values for stack parameters at deployment time. Each parameter resolver has a name that can be used to refer to it from stack parameters configuration with `resolver` property.

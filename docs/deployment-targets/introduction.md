@@ -1,6 +1,9 @@
 ---
 id: introduction
 title: Introduction to Deployment Targets
+description: Deployment targets offer a scalable and flexible way to deploy and undeploy Takomo configurations across multiple accounts and regions
+keywords:
+  - Takomo
 ---
 
 Deployment targets offer a scalable and flexible way to deploy and undeploy Takomo configurations across multiple accounts and regions.

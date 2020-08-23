@@ -1,6 +1,10 @@
 ---
 id: deployment-targets
 title: Deployment Targets
+description: CLI commands to manage deployment targets
+keywords:
+  - Takomo
+  - CLI
 ---
 
 Commands to manage deployment targets:

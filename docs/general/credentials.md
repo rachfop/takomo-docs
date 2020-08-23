@@ -1,6 +1,10 @@
 ---
 id: credentials
 title: Credentials
+description: Configuring AWS credentials
+keywords:
+  - credentials
+  - Takomo
 ---
 To do anything with Takomo, you need to have valid AWS credentials configured. Under the hood Takomo uses AWS JavaScript SDK to acquire the credentials. Take a look at [the SDK’s documentation](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html) to learn the ways you can configure credentials.
 

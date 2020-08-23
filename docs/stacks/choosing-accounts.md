@@ -1,6 +1,12 @@
 ---
 id: choosing-accounts
 title: Choosing Accounts
+description: Choosing AWS accounts where to deploy stacks
+keywords:
+  - Takomo
+  - accounts
+  - deploy
+  - stack
 ---
 
 The account where stacks get deployed is dictated by the AWS credentials available in the current terminal session. We call these credentials **the default credentials**.

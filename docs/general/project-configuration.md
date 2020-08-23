@@ -1,6 +1,11 @@
 ---
 id: project-configuration
 title: Project Configuration
+description: General project configuration for Takomo
+keywords:
+  - Takomo
+  - project
+  - configuration
 ---
 General project configuration is defined in `takomo.yml` file located in the project directory. It is optional and currently there is only one supported property: `requiredVersion`, which is used to specify the version of Takomo required by the project.
 

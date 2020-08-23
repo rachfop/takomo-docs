@@ -1,6 +1,10 @@
 ---
 id: project
 title: Project
+description: Configuration reference for project
+keywords:
+  - Takomo
+  - configuration
 ---
 Project configuration file `takomo.yml` is placed in the project root directory and contains general configuration for the project.
 

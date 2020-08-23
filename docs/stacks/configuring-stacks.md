@@ -1,7 +1,13 @@
 ---
 id: configuring-stacks
 title: Configuring Stacks
+description: Configuring stacks
+keywords:
+  - Takomo
+  - configuration
+  - stacks
 ---
+
 You create a configuration file to `stacks` directory for each stack you want to manage with Takomo. Configuration files are in **YAML** format and should contain configuration needed to deploy the corresponding stacks.
 
 :::important

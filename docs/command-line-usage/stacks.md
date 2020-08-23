@@ -1,6 +1,10 @@
 ---
 id: stacks
 title: Stacks
+description: CLI commands to manage CloudFormation stacks
+keywords:
+  - Takomo
+  - CLI
 ---
 
 Commands to manage stacks:

@@ -1,6 +1,10 @@
 ---
 id: organization
 title: Organization
+description: Configuration reference for organization
+keywords:
+  - Takomo
+  - configuration
 ---
 
 This page describes properties available in organization configuration file.

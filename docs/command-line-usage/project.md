@@ -1,6 +1,10 @@
 ---
 id: project
 title: Project
+description: CLI commands to manage Takomo project
+keywords:
+  - Takomo
+  - CLI
 ---
 
 ## Initialize a New Project

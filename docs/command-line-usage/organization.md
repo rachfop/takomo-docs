@@ -1,6 +1,10 @@
 ---
 id: organization
 title: Organization
+description: CLI commands to manage AWS organization
+keywords:
+  - Takomo
+  - CLI
 ---
 
 Commands to manage organizations.

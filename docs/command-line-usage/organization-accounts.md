@@ -1,6 +1,10 @@
 ---
 id: organization-accounts
 title: Organization Accounts
+description: CLI commands to manage AWS organization member accounts
+keywords:
+  - Takomo
+  - CLI
 ---
 
 Commands to manage organization member accounts:

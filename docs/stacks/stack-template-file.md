@@ -1,6 +1,11 @@
 ---
 id: stack-template-file
 title: Stack Template File
+description: Stack template files
+keywords:
+  - Takomo
+  - template
+  - stack
 ---
 
 CloudFormation template files for stacks are located in `templates` directory or its subdirectories. 

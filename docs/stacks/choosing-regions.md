@@ -1,6 +1,12 @@
 ---
 id: choosing-regions
 title: Choosing Regions
+description: Choosing regions where to deploy stacks
+keywords:
+  - Takomo
+  - stacks
+  - regions
+  - deploy
 ---
 
 A stack can be deployed to one or more regions. You specify the stack region with `regions` property. It accepts a single region or a list of regions.

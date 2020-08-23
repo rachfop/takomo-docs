@@ -1,6 +1,10 @@
 ---
 id: trusted-aws-services
 title: Trusted AWS Services
+description: Managing trusted AWS services
+keywords:
+  - Takomo
+  - organization
 ---
 
 Takomo supports managing of trusted AWS services.

@@ -1,6 +1,10 @@
 ---
 id: common-options
 title: Common Options
+description: Common options for Takomo command line
+keywords:
+  - Takomo
+  - CLI
 ---
 
 These options are supported by all CLI commands unless stated otherwise.

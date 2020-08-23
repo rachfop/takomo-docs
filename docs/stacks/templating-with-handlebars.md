@@ -1,6 +1,11 @@
 ---
 id: templating-with-handlebars
 title: Templating with Handlebars
+description: Templating with Handlebars
+keywords:
+  - Takomo
+  - handlebars
+  - templating
 ---
 
 Sometimes static configuration files and templates are not enough to solve the real-life problems we might face. To help overcome those trickier challenges, and to avoid tedious and error-prone repeating of configuration, Takomo supports dynamic templating with [Handlebars](https://handlebarsjs.com/). All standard Handlebars features are available, so you can use loops, if-conditions, partial includes, helpers, variables etc. to streamline your configuration.

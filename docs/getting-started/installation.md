@@ -1,6 +1,10 @@
 ---
 id: installation
 title: Installation
+description: System requirements and installing Takomo
+keywords:
+  - Takomo
+  - installation
 ---
 
 ## System Requirements

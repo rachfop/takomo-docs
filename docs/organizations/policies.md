@@ -1,6 +1,10 @@
 ---
 id: policies
 title: Policies
+description: Managing authorization and management policies
+keywords:
+  - Takomo
+  - organization
 ---
 
 Takomo supports managing of authorization and management policies.

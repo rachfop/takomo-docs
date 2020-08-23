@@ -1,6 +1,11 @@
 ---
 id: dependencies-between-stacks
 title: Dependencies Between Stacks
+description: Specifying dependencies between stacks
+keywords:
+  - Takomo
+  - dependencies
+  - stacks
 ---
 
 It’s a good practice to split the infrastructure into multiple stacks that group related resources together. Naturally, there will be dependencies between the stacks, for example, one stack creates a VPC with subnets, and another stack creates some resources into those subnets. This means that the stacks need to be created and updated in a certain order to ensure that the dependencies can be satisfied, for example, the subnets need to be ready before other resources can be created to them. This order is reversed when the stacks are deleted.

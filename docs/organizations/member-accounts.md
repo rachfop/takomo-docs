@@ -1,6 +1,10 @@
 ---
 id: member-accounts
 title: Member Accounts
+description: Accounts that belong to an organization are called as member accounts. Each member account belongs to exactly one organizational unit
+keywords:
+  - Takomo
+  - organization
 ---
 
 Accounts that belong to an organization are called as member accounts. Each member account belongs to exactly one organizational unit. 

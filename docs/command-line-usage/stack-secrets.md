@@ -1,6 +1,10 @@
 ---
 id: stack-secrets
 title: Stack Secrets
+description: CLI commands to manage stack secrets
+keywords:
+  - Takomo
+  - CLI
 ---
 
 Commands to manage stack secrets:

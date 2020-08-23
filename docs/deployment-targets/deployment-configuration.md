@@ -1,6 +1,10 @@
 ---
 id: deployment-configuration
 title: Deployment Configuration
+description: Configuration for deployment targets
+keywords:
+  - Takomo
+  - configuration
 ---
 
 ## Directory Structure

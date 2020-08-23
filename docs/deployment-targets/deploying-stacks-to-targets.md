@@ -1,6 +1,9 @@
 ---
 id: deploying-stacks-to-targets
 title: Deploying Stacks to Targets
+description: Deploying stacks to deployment targets
+keywords:
+  - Takomo
 ---
 
 Stacks to deploy to deployment targets are defined with config sets. Config sets build on top of Takomo’s standard stack configuration and deployment features.

@@ -1,6 +1,11 @@
 ---
 id: directory-structure
 title: Directory Structure
+description: Directory structure for Takomo configuration files
+keywords:
+  - Takomo
+  - configuration
+  - files
 ---
 The directory where Takomo configuration files are placed is called **project directory** and looks like this:
 

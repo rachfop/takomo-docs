@@ -1,6 +1,10 @@
 ---
 id: bootstrapping-member-accounts
 title: Bootstrapping Member Accounts
+description: Bootstrapping organization member accounts
+keywords:
+  - Takomo
+  - organization
 ---
 
 It’s best practice to follow the principle of least privilege when deploying configuration to organization accounts. To achieve this, you should create an account administrator role with restricted permissions and use it to deploy configuration. Now, the next question is, how to create this restricted role in the first place?

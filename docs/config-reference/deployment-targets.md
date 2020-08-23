@@ -1,6 +1,10 @@
 ---
 id: deployment-targets
 title: Deployment Targets
+description: Configuration reference for deployment targets
+keywords:
+  - Takomo
+  - configuration
 ---
 
 This page describes properties available in deployment targets configuration file.

@@ -1,6 +1,11 @@
 ---
 id: naming-stacks
 title: Naming Stacks
+description: Naming stacks
+keywords:
+  - Takomo
+  - stacks
+  - naming
 ---
 
 Takomo uses stack names to identify which of the stacks defined in the local configuration are already deployed to the target accounts and can be updated, and which ones do not yet exist and need to be created.

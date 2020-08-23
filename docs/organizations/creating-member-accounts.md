@@ -1,6 +1,10 @@
 ---
 id: creating-member-accounts
 title: Creating Member Accounts
+description: Creating member accounts to AWS organization
+keywords:
+  - Takomo
+  - organization
 ---
 
 You can create new accounts with [create account](/docs/command-line-usage/organization-accounts#create-account) command. Once an account has been created, it must be added manually to the organization configuration file under the appropriate organizational unit.

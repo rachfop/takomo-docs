@@ -1,6 +1,10 @@
 ---
 id: from-0-to-1
 title: From 0.x to 1.x
+description: Upgrading Takomo from version 0.x to 1.x
+keywords:
+  - upgrading
+  - Takomo
 ---
 
 This page describes breaking changes introduced in version 1.0.0 and how to migrate from version 0.x.

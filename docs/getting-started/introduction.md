@@ -1,6 +1,12 @@
 ---
 id: introduction
 title: Introduction
+description: Takomo makes it easy to organize, parameterize and deploy your CloudFormation stacks across multiple regions and accounts
+keywords:
+  - Takomo
+  - AWS
+  - CloudFormation
+  - Organizations
 ---
 
 Takomo makes it easy to organize, parameterize and deploy your CloudFormation stacks across multiple regions and accounts. In addition to stacks, you can also manage accounts, organizational units and service control policies that belong to your AWS organization.

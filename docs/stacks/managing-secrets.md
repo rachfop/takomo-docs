@@ -1,6 +1,10 @@
 ---
 id: managing-secrets
 title: Managing Secrets
+description: Managing secrets
+keywords:
+  - Takomo
+  - secrets
 ---
 
 Managing secrets, such as database credentials and various authorization tokens, is a common problem that is quite hard to automate. Takomo offers one way to tackle this problem with stack secrets that are declared locally and persisted to AWS Systems Manager Parameter Store as encrypted parameters.
