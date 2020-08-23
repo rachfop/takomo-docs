@@ -85,7 +85,7 @@ We attached **logging** config set to **Root** organizational unit from where it
 
 When config sets are deployed to member accounts, Takomo assumes a role from each account and uses that for deployment. By default, Takomo attempts to assume a role named **OrganizationAccountAccessRole** which is the default role created for each account when the account is itself created and added to the organization.
 
-You can set the deployment role name in many places within the organization configuration. When config sets are deployed to a member account, the deployment role is looked in the following order:
+You can also provide a custom deployment role. The custom deployment role name can be specified in many places within the organization configuration. When config sets are deployed to a member account, the deployment role is looked in the following order:
 
 1. `accountAdminRoleName` key under the current account
 2. `accountAdminRoleName` key under the current organizational unit
@@ -113,6 +113,59 @@ organizationalUnits:
     accounts:
       - id: "111111111111"
         accountAdminRoleName: YetAnotherRole
+```
+
+## Using Variables
+
+You can define variables that will be passed to stacks when config sets are deployed. Variables can be defined at the top-level of the organization configuration, and under organizational units and accounts.
+
+Organizational units inherit and can override variables from the top-level, and accounts, in turn, inherit and can override variables from the organizational unit they belong to.
+
+### Example: Defining Variables
+
+Here's an example how to defined variables.
+
+```yaml title="organization.yml"
+vars:
+  settings:
+    debug: true
+    logLevel: info
+  region: eu-west-1
+
+organizationalUnits:
+  Root:
+    vars:
+      settings:
+        debug: false
+    accounts:
+      - id: "111111111111"
+        vars:
+          foo: bar
+          vpcCidr: 10.0.0.0/22
+```
+
+Variables for account **111111111111** look like this:
+
+```
+vars:
+  settings:
+    debug: false
+    logLevel: info
+  region: eu-west-1
+  foo: bar  
+  vpcCidr: 10.0.0.0/22
+```
+
+These variables are then available in stack configuration files and could be used like so:
+
+```yaml
+regions: {{ var.region }}
+parameters:
+  EnabledDebug: {{ var.settings.debug }}
+  LogLevel: {{ var.settings.logLevel }}
+  Cidr: {{ var.vpcCidr }}
+data:
+  foo: {{ var.foo }}
 ```
 
 ## Controlling Deployment Order
@@ -168,10 +221,15 @@ The config sets are deployed to member accounts with [deploy accounts](/docs/com
 tkm org accounts deploy
 ```
 
-You can review the deployment plan and decide whether you want to proceed with the deployment.
+The config sets are undeployed, i.e. the stacks defined in the config sets are removed, with [undeploy accounts](/docs/command-line-usage/organization-accounts#undeploy-accounts) command.
 
-Refer to [command line usage guide](/docs/command-line-usage/organization-accounts#deploy-accounts) for detailed documentation of this command and its supported options.
+```
+tkm org accounts undeploy
+```
+
+Both commands lets you review the deployment plan and decide whether you want to proceed with the deployment.
 
 ## See Also
 
 - [Command line usage > Deploy accounts](/docs/command-line-usage/organization-accounts#deploy-accounts)
+- [Command line usage > Undeploy accounts](/docs/command-line-usage/organization-accounts#undeploy-accounts)
