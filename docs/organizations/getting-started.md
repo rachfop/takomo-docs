@@ -79,6 +79,6 @@ Please note that `organizationAdminRoleName` accepts a role name and not full ro
 
 - [Command line usage > Create organization](/docs/command-line-usage/organization#create-organization)
 - [Config reference > masterAccountId](/docs/config-reference/organization#masteraccountid)
-- [Config reference > organizationAdminRoleName](/docs/config-reference/organization.md#organizationadminrolename)
+- [Config reference > organizationAdminRoleName](/docs/config-reference/organization#organizationadminrolename)
 - [AWS documentation > Creating and managing an organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org.html)
 - [AWS documentation > Enabling all features in your organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html)

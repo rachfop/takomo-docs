@@ -7,17 +7,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'takomo-io',
   projectName: 'Takomo',
-  plugins: [
-    '@docusaurus/plugin-google-analytics',
-    [
-      '@docusaurus/plugin-sitemap',
-      {
-        cacheTime: 600 * 1000, // 600 sec - cache purge period
-        changefreq: 'weekly',
-        priority: 0.5,
-      },
-    ],
-  ],
+  plugins: [],
   themeConfig: {
     googleAnalytics: {
       trackingID: 'UA-165592316-1',
@@ -34,6 +24,11 @@ module.exports = {
           activeBasePath: 'docs',
           label: 'Docs',
           position: 'left',
+        },
+        {
+          to: 'versions/',
+          label: 'All versions',
+          position: 'right',
         },
         {
           href: 'https://github.com/takomo-io/takomo',
@@ -98,18 +93,13 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          // It is recommended to set document id as docs home page (`docs/` path).
+          path: 'docs',
           homePageId: 'getting-started/introduction',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // editUrl:
-          //   'https://github.com/facebook/docusaurus/edit/master/website/',
+          disableVersioning: true,
         },
         blog: {
           showReadingTime: false,
-          // Please change this to your repo.
-          // editUrl:
-          //   'https://github.com/facebook/docusaurus/edit/master/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

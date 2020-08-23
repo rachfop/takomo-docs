@@ -152,7 +152,7 @@ An IAM role used to execute commands for the stack. Determines the target AWS ac
 
 ### See also
 
-- [Configuring AWS credentials](../guide/general/credentials.md)
+- [Configuring AWS credentials](/docs/general/credentials)
 
 ### Examples
 
@@ -175,7 +175,7 @@ Arbitrary data that can be referred in `.hbs` CloudFormation template files.
 
 ### See also
 
-- [Templating](../guide/stacks/variables-and-templating.md)
+- [Templating](/docs/stacks/templating-with-handlebars)
 
 ### Examples
 
@@ -315,8 +315,7 @@ Allowed values:
 
 ### See also
 
-- [Hooks](../guide/stacks/hooks.md)
-- [Implementing custom hooks](../guide/stacks/custom-hooks.md)
+- [Hooks](/docs/stacks/hooks)
 
 ### Examples
 
@@ -417,7 +416,7 @@ Input parameters for the stack.
 
 Parameters configuration is an object where keys are names for the parameters and values are configuration for the corresponding parameters. A parameter value can be a `string`, `number`, `boolean`, `object` or an array of the aforementioned types.
 
-An `object` is used when the parameter value is resolved using a [parameter resolver](../guide/stacks/parameter-resolvers.md).
+An `object` is used when the parameter value is resolved using a [parameter resolver](/docs/stacks/parameter-resolvers).
 
 An array should be used when the template parameter is of type `CommaDelimitedList` or `List<>`.
 
@@ -442,8 +441,7 @@ Boolean defining if the parameter value should be concealed from the logs.
 
 ### See also
 
-- [Parameter resolvers](../guide/stacks/parameter-resolvers.md)
-- [Implementing custom parameter resolvers](../guide/stacks/custom-parameter-resolvers.md)
+- [Parameter resolvers](/docs/stacks/parameter-resolvers)
 
 ### Examples
 
@@ -463,7 +461,7 @@ parameters:
     - 10.0.0.64/26
 ```
 
-A parameter whose value is resolved from a stack output of a stack within the same Takomo project using the [output resolver](../guide/stacks/parameter-resolvers.md#stack-output):
+A parameter whose value is resolved from a stack output of a stack within the same Takomo project using the [output resolver](/docs/stacks/parameter-resolvers#stack-output):
 
 ```yaml
 parameters:
@@ -473,7 +471,7 @@ parameters:
     output: vpcId
 ```
 
-A parameter whose value is resolved from a stack output of a stack outside the Takomo project using the [external output resolver](../guide/stacks/parameter-resolvers.md#external-stack-output):
+A parameter whose value is resolved from a stack output of a stack outside the Takomo project using the [external output resolver](/docs/stacks/parameter-resolvers#external-stack-output):
 
 ```yaml
 parameters:
@@ -485,7 +483,7 @@ parameters:
     commandRole: arn:aws:iam::123456789012:role/deployer
 ```
 
-A parameter whose value is resolved from a stack secret of a stack within the same Takomo project using the [secret resolver](../guide/stacks/parameter-resolvers.md#secret):
+A parameter whose value is resolved from a stack secret of a stack within the same Takomo project using the [secret resolver](/docs/stacks/parameter-resolvers#secret):
 
 ```yaml
 parameters:
@@ -538,7 +536,7 @@ Adding new regions to an existing stack does not require any special actions.
 
 If an existing stack has only one region and that region is changed, then Takomo will start looking for the stack from the new region and forget that it still exists in the old region.
 
-If one or more regions need to be removed from a stack, use [stacks undeploy](../command-line-usage/stacks.md#undeploy-stacks) command to remove the stack from the regions in question, and then update corresponding stack or stack group configuration files.
+If one or more regions need to be removed from a stack, use [stacks undeploy](/docs/command-line-usage/stacks#undeploy-stacks) command to remove the stack from the regions in question, and then update corresponding stack or stack group configuration files.
 :::
 
 ### Examples
@@ -589,8 +587,8 @@ Description for the secret.
 
 ### See also
 
-- [Secret parameter resolver](../guide/stacks/parameter-resolvers.md#secret)
-- [Secrets CLI commands](../command-line-usage/stack-secrets.md)
+- [Secret parameter resolver](/docs/stacks/parameter-resolvers#secret)
+- [Secrets CLI commands](/docs/command-line-usage/stack-secrets)
 
 ### Examples
 
