@@ -7,9 +7,9 @@ keywords:
   - configuration
 ---
 
-This page describes properties available in stack configuration files.
+import ConfigReferenceTable from '@site/src/components/ConfigReferenceTable';
 
-### Available Properties
+This page describes properties available in stack configuration files.
 
 Here are the available properties: 
 
@@ -30,65 +30,19 @@ Here are the available properties:
 - [templateBucket](#templatebucket)
 - [timeout](#timeout)
 
-### Property Documentation
-
-Following information is documented for each property:
-
-#### Type
-
-Allowed type or types for the property value. Possible values: `string`, `number`, `boolean`, `object` or array of the aforementioned, e.g. `string[]`.
-
-#### Required
-
-Is the property required. Possible values: `yes`, `no`.
-
-#### Default value
-
-If no value is given for the property, this value will be used. If this is set as `computed`, then detailed information on how the default value is computed is found under the property's description.
-
-#### Since
-
-In which Takomo version the property was introduced. If omitted, then the property was introduced in Takomo 1.0.0.
-
-#### Where to define
-
-In which files the property can be defined.
-
-Possible values:
-
-- `stack group` - The property can be defined in a stack group configuration file
-- `stack` - The property can be defined in a stack configuration file
-
-#### Inherited
-
-Is the value inherited from the parent stack group. Possible values: `yes`, `no`.
-
-#### Overriding
-
-If the value is inherited from the parent, how it can be overriden.
-
-Possible values:
-
-- `replace` - The value completely replaces the inherited value.
-- `merge` - The value is merged with the inherited value.
-- `no` - The inherited value can't be overridden.
-
-#### Requirements
-
-What requirements the property value must satisfy.
-
 ## accountIds
 
-- Type: `string`, `string[]`
-- Required: `no`
-- Default value: `undefined`
-- Where to define: `stack group`, `stack`
-- Inherited: `yes`
-- Overriding: `replace`
-- Requirements:
-  - Must be valid AWS account ids
-
 List of allowed AWS accounts where a stack can be deployed.
+
+<ConfigReferenceTable 
+    required={true} 
+    types={['string','string[]']}
+    defaultValue='undefined' 
+    inherited={true} 
+    overriding='replace' 
+    defineIn={'both'}
+    requirements={['Must be valid AWS account ids']}
+/>
 
 ### Examples
 
@@ -108,16 +62,17 @@ accountIds:
 
 ## capabilities
 
-- Type: `string`, `string[]`
-- Required: `no`
-- Default value: `[CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND]`
-- Where to define: `stack group`, `stack`
-- Inherited: `yes`
-- Overriding: `complete`
-- Requirements:
-  - Allowed values: `CAPABILITY_IAM`, `CAPABILITY_NAMED_IAM`, `CAPABILITY_AUTO_EXPAND`
-
 Capabilities for the stack.
+
+<ConfigReferenceTable 
+    required={false} 
+    types={['string','string[]']}
+    defaultValue='[CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND]' 
+    inherited={true} 
+    overriding='replace' 
+    defineIn={'both'}
+    requirements={["Allowed values: CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND"]}
+/>
 
 ### Examples
 
@@ -143,20 +98,17 @@ capabilities: []
 
 ## commandRole
 
-- Type: `string`
-- Required: `no`
-- Default value: `undefined`
-- Where to define: `stack group`, `stack`
-- Inherited: `yes`
-- Overriding: `replace`
-- Requirements:
-  - Must be a valid IAM role ARN
-
 An IAM role used to execute commands for the stack. Determines the target AWS account.
 
-### See also
-
-- [Configuring AWS credentials](/docs/general/credentials)
+<ConfigReferenceTable 
+    required={false} 
+    types={['string']}
+    defaultValue='undefined' 
+    inherited={true} 
+    overriding='replace' 
+    defineIn={'both'}
+    requirements={['Must be a valid IAM role ARN']}
+/>
 
 ### Examples
 
@@ -164,22 +116,23 @@ An IAM role used to execute commands for the stack. Determines the target AWS ac
 commandRole: arn:aws:iam::123456789012:role/deployer-role
 ```
 
-## data
+### See also
 
-- Type: `object`
-- Required: `no`
-- Default value: `undefined`
-- Where to define: `stack group`, `stack`
-- Inherited: `yes`
-- Overriding: `merge`
-- Requirements:
-  - The value object keys must be of type `string`
+- [Configuring AWS credentials](/docs/general/credentials)
+
+## data
 
 Arbitrary data that can be referred in `.hbs` CloudFormation template files.
 
-### See also
-
-- [Templating](/docs/stacks/templating-with-handlebars)
+<ConfigReferenceTable 
+    required={false} 
+    types={['object']}
+    defaultValue='undefined' 
+    inherited={true} 
+    overriding='merge' 
+    defineIn={'both'}
+    requirements={['The value of the object keys must be of type string']}
+/>
 
 ### Examples
 
@@ -210,18 +163,23 @@ Resources:
           Value: {{ stack.data.environment.code }}
 ```
 
+### See also
+
+- [Templating](/docs/stacks/templating-with-handlebars)
+
 ## depends
 
-- Type: `string`, `string[]`
-- Required: `no`
-- Default value: `[]`
-- Where to define: `stack`
-- Inherited: `no`
-- Overriding: `replace`
-- Requirements:
-  - Must be a valid `stack path`
-
 A single `stack path` or a list of `stack paths` to stacks within the same Takomo project that the current stack depends on.
+
+<ConfigReferenceTable 
+    required={false} 
+    types={['string','string[]']}
+    defaultValue='undefined' 
+    inherited={false} 
+    overriding='not applicable' 
+    defineIn={'stack'}
+    requirements={['Must be a valid stack path']}
+/>
 
 ### Examples
 
@@ -247,79 +205,31 @@ depends:
 
 ## hooks
 
-- Type: `object[]`
-- Required: `no`
-- Default value: `[]`
-- Inherited: `yes`
-- Overriding: `merge`
-- Where to define: `stack group`, `stack`
+A list of hooks to be executed at different stages of deploy and undeploy commands. Hooks are executed in the order they are defined. If a hook fails, the stack operation is cancelled and deemed as failure.
 
-A list of hooks to be executed at different stages of deploy and undeploy commands. Configuration for each hook is given as an object with properties described below.
+<ConfigReferenceTable 
+    required={false} 
+    types={[<a href='#hook-configuration-object'>Hook Configuration Object[]</a>]}
+    defaultValue='undefined' 
+    inherited={true} 
+    overriding='merge' 
+    defineIn={'both'}
+    requirements={[]}
+/>
 
-Hooks are executed in the order they are defined. If a hook fails, the stack operation is cancelled and deemed as failure.
-
-Any hooks defined in a stack configuration are appended to the list of hooks inherited from the stack group configuration.
+Hooks defined in a stack or stack group configuration are appended to the list of hooks inherited from the parent stack group configuration.
 
 ### Hook Configuration Object
 
-Properties available in hook configuration. In addition to these standard properties, different hook types can have properties of their own.
+Configuration for each hook is given as an object with the properties described below. In addition to these standard properties, different hook types can have properties of their own.
 
-#### hooks.name
-
-- Type: `string`
-- Required: `yes`
-
-Name of the hook
-
-#### hooks.type
-
-- Type: `string`
-- Required: `yes`
-
-Type of the hook
-
-#### hooks.operation
-
-- Type: `string`, `string[]`
-- Required: `no`
-
-Stack operations during which the hook is executed. Accepts a single value or a list of values. If no `operation` is defined, the hook is executed on all operations.
-
-Allowed values:
-
-- `create` - A new stack is created
-- `update` - An existing stack is updated
-- `delete` - An existing stack is deleted
-
-#### hooks.stage
-
-- Type: `string`, `string[]`
-- Required: `no`
-
-Stack operation stages during which the hook is executed. Accepts a single value or a list of values. If no `stage` is defined, the hook is executed on all stages.
-
-Allowed values:
-
-- `before` - Hook is executed before the stack operation 
-- `after` - Hook is executed after the stack operation
-
-#### hooks.status
-
-- Type: `string`, `string[]`
-- Required: `no`
-
-Stack operation statuses during which the hook is executed. Accepts a single value or a list of values. If no `status` is defined, the hook is executed on all statuses. `status` is available only when `stage`is `after`.
-
-Allowed values:
-
-- `success` - Stack operation was successful
-- `failed` - Stack operation failed
-- `cancelled` - Stack operation was cancelled
-- `skipped` -  Stack operation was skipped
-
-### See also
-
-- [Hooks](/docs/stacks/hooks)
+| Key | Required | Type | Description |
+| --- | -------- | ---- | ----------- |
+| name      | yes | string | Name of the hook |
+| type      | yes | string | Type of the hook |
+| operation | no  | string<br/>string[] | Stack operations during which the hook is executed. Accepts a single value or a list of values. If no operation is defined, the hook is executed on all operations.<br/><br/>Allowed values:<ul><li>create - A new stack is created</li><li>update - An existing stack is updated</li><li>delete - An existing stack is deleted</li></ul> |
+| stage     | no  | string<br/>string[] | Stack operation stages during which the hook is executed. Accepts a single value or a list of values. If no stage is defined, the hook is executed on all stages.<br/><br/>Allowed values:<ul><li>before - Hook is executed before the stack operation</li><li>after - Hook is executed after the stack operation</li></ul> |
+| status    | no  | string<br/>string[] | Stack operation statuses during which the hook is executed. Accepts a single value or a list of values. If no status is defined, the hook is executed on all statuses.<br/><br/>Allowed values:<ul><li>success - Stack operation was successful</li><li>failed - Stack operation failed</li><li>cancelled - Stack operation was cancelled</li><li>skipped - Stack operation was skipped</li></ul>Has effect only when the stage is after. |
 
 ### Examples
 
@@ -348,16 +258,25 @@ hooks:
     command: echo 'hello'
 ```
 
+### See also
+
+- [Hooks](/docs/stacks/hooks)
+
 ## ignore
 
-- Type: `boolean`
-- Required: `no`
-- Default value: `false`
-- Inherited: `yes`
-- Overriding: `no`
-- Where to define: `stack group`, `stack`
+Ignore a stack group or a stack. If a stack group is ignored, all its stacks and children are also ignored. If a stack is ignored, its configuration is not loaded, effectively making it non-existing. Ignored stacks can't be deployed or referenced elsewhere in configuration, e.g. ignored stack can't be a dependency for other stacks.
 
-Ignore stack group or stack. If a stack group is ignored, all its stacks and children are also ignored. If a stack is ignored, its configuration is not loaded, effectively making it non-existing. Ignored stacks can't be deployed or referenced elsewhere in configuration, e.g. ignored stack can't be a dependency for other stacks.
+<ConfigReferenceTable 
+    required={false} 
+    types={['boolean']}
+    defaultValue='false' 
+    inherited={true} 
+    overriding='replace' 
+    defineIn={'both'}
+    requirements={[]}
+/>
+
+If a stack group sets ignore to true, it's stacks or child stack groups won't be parsed and thus can't set ignore to false.
 
 ### Examples
 
@@ -367,18 +286,21 @@ ignore: true
 
 ## name
 
-- Type: `string`
-- Required: `no`
-- Default value: `computed`
-- Where to define: `stack`
-- Inherited: `no`
-- Overriding: `replace`
-- Requirements:
-  - Must match regex `^[a-zA-Z0-9][-a-zA-Z0-9]*$`
-  - Minimum length 1
-  - Maximum length 128
-
 Name of the stack.
+
+<ConfigReferenceTable 
+    required={false} 
+    types={['string']}
+    defaultValue='computed (see below)' 
+    inherited={false} 
+    overriding='not applicable' 
+    defineIn={'stack'}
+    requirements={[
+        'Must match regex ^[a-zA-Z0-9][-a-zA-Z0-9]*$',
+        'Minimum length 1',
+        'Maximum length 128'
+    ]}
+/>
 
 ### Default value
 
@@ -406,46 +328,39 @@ name: rds-database
 
 ## parameters
 
-- Type: `object`
-- Required: `no`
-- Default value: `undefined`
-- Where to define: `stack`
-- Inherited: `no`
-- Overriding: `replace`
-- Requirements:
-  - Parameter name must be of type `string`
-  - Parameter name must match regex `^[a-zA-Z0-9]*$`
+Stack input parameters.
 
-Input parameters for the stack.
+<ConfigReferenceTable 
+    required={false} 
+    types={[<a href='#parameters-configuration-object'>Parameters Configuration Object</a>]}
+    defaultValue='undefined' 
+    inherited={false} 
+    overriding='not applicable' 
+    defineIn={'stack'}
+    requirements={[
+        'Parameter name must be of type string',
+        'Parameter name must match regex ^[a-zA-Z0-9]*$'
+    ]}
+/>
 
-Parameters configuration is an object where keys are names for the parameters and values are configuration for the corresponding parameters. A parameter value can be a `string`, `number`, `boolean`, `object` or an array of the aforementioned types.
+### Parameters Configuration Object
 
-An `object` is used when the parameter value is resolved using a [parameter resolver](/docs/stacks/parameter-resolvers).
+Parameters configuration is an object where keys are names for the parameters and values are configuration for the corresponding parameters. A parameter value can be a string, number, boolean, object or an array of the aforementioned types.
 
-An array should be used when the template parameter is of type `CommaDelimitedList` or `List<>`.
+| Key | Required | Type | Description |
+| --- | -------- | ---- | ----------- |
+| {parameter&nbsp;name} | yes | string<br/>number<br/>boolean<br/>[Parameter Configuration Object](#parameter-configuration-object)<br/>any[] | Value of the parameter whose name is given as the key. An array should be used when the template parameter is accepts a list of values. |
 
 ### Parameter Configuration Object
 
-Properties available when an `object` is used to configure a parameter. In addition to the standard properties described below, different parameter resolvers can have properties of their own.
+Parameter value must be given as object when the parameter value is resolved using a [parameter resolver](/docs/stacks/parameter-resolvers). The configuration object has the properties described below. 
 
-#### parameters.&lt;name&gt;.resolver
+| Key | Required | Type | Description |
+| --- | -------- | ---- | ----------- |
+| resolver     | yes | string  | Name of parameter resolver used to resolve the value for the parameter |
+| confidential | no  | boolean | Boolean determining if the parameter value should be concealed from the logs. Defaults to false. |
 
-- Type: `string`
-- Required: `yes`
-
-Name of parameter resolver used to resolve the value for the parameter.
-
-#### parameters.&lt;name&gt;.confidential
-
-- Type: `string`
-- Required: `no`
-- Default value: `false`
-
-Boolean defining if the parameter value should be concealed from the logs.
-
-### See also
-
-- [Parameter resolvers](/docs/stacks/parameter-resolvers)
+In addition to the standard properties documented above, different parameter resolvers can have properties of their own.
 
 ### Examples
 
@@ -497,18 +412,26 @@ parameters:
     secret: password
 ```
 
+### See also
+
+- [Parameter resolvers](/docs/stacks/parameter-resolvers)
+
 ## project
 
-- Type: `string`
-- Required: `no`
-- Default value: `undefined`
-- Inherited: `yes`
-- Overriding: `replace`
-- Where to define: `stack group`, `stack`
-- Requirements:
-  - Must match regex `^[a-zA-Z][a-zA-Z0-9-]*$`
-
 Name of the Takomo project. If a stack has no explicitly defined `name`, then the `project` is included in the stack `name` generated by Takomo.
+
+<ConfigReferenceTable 
+    required={false} 
+    types={['string']}
+    defaultValue='undefined' 
+    inherited={true} 
+    overriding='replace' 
+    defineIn={'both'}
+    requirements={[
+        'Must match regex ^[a-zA-Z][a-zA-Z0-9-]*$'
+    ]}
+/>
+
 
 :::caution Changing the project
 If a stack does not have explicitly defined `name`, changing the `project` will also change its `name`. If the `name` of an existing stack changes, Takomo will not be able to find it anymore and assumes that the stack does not exist.
@@ -522,18 +445,21 @@ project: my-takomo-project
 
 ## regions
 
-- Type: `string`, `string[]`  
-- Required: `yes`  
-- Default value: `undefined`  
-- Where to define: `stack group`, `stack`  
-- Inherited: `yes`  
-- Overriding: `replace`  
-- Requirements:  
-  - Must be a valid AWS region  
-
 Regions where the stack is created. Accepts a single region or a list of regions.
 
 Regions defined in a stack or a stack group configuration completely override the regions inherited from the parent stack group.
+
+<ConfigReferenceTable 
+    required={true} 
+    types={['string','string[]']}
+    defaultValue='undefined' 
+    inherited={true} 
+    overriding='replace' 
+    defineIn={'both'}
+    requirements={[
+        'Must be a valid AWS region '
+    ]}
+/>
 
 :::caution Changing the regions
 Adding new regions to an existing stack does not require any special actions.
@@ -562,37 +488,38 @@ regions:
 
 ## secrets
 
-- Type: `object`
-- Required: `no`
-- Default value: `undefined`
-- Where to define: `stack`
-- Inherited: `no`
-- Overriding: `replace`
-- Requirements:
-  - Secret name must match regex `^[a-zA-Z0-9][-a-zA-Z0-9]*$`
-  - Secret name minimum length 1
-  - Secret name maximum length 30
-  - Secret description maximum length 1024
+Confidential information, such as passwords and access tokens, that can be used in the stack parameters.
 
-Confidential information, such as passwords and access tokens, that canbe used in the stack parameters.
+<ConfigReferenceTable 
+    required={false} 
+    types={[<a href='#secrets-configuration-object'>Secrets Configuration Object</a>]}
+    defaultValue='undefined' 
+    inherited={false} 
+    overriding='not applicable' 
+    defineIn={'stack'}
+    requirements={[
+        'Secret name must match regex ^[a-zA-Z0-9][-a-zA-Z0-9]*$',
+        'Secret name minimum length 1',
+        'Secret name maximum length 30',
+        'Secret description maximum length 1024'
+    ]}
+/>
 
-Secrets configuration is an object where keys are names for the secrets and values are configuration for the corresponding secrets. Each secret has a mandatory description stating its purpose.
+### Secrets Configuration Object
+
+Secrets configuration is an object where keys are names for the secrets and values are configuration for the corresponding secrets.
+
+| Key | Required | Type | Description |
+| --- | -------- | ---- | ----------- |
+| {secret&nbsp;name} | yes | [Secret Configuration Object](#secret-configuration-object) | Value of the secret whose name is given as the key |
 
 ### Secret Configuration Object
 
 Properties of a secret configuration object.
 
-#### secrets.&lt;name&gt;.description
-
-- Type: `string`
-- Required: `yes`
-
-Description for the secret.
-
-### See also
-
-- [Secret parameter resolver](/docs/stacks/parameter-resolvers#secret)
-- [Secrets CLI commands](/docs/command-line-usage/stack-secrets)
+| Key | Required | Type | Description |
+| --- | -------- | ---- | ----------- |
+| description | yes | string | Description for the secret |
 
 ### Examples
 
@@ -614,23 +541,37 @@ secrets:
     description: Access key
 ```
 
-## tags
+### See also
 
-- Type: `object`  
-- Required: `no`  
-- Default value: `undefined`  
-- Where to define: `stack group`, `stack`  
-- Inherited: `yes`  
-- Overriding: `merge`  
-- Requirements:  
-  - Tag key must be a valid tag key  
-  - Tag value must be a valid tag value  
+- [Secret parameter resolver](/docs/stacks/parameter-resolvers#secret)
+- [Secrets CLI commands](/docs/command-line-usage/stack-secrets)
+
+## tags
 
 Tags to be associated with the stack and its resources that support tagging.
 
+Tags defined in the stack configuration are merged with the tags inherited from the stack group, i.e. tags with the same name are overridden but other tags are retained as is.
+
+<ConfigReferenceTable 
+    required={false} 
+    types={[<a href='#tags-configuration-object'>Tags Configuration Object</a>]}
+    defaultValue='undefined' 
+    inherited={true} 
+    overriding='merge' 
+    defineIn={'both'}
+    requirements={[
+        'Tag key must be a valid tag key',
+        'Tag value must be a valid tag value'
+    ]}
+/>
+
+### Tags Configuration Object
+
 Tags configuration is an object where keys are names for the tags and values are values for the corresponding tags.
 
-Tags defined in the stack configuration are merged with the tags inherited from the stack group, i.e. tags with the same name are overridden but other tags are retained as is.
+| Key | Required | Type | Description |
+| --- | -------- | ---- | ----------- |
+| {tag&nbsp;name} | yes | string | Value of the tag whose name is given as the key |
 
 ### Examples
 
@@ -645,16 +586,19 @@ tags:
 
 ## template
 
-- Type: `string`  
-- Required: `no`  
-- Default value: `computed`  
-- Where to define: `stack`  
-- Inherited: `no`  
-- Overriding: `replace`  
-- Requirements:  
-  - File extensions must be `.json`, `.yml` or `.hbs`  
-
 Path to a CloudFormation template file used to create or update the stack, located in `templates` dir
+
+<ConfigReferenceTable 
+    required={false} 
+    types={['string']}
+    defaultValue='computed (see below)' 
+    inherited={false} 
+    overriding='not applicable' 
+    defineIn={'stack'}
+    requirements={[
+        'File extensions must be .json, .yml or .hbs'
+    ]}
+/>
 
 ### Default value
 
@@ -676,26 +620,29 @@ template: networking/vpc.yml
 
 ## templateBucket
 
-- Type: `object`
-- Required: `no`
-- Default value: `undefined`
-- Where to define: `stack group`, `stack`
-- Inherited: `yes`
-- Overriding: `replace`
-- Requirements:
-  - Name must be a valid S3 bucket name
-  - Key prefix must be a valid S3 object key prefix
+An S3 bucket where the stack's CloudFormation template is uploaded prior the deployment. Using a template bucket allows bigger CloudFormation template files (max size of 460,800 bytes instead of the default of 51,200 bytes). The template bucket is managed and accessed using the same credentials as are used for the current stack.
 
-An S3 bucket where the stack's CloudFormation template is uploaded prior the launch. Using a template bucket allows bigger CloudFormation template files (max size of 460,800 bytes instead of the default of 51,200 bytes).
+<ConfigReferenceTable 
+    required={false} 
+    types={[<a href='#template-bucket-configuration-object'>Template Bucket Configuration Object</a>]}
+    defaultValue='undefined' 
+    inherited={true} 
+    overriding='replace' 
+    defineIn={'both'}
+    requirements={[
+        'Name must be a valid S3 bucket name',
+        'Key prefix must be a valid S3 object key prefix'
+    ]}
+/>
+
+### Template Bucket Configuration Object
 
 Template bucket configuration is an object with following keys:
 
-- `name` - Name of the S3 bucket
-- `keyPrefix` - Key prefix where templates are uploaded
-
-Only the `name` property is required. You can tell Takomo to upload template files to a certain path by specifying the `keyPrefix`.
-
-The template bucket is managed and accessed using the same credentials as the present for the current stack.
+| Key | Required | Type | Description |
+| --- | -------- | ---- | ----------- |
+| name      | yes | string | Name of the S3 bucket |
+| keyPrefix | no  | string | Key prefix where templates are uploaded inside the bucket |
 
 ### Examples
 
@@ -716,27 +663,29 @@ templateBucket:
 
 ## timeout
 
-- Type: `number`, `object`
-- Required: `no`
-- Default value: `undefined`
-- Where to define: `stack group`, `stack`
-- Inherited: `yes`
-- Overriding: `replace`
-- Requirements:
-  - Timeout must be an integer greater or equal to 0
+Time in seconds the stack create or update operation can take before it is considered as failure and rolled back. Delete operations do not support timeout.
+ Use 0 to disable timeout.
+ 
+<ConfigReferenceTable 
+    required={false} 
+    types={['number',<a href='#timeout-configuration-object'>Timeout Configuration Object</a>]}
+    defaultValue='undefined' 
+    inherited={true} 
+    overriding='replace' 
+    defineIn={'both'}
+    requirements={[
+        'Timeout must be an integer greater or equal to 0'
+    ]}
+/>
 
-Time in seconds the stack create or update operation can take before it is considered as failure and rolled back.
-
-Timeout configuration can be given also in an object with following keys:
-
-- `create` - Timeout for create operations
-- `update` - Timeout for update operations
+### Timeout Configuration Object
 
 Use object configuration to provide separate timeouts for stack create and update operations. You can provide the timeout for the both, or just one of the operations.
 
-Use 0 to disable timeout.
-
-Delete operations do not support timeout.
+| Key | Required | Type | Description |
+| --- | -------- | ---- | ----------- |
+| create | no | number | Timeout in seconds for create stack operations |
+| update | no | number | Timeout in seconds for update stack operations |
 
 ### Examples
 
