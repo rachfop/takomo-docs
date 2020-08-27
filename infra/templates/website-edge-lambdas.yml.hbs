@@ -1,0 +1,55 @@
+Description: Takomo Website edge lambdas
+
+Resources:
+
+  EdgeLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: takomo-website
+      Handler: index.handler
+      Role: !GetAtt EdgeLambdaRole.Arn
+      Code:
+        ZipFile: |
+          {{> edge-lambda.js }}
+      Runtime: nodejs12.x
+      Timeout: 6
+
+  EdgeLambdaVersion{{ hooks.origin-request-lambda-checksum }}:
+    Type: AWS::Lambda::Version
+    Properties:
+      FunctionName: !Ref EdgeLambda
+
+  EdgeLambdaRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Action: sts:AssumeRole
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+                - edgelambda.amazonaws.com
+                - replicator.lambda.amazonaws.com
+            Effect: Allow
+      Policies:
+        - PolicyName: EdgeLambdaPolicy
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Action:
+                  - xray:PutTraceSegments
+                  - xray:PutTelemetryRecords
+                  - lambda:GetFunction
+                  - lambda:EnableReplication*
+                  - lambda:InvokeFunction
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Effect: Allow
+                Resource: '*'
+
+Outputs:
+  EdgeLambdaVersionArn:
+    Description: Arn of the edge lambda version
+    Value: !Sub ${EdgeLambda.Arn}:${EdgeLambdaVersion{{ hooks.origin-request-lambda-checksum }}.Version}

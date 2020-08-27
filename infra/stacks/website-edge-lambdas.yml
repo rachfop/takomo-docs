@@ -1,0 +1,10 @@
+regions: us-east-1
+template: website-edge-lambdas.yml.hbs
+hooks:
+  - name: origin-request-lambda-checksum
+    type: cmd
+    operation:
+      - create
+      - update
+    phase: before
+    command: openssl md5 partials/edge-lambda.js | cut -d ' ' -f 2
