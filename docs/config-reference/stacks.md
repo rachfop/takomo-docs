@@ -689,13 +689,13 @@ Use object configuration to provide separate timeouts for stack create and updat
 
 ### Examples
 
-Timeout of 180 minutes for both create and update:
+Timeout of 180 seconds for both create and update:
 
 ```yaml
 timeout: 180
 ```
 
-Timeout of 5 minutes for create and no timeout for update:
+Timeout of 300 seconds for create and no timeout for update:
 
 ```yaml
 timeout:
