@@ -11,7 +11,10 @@ keywords:
 
 - Node.js version 14.4.0 or above
 - Supported operating systems: Linux, macOS
-- Windows is not supported
+
+:::caution
+Windows is not currently supported.
+:::
 
 ## Install as Dependency
 

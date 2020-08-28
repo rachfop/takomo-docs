@@ -129,9 +129,7 @@ Organizational units and member accounts inherit policies from their parent orga
 
 ### A Note Regarding Service Control Policies 
 
-There's one important difference between service control policies and other policy types. AWS requires that if you enable service control policies, then each organizational unit and member account must have at least one service control policy attached to them.
-
-To be able to satisfy this requirement, while keeping the configuration simple, Takomo processes service control policies using different logic than with the other policy types. If an organizational unit or a member account doesn't have any directly attached service control policies, Takomo attaches the first inherited service control policy to it.
+Takomo handles service control policies differently compared to other policies. Service control policies attached to an organizational unit are also attached directly to all organizational units and accounts under it. When other policies are attached to an organizational unit, they are just inherited by all organizational units and accounts under it and not directly attached.
 
 ### Example: Attaching policies to organizational units
 
@@ -184,7 +182,7 @@ organizationalUnits:
 
 In this example we have service control and backup policies.
 
-- The AWS managed policy **FullAWSAccess** is attached to the **Root** and therefore inherited by all other organizational units and member accounts.
+- The AWS managed policy **FullAWSAccess** is attached to the **Root** and also attached to all other organizational units and member accounts.
 - The organization master account **999999999999** is put into **Root/Master** because we don't want to apply any additional policies to it.
 - **Root/Applications** is the parent of two organizational units that host the two application environments, and has **AllowedRegions** service control policy attached to it. This policy could set the allowed regions for the application environments and their member accounts.
 - Finally, the production account **888888888888** has **Production** service control policy, maybe containing some strict restrictions, attached directly to it. 
