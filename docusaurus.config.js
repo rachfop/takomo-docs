@@ -1,3 +1,6 @@
+const versions = require('./versions.json');
+const latestVersion = versions[0];
+
 module.exports = {
   title: 'Takomo',
   tagline: 'Organize, parameterize and deploy CloudFormation stacks',
@@ -18,7 +21,7 @@ module.exports = {
       trackingID: 'UA-165592316-1',
     },
     navbar: {
-      title: 'Takomo',
+      title: 'Takomo v' + latestVersion,
       logo: {
         alt: 'Takomo Logo',
         src: 'img/takomo-logo-sm.png',
@@ -33,6 +36,11 @@ module.exports = {
         {
           to: 'versions/',
           label: 'All versions',
+          position: 'right',
+        },
+        {
+          href: `https://takomo.io/api-docs/release/v${latestVersion.replace(/\./g, '-')}/`,
+          label: 'API',
           position: 'right',
         },
         {
