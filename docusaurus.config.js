@@ -20,6 +20,10 @@ module.exports = {
     googleAnalytics: {
       trackingID: 'UA-165592316-1',
     },
+    algolia: {
+      apiKey: '34a9b39ce6857682820980ace4f5fa1c',
+      indexName: 'takomo'
+    },
     navbar: {
       title: 'Takomo v' + latestVersion,
       logo: {
