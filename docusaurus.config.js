@@ -26,6 +26,7 @@ module.exports = {
     },
     navbar: {
       title: 'Takomo v' + latestVersion,
+      hideOnScroll: true,
       logo: {
         alt: 'Takomo Logo',
         src: 'img/takomo-logo-sm.png',
@@ -38,24 +39,49 @@ module.exports = {
           position: 'left',
         },
         {
+          href: `https://takomo.io/api-docs/release/v${latestVersion.replace(/\./g, '-')}/`,
+          label: 'API',
+          position: 'left',
+        },
+        {
           to: 'versions/',
           label: 'All versions',
           position: 'right',
         },
         {
-          href: `https://takomo.io/api-docs/release/v${latestVersion.replace(/\./g, '-')}/`,
-          label: 'API',
-          position: 'right',
-        },
-        {
           href: 'https://github.com/takomo-io/takomo',
-          label: 'GitHub',
+          className: 'header-github-link',
           position: 'right',
+          'aria-label': 'GitHub repository',
         },
       ],
     },
     footer: {
       style: 'dark',
+      links: [
+        {
+          title: 'Learn',
+          items: [
+            {
+              label: 'Introduction',
+              to: 'docs',
+            },
+            {
+              label: 'Installation',
+              to: 'docs/getting-started/installation',
+            },
+          ],
+        },
+        {
+          title: 'Support',
+          items: [
+            {
+              label: 'Gitter',
+              to: 'https://gitter.im/takomo-io/community',
+            },
+          ],
+        },
+      ],
       copyright: `Copyright © ${new Date().getFullYear()} Takomo. Built with Docusaurus.`,
     },
   },
