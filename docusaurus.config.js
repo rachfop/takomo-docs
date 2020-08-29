@@ -28,7 +28,7 @@ module.exports = {
       title: 'Takomo v' + latestVersion,
       hideOnScroll: true,
       logo: {
-        alt: 'Takomo Logo',
+        alt: 'Takomo logo',
         src: 'img/takomo-logo-sm.png',
       },
       items: [
@@ -69,6 +69,10 @@ module.exports = {
             {
               label: 'Installation',
               to: 'docs/getting-started/installation',
+            },
+            {
+              label: 'Examples',
+              to: 'docs/examples/about',
             },
           ],
         },

@@ -1,5 +1,5 @@
 module.exports = {
-  guideSidebar: {
+  docs: {
     "Getting Started": [
       'getting-started/introduction',
       'getting-started/installation',
@@ -56,6 +56,12 @@ module.exports = {
       "config-reference/stacks",
       "config-reference/organization",
       "config-reference/deployment-targets",
+    ],
+    "Examples": [
+      "examples/about",
+      "examples/stack-output-resolvers",
+      "examples/custom-resolvers",
+      "examples/managing-organization",
     ],
     "Upgrade Guide": [
       "upgrade-guide/from-1-to-2",
