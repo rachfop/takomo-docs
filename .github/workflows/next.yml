@@ -1,9 +1,13 @@
-name: Release
+name: Next
 
 on:
   push:
     branches:
-      - release/v**
+      - master
+
+env:
+  CURRENT_RELEASE: next
+  DOCS_BASE: /docs/release/next/
 
 jobs:
   build:
@@ -17,8 +21,6 @@ jobs:
         with:
           path: node_modules
           key: npm-${{ hashFiles('yarn.lock') }}
-      - run: echo ::set-env name=CURRENT_RELEASE::$(echo ${GITHUB_REF#refs/heads/})
-      - run: echo ::set-env name=DOCS_BASE::$(echo /docs/$CURRENT_RELEASE/ | tr '.' '-')
       - run: yarn
       - run: yarn build
       - run: ./ci/publish-versioned-docs.sh

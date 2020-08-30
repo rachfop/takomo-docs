@@ -1,5 +1,4 @@
-const currentRelease = process.env.CURRENT_RELEASE || 'master'
-const currentVersion = currentRelease === 'master' ? 'master' : currentRelease.split("/")[0]
+const currentRelease = process.env.CURRENT_RELEASE || 'next'
 
 module.exports = {
   title: 'Takomo',
@@ -25,7 +24,7 @@ module.exports = {
       indexName: 'takomo'
     },
     navbar: {
-      title: 'Takomo v' + currentVersion,
+      title: 'Takomo ' + currentRelease,
       hideOnScroll: true,
       logo: {
         alt: 'Takomo logo',
@@ -39,7 +38,7 @@ module.exports = {
           position: 'left',
         },
         {
-          href: `https://takomo.io/api-docs/release/v${currentVersion.replace(/\./g, '-')}/`,
+          href: `https://takomo.io/api-docs/release/${currentRelease.replace(/\./g, '-')}/`,
           label: 'API',
           position: 'left',
         },
