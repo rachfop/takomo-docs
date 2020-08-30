@@ -1,11 +1,11 @@
-const versions = require('./versions.json');
-const latestVersion = versions[0];
+const currentRelease = process.env.CURRENT_RELEASE || 'master'
+const currentVersion = currentRelease === 'master' ? 'master' : currentRelease.split("/")[0]
 
 module.exports = {
   title: 'Takomo',
   tagline: 'Organize, parameterize and deploy CloudFormation stacks',
   url: 'https://takomo.io',
-  baseUrl: '/',
+  baseUrl: process.env.DOCS_BASE || '/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'takomo-io',
@@ -25,7 +25,7 @@ module.exports = {
       indexName: 'takomo'
     },
     navbar: {
-      title: 'Takomo v' + latestVersion,
+      title: 'Takomo v' + currentVersion,
       hideOnScroll: true,
       logo: {
         alt: 'Takomo logo',
@@ -39,7 +39,7 @@ module.exports = {
           position: 'left',
         },
         {
-          href: `https://takomo.io/api-docs/release/v${latestVersion.replace(/\./g, '-')}/`,
+          href: `https://takomo.io/api-docs/release/v${currentVersion.replace(/\./g, '-')}/`,
           label: 'API',
           position: 'left',
         },

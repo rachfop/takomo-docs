@@ -1,4 +1,4 @@
-name: Default
+name: Release
 
 on:
   push:
@@ -19,10 +19,10 @@ jobs:
           path: node_modules
           key: npm-${{ hashFiles('yarn.lock') }}
       - run: echo ::set-env name=CURRENT_RELEASE::$(echo ${GITHUB_REF#refs/heads/})
-      - run: echo ::set-env name=DOCS_BASE::$(echo /docs/$CURRENT_RELEASE/ | tr '.' '-')
+      - run: echo ::set-env name=LATEST_RELEASE::$(node ci/get-latest-release.js)
       - run: yarn
       - run: yarn build
-      - run: ./ci/publish-versioned-docs.sh
+      - run: ./ci/publish-latest-docs.sh
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.DOCS_AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.DOCS_AWS_SECRET_ACCESS_KEY }}

@@ -28,6 +28,7 @@ Here are the available properties:
 - [tags](#tags)
 - [template](#template)
 - [templateBucket](#templatebucket)
+- [terminationProtection](#terminationprotection)
 - [timeout](#timeout)
 
 ## accountIds
@@ -709,3 +710,30 @@ timeout:
   create: 300
   update: 120
 ```
+
+## terminationProtection
+
+Enable stack termination protection.
+
+<ConfigReferenceTable 
+    since={'v2.7.0'}
+    required={false} 
+    types={['boolean']}
+    defaultValue={'false'} 
+    inherited={true} 
+    overriding='replace' 
+    defineIn={'both'}
+    requirements={[]}
+/>
+
+### Examples
+
+Enabled stack termination protection.
+
+```yaml
+terminationProtection: true
+```
+
+### See Also
+
+- [AWS documentation > Protecting a stack from being deleted](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html)

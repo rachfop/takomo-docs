@@ -258,6 +258,14 @@ The following variables are available in stack configuration files.
 | stackGroup.data | object | Data object of the stack group. |
 | stackGroup.tags | object | Stack tags of the stack group. |
 | stackGroup.accountIds | string[] | Account ids of the stack group. |
+| stack | object | An object representing the stack. |
+| stack.path | string | Path of the stack without the region specified. |
+| stack.pathSegments | string[] | Path of the stack without the region specified split into an array using `/` as a separator.  |
+| stack.configFile | object | An object representing configuration file of the stack. |
+| stack.configFile.name | string | Name of the stack configuration file without the file extension. |
+| stack.configFile.basename | string | Name of the stack configuration file including the file extension |
+| stack.configFile.filePath | string | File path of the stack configuration file relative to stack directory. |
+| stack.configFile.dirPath | string | File path to the directory containing the stack configuration file relative to stack directory. |
 
 ### CloudFormation Template
 
@@ -272,6 +280,7 @@ The following variables are available in CloudFormation template files with `.hb
 | hooks | object | An object containing values returned by hooks |
 | stack | object | An object representing the current stack |
 | stack.path | string | Path of the stack. |
+| stack.pathSegments | string[] | Path of the stack split into an array using `/` as a separator. |
 | stack.project | string | Project of the stack. |
 | stack.name | string | Name of the stack. |
 | stack.region | string | Region of the stack. |
@@ -287,4 +296,9 @@ The following variables are available in CloudFormation template files with `.hb
 | stack.tags | object | Stack tags of the stack. |
 | stack.accountIds | string[] | Account ids of the stack. |
 | stack.depends | string[] | Dependencies of the stack. |
+| stack.configFile | object | An object representing configuration file of the stack. |
+| stack.configFile.name | string | Name of the stack configuration file without the file extension. |
+| stack.configFile.basename | string | Name of the stack configuration file including the file extension |
+| stack.configFile.filePath | string | File path of the stack configuration file relative to stack directory. |
+| stack.configFile.dirPath | string | File path to the directory containing the stack configuration file relative to stack directory. |
 

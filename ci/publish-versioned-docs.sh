@@ -10,10 +10,10 @@ aws s3 sync \
   --cache-control "public, max-age=60" \
   --exclude "*" \
   --include "*.html" \
-  build s3://takomo-website/
+  build s3://takomo-website-versioned$DOCS_BASE
 
 aws s3 sync \
   --delete \
   --cache-control "public, max-age=604800" \
   --exclude "*.html" \
-  build s3://takomo-website/
+  build s3://takomo-website-versioned$DOCS_BASE
