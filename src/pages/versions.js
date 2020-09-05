@@ -33,8 +33,7 @@ function Version() {
                     <div className="margin-bottom--lg">
                         <h3 id="archive">Past Versions</h3>
                         <p>
-                            Here you can find documentation for previous versions of
-                            Docusaurus.
+                            Here you can find documentation for previous versions of Takomo.
                         </p>
                         <table>
                             <tbody>
