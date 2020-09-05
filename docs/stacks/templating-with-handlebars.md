@@ -8,17 +8,17 @@ keywords:
   - templating
 ---
 
-Sometimes static configuration files and templates are not enough to solve the real-life problems we might face. To help overcome those trickier challenges, and to avoid tedious and error-prone repeating of configuration, Takomo supports dynamic templating with [Handlebars](https://handlebarsjs.com/). All standard Handlebars features are available, so you can use loops, if-conditions, partial includes, helpers, variables etc. to streamline your configuration.
+Sometimes static configuration files and templates are not enough to solve the real-life problems we might face. To help overcome those trickier challenges and avoid tedious and error-prone repeating of configuration, Takomo supports dynamic templating with [Handlebars](https://handlebarsjs.com/). All standard Handlebars features are available, which means you can use loops, if-conditions, partial includes, helpers, variables to streamline your configuration.
 
-Stack and stack group configuration files are always processed as dynamic Handlebars templates. To enable the same dynamic processing of CloudFormation template files in `templates` directory, the `.hbs` file extension is needed.
+Stack and stack group configuration files are always processed as dynamic Handlebars templates. By default, stack template files in the **templates** directory are not treated as dynamic Handlebars templates, but you can enable it by using **.hbs** file extension.
 
 ## Partials
 
-Each file in `partials` directory or its sub directories can be used as a Handlebars partial.
+Each file in the **partials** directory or its subdirectories can be used as a Handlebars partial.
 
 #### Example
 
-If `partials` directory contains a file named `my-partial.hbs`, you can include it as a partial in a configuration file like so:
+If the **partials** directory contains a file named **my-partial.hbs**, you can include it as a partial in a configuration file like so:
 
 ```yaml
 {{> my-partial.hbs }}
@@ -26,11 +26,11 @@ If `partials` directory contains a file named `my-partial.hbs`, you can include 
 
 ## Helpers
 
-Custom Handlebars helpers can be registered by adding `.js` files to `helpers` directory. These files must be valid JavaScript files and export two properties: `name` and `fn`. The former is the name for the helper, and the latter is the actual helper function.
+Custom Handlebars helpers can be registered by adding **.js** files to the **helpers** directory. These files must be valid JavaScript files and export two properties: `name` and `fn`. The former is the name for the helper, and the latter is the actual helper function.
 
 #### Example
 
-If `helpers` directory contains a file named `to-upper-case.js` with following contents:
+If the **helpers** directory contains a file named **to-upper-case.js** with following contents:
 
 ```javascript title="helpers/to-upper-case.js"
 module.exports = {
@@ -86,13 +86,13 @@ Resources:
 
 ### Variables from Files
 
-Use `--var-file` option to load variables from a file. If the file extension is `.json` or `.yml`, the file is first parsed into an object which is then stored to a variable. If the file extension is something else, the contents are just read into a variable.
+Use `--var-file` option to load variables from a file. If the file extension is **.json** or **.yml**, the file is first parsed into an object which is then stored to a variable. If the file extension is something else, the contents are just read into a variable.
 
-The variable name can be omitted for `.yml` and `.json` files as long as the file contents can be deserialized to an object. The deserialized object is then stored to the top-level of variables.
+The variable name can be omitted for **.yml** and **.json** files as long as the file contents can be deserialized to an object. The deserialized object is then stored to the top-level of variables.
 
 #### Example: Read File Contents to a Variable  
 
-If the project directory contains a file named `commit.txt`, we can read its contents into a variable named `commitHash` like so:
+If the project directory contains a file named **commit.txt**, we can read its contents into a variable named `commitHash` like so:
 
 ```bash
 --var-file commitHash=commit.txt
@@ -100,7 +100,7 @@ If the project directory contains a file named `commit.txt`, we can read its con
 
 #### Example: Deserialize File Contents to a Variable
 
-Say, we have a file `/home/variables.yml` with valid YAML contents:
+Say, we have a file **/home/variables.yml** with valid YAML contents:
 
 ```yaml title="/home/variables.yml"
 name: James
@@ -127,7 +127,7 @@ parameters:
 
 #### Example: Deserialize File Contents to a Top-Level of Variables
 
-Say, we have a file `properties.json` with valid JSON contents:
+Say, we have a file **properties.json** with valid JSON contents:
 
 ```yaml title="properties.json"
 {
@@ -170,7 +170,7 @@ Say, we have a JSON file that defines some basic settings:
 }
 ```
 
-We also have another file that contains environment specific settings:
+We also have another file that contains environment-specific settings:
 
 ```json title="prod.json"
 {
@@ -178,7 +178,7 @@ We also have another file that contains environment specific settings:
     "debug": false
   }
 }
-```
+``` 
 
 We can load both settings files and also override and extend the loaded configuration using named variables:
 
@@ -269,7 +269,7 @@ The following variables are available in stack configuration files.
 
 ### CloudFormation Template
 
-The following variables are available in CloudFormation template files with `.hbs` file extension.
+The following variables are available in CloudFormation template files with **.hbs** file extension.
 
 | Key | Type | Description |
 | --- | ---- | ----------- |

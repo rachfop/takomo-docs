@@ -11,10 +11,14 @@ Stack management provides commands to deploy, undeploy and list stacks. Takomo's
 
 ## How It Works?
 
-CloudFormation stacks that Takomo should manage are defined using configuration files located in `stacks` directory. When a Takomo command targeting the stacks is run, Takomo first loads the configuration files to build local state, then queries target accounts to find out which stacks are already deployed and uses this information to build remote state, and finally, compares these two states to create an execution plan that contains operations needed to bring the local state to match with the remote.
+CloudFormation stacks that Takomo should manage are defined using configuration files located in the **stacks** directory. When you run a Takomo command, the following steps are taken:
 
-For example, when deploy stacks command is run, Takomo updates stacks that are found from both the local and remote states. It then creates new stacks for the ones that are found only in the local state but not in the target accounts.
+1. The configuration files are loaded and used to build a local state.
+2. Stacks currently deployed to the target accounts are queried to construct a remote state.
+3. The states are then compared to create an execution plan containing operations needed to bring the local state to match with the remote. 
+
+For example, when you run the deploy stacks command, Takomo updates stacks found from both the local and remote states. It then creates new stacks for the ones found only in the local state but not in the remote.
 
 ## There Is No State
 
-It’s important to understand that Takomo doesn't store the infrastructure’s state or operations it has executed anywhere. It relies solely on information found from the configuration files to match locally defined stacks with the ones found in the target accounts.
+It's important to understand that Takomo doesn't store the infrastructure's state or operations it has executed anywhere. It relies solely on the configuration files' information to match locally defined stacks with the ones found in the target accounts.

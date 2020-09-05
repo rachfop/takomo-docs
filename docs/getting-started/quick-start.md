@@ -19,7 +19,7 @@ npm install -D takomo
 
 ## Credentials
 
-You need to have valid AWS credentials configured. Create a profile named **takomo-example** in your `~/.aws/credentials` file:
+You need to have valid AWS credentials configured. Create a profile named **takomo-example** in your **~/.aws/credentials** file:
 
 ```bash
 [takomo-example]
@@ -31,7 +31,7 @@ You can also provide credentials using some other method described [here](/docs/
 
 :::tip Initializing a new Takomo project using CLI
 
-The rest of this quick start guide describes how to manually create all the needed directories and files. If you just want to try out how to deploy infrastructure with Takomo, you can initialize a new project and create the files using the following command:
+The rest of this quick start guide describes how to create all the needed directories and files manually. If you just want to try out how to deploy infrastructure with Takomo, you can initialize a new project and create the files using the following command:
 
 ```bash
 npx tkm init --create-samples
@@ -41,7 +41,7 @@ npx tkm init --create-samples
 
 ## Stack Configuration
 
-Our stack contains a VPC whose CIDR range can be parameterized. First, we need to create the `stacks` directory that will host all stack configurations. Create the directory and add a file named `vpc.yml` with the following contents:
+Our stack contains a VPC whose CIDR range can be parameterized. First, we need to create the **stacks** directory that will host all stack configurations. Create the directory and add a file named **vpc.yml** with the following contents:
 
 ```yaml title="stacks/vpc.yml"
 regions: eu-west-1
@@ -51,7 +51,7 @@ parameters:
 
 ## Stack Template
 
-Next, we need to provide a CloudFormation template for our stack. Create the `templates` directory next to the stacks directory, and add a file named `vpc.yml` with the following contents:
+Next, we need to provide a CloudFormation template for our stack. Create the **templates** directory next to the stacks directory, and add a file named **vpc.yml** with the following contents:
 
 ```yaml title="templates/vpc.yml"
 Description: My VPC

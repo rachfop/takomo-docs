@@ -17,7 +17,7 @@ If you don't have an existing organization, you can create one using [create org
 tkm org create
 ``` 
 
-This command uses the credentials found from the current terminal session to create a new organization and make the AWS account bound to the credentials as the master account of the organization. It will also create `organization` directory and inside it a file named `organization.yml` containing minimum configuration needed to manage the organization.
+This command uses the credentials found from the current terminal session to create a new organization and make the AWS account bound to the credentials as the master account of the organization. It will also create an **organization** directory, and inside it, a file named **organization.yml** containing the minimum configuration needed to manage the organization.
 
 After running the command, you will have the following file structure:
 
@@ -27,7 +27,7 @@ After running the command, you will have the following file structure:
    └- organization.yml
 ```
 
-Contents of the generated `organization.yml` file will look like this:
+Contents of the generated **organization.yml** file will look like this:
 
 ```yaml title="organization.yml"
 masterAccountId: "<your aws account id>"
@@ -39,9 +39,9 @@ organizationalUnits:
 
 ## Getting Started with an Existing Organization
 
-If you have an existing organization, you will need to create required configuration files manually. You can start by copy-pasting the contents of `organization.yml` file shown above and setting `masterAccountId` with the id of your organization master account.
+If you have an existing organization, you will need to create the required configuration files manually. You can start by copy-pasting the contents of the **organization.yml** file shown above and setting the `masterAccountId` with your organization master account's id.
 
-Next. you will need to make your local configuration to match with the current organization state. This means describing all organizational units, policies and member accounts in `organization.yml` file. Obviously, this can be quite an effort but [deploy organization command](/docs/command-line-usage/organization#deploy-organization) will show you differences between your local configuration and the actual organization state. Once there are no changes to be executed, your configuration is completed.
+Next, you will need to make your local configuration to match with the current organization state. You need to describe all organizational units, policies and member accounts in the **organization.yml** file. This can be quite an effort, but [deploy organization command](/docs/command-line-usage/organization#deploy-organization) will show you differences between your local configuration and the actual organization state. Once there are no changes to be executed, your configuration is completed.
 
 ## Organization Feature Set
 
@@ -63,13 +63,13 @@ masterAccountId: "123456789012"
 
 ## Credentials
 
-When managing the AWS organization, you need to have credentials with sufficient permissions to manage the organization itself, and also to assume administrative role to all accounts that belong to the organization.
+When managing the AWS organization, you need to have credentials with sufficient permissions to manage the organization itself and assume the administrative role to all accounts that belong to the organization.
 
-Basically this means that Takomo's organization management commands need to be run with credentials of an IAM user located in the organization master account.
+Basically, this means that Takomo's organization management commands need to be run with credentials of an IAM user located in the organization master account.
 
 ### Organization Admin Role
 
-By default, Takomo uses the credentials currently available in the terminal session to execute operations that query information from the organization and also alter its state. It is also possible to tell Takomo to use a specific IAM role to execute these organization management operations by setting the `organizationAdminRoleName` property in the organization configuration file.
+By default, Takomo uses the credentials currently available in the terminal session to execute operations that query information from the organization and alter its state. It is also possible to tell Takomo to use a specific IAM role to execute these organization management operations by setting the `organizationAdminRoleName` property in the organization configuration file.
 
 #### Example: Setting the organization admin role name
 

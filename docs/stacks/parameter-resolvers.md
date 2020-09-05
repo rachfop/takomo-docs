@@ -8,7 +8,7 @@ keywords:
 
 Parameter resolvers are used to get values for stack parameters at deployment time. Each parameter resolver has a name that can be used to refer to it from stack parameters configuration with `resolver` property.
 
-Takomo logs parameter values when lower logging levels are used. When using parameter resolvers, you can prevent this by setting `confidential` property to `true`.
+Takomo outputs parameter values to logs when lower logging levels are used. When using parameter resolvers, you can prevent this by setting the `confidential` property to `true`.
 
 Each parameter resolver can have properties of their own.
 
@@ -23,7 +23,7 @@ There are four built-in parameter resolvers:
 
 ### Stack Output
 
-Stack output resolver reads the parameter value from a stack output of another stack configured within the same Takomo project. The stack from where the output is read is referred as the source stack, and the stack that is using the resolver is referred as the target stack.
+Stack output resolver reads the parameter value from a stack output of another stack configured within the same Takomo project. The stack from where the output is read is referred to as the source stack, and the stack using the resolver is referred to as the target stack.
 
 The source stack automatically becomes the target stack's dependency.
 
@@ -40,7 +40,7 @@ Here are the properties available for `stack-output` resolver.
 | resolver | yes | string | Resolver name, this must be **stack-output**. |
 | stack    | yes | string | Stack path of the source stack. |
 | output   | yes | string | Name of the stack output whose value is read. |
-| confidential | no | boolean | Conceal the resolved parameter value from logs, defaults to `false` |
+| confidential | no | boolean | Conceal the resolved parameter value from logs, defaults to **false** |
 
 #### Example
 
@@ -70,7 +70,7 @@ parameters:
 
 ### External stack output
 
-External stack output resolver reads the parameter value from a stack output of a stack. The stack from where the output is read is referred as the source stack, and the stack that is using the resolver is referred as the target stack.
+The external stack output resolver reads the parameter value from a stack output of a stack. The stack from where the output is read is referred to as the source stack, and the stack using the resolver is referred to as the target stack.
 
 The source stack does not have to be configured within the same Takomo project with the target stack.
 
@@ -85,17 +85,17 @@ Here are the properties available for `external-stack-output` resolver.
 | output      | yes | string | Name of the stack output whose value is read. |
 | region      | no  | string | Region of the source stack. Region is optional. By default, the region of the target stack is used. |
 | commandRole | no  | string | IAM role used to access the stack output. Command role is optional. By default, credentials associated with the target stack are used. |
-| confidential | no | boolean | Conceal the resolved parameter value from logs, defaults to `false` |
+| confidential | no | boolean | Conceal the resolved parameter value from logs, defaults to **false** |
 
 #### Example
 
 Say, we have two accounts: **123456789012** and **888888888888**.
 
-The account **123456789012** has one stack: **src-bucket**. It is located in the **us-east-1** region and exposes name of an application sources bucket in a stack output named **SrcBucketName**. The **123456789012** account also has a read-only role that the **888888888888** account can assume.
+The account **123456789012** has one stack: **src-bucket**. It is located in the **us-east-1** region and exposes the name of an application source bucket in a stack output named **SrcBucketName**. The **123456789012** account also has a read-only role that the **888888888888** account can assume.
 
-The **888888888888** account has two stacks: **assets-bucket** and **build-infra**. The stacks are located in the **us-east-1** and **eu-west-1** regions, respectively. The **assets-bucket** stack exposes name of an assets bucket in a stack output named **AssetsBucket**.
+The **888888888888** account has two stacks: **assets-bucket** and **build-infra**. The stacks are located in the **us-east-1** and **eu-west-1** regions, respectively. The **assets-bucket** stack exposes the name of an assets bucket in a stack output named **AssetsBucket**.
 
-Only the **build-infra** stack is managed in our Takomo project. The two other stacks are configured elsewhere. The **build-infra** stack has two parameters: **SrcBucket** and **AssetsBucket**. To get the values for them, we use the `external-stack-output` resolver to read the outputs from the two other stacks.
+Only the **build-infra** stack is managed in our Takomo project. The two other stacks are configured elsewhere. The **build-infra** stack has two parameters: **SrcBucket** and **AssetsBucket**. To get the values for them, we use the `external-stack-output` resolver to read the two other stacks' outputs.
 
 The directory structure looks like this:
 
@@ -124,13 +124,13 @@ parameters:
     region: eu-west-1
 ```
 
-For the **SrcBucket** parameter, we need to specify the `commandRole` property because the source stack is located in a different account. We don't need to specify the `region` because the both stacks are located in the same region.
+For the **SrcBucket** parameter, we need to specify the `commandRole` property because the source stack is located in a different account. We don't need to specify the `region` because both stacks are located in the same region.
 
-For the **AssetsBucket** parameter, we must specify the `region` but not the `commandRole` because the stacks are located in the same account but in different regions.
+For the **AssetsBucket** parameter, we must specify the `region` but not the `commandRole` because the stacks are located in the same account but different regions.
 
 ### Secret
 
-Secret resolver reads value from a stack secret configured within the same Takomo project. The stack that defines the secret is referred as the source stack, and the stack that is using the resolver is referred as the target stack.
+Secret resolver reads a value from a stack secret configured within the same Takomo project. The stack that defines the secret is referred to as the source stack, and the stack using the resolver is referred to as the target stack.
 
 The source stack automatically becomes the target stack's dependency.
 
@@ -145,11 +145,11 @@ Here are the properties available for `secret` resolver.
 | resolver | yes | string | Resolver name, this must be **secret**. |
 | stack    | yes | string | Stack path of the source stack.  |
 | secret   | yes | string | Name of the secret. |
-| confidential | no | boolean | Conceal the resolved parameter value from logs, defaults to `false` |
+| confidential | no | boolean | Conceal the resolved parameter value from logs, defaults to **false** |
 
 ### Command
 
-Command resolver reads value from output of a shell command.
+The command resolver reads a value from the output of a shell command.
 
 #### Properties
 
@@ -159,30 +159,30 @@ Here are the properties available for `command` resolver.
 | --- | -------- | ---- | ----------- |
 | resolver | yes | string | Resolver name, this must be **cmd**. |
 | command  | yes | string | Shell command to execute. |
-| confidential | no | boolean | Conceal the resolved parameter value from logs, defaults to `false` |
+| confidential | no | boolean | Conceal the resolved parameter value from logs, defaults to **false** |
 
 ## Implementing Custom Parameter Resolvers
 
-You can provide your own custom parameter resolvers by placing plain JavaScript files, with `.js` file extension, into `resolvers` directory. Each file must export a [parameter resolver provider](#parameter-resolver-provider) object that is used to initialize the actual parameter resolver. You can use all language features available in Node 14.4.0.
+You can provide custom parameter resolvers by placing plain JavaScript files, with **.js** file extension, into the **resolvers** directory. Each file must export a [parameter resolver provider](#parameter-resolver-provider) object that is used to initialize the actual parameter resolver. You can use all language features available in Node 14.4.0.
 
 ### Parameter Resolver Provider
 
-Parameter resolver provider has the following properties:
+The parameter resolver provider has the following properties:
 
 | Key | Required | Type | Description |
 | --- | -------- | ---- | ----------- |
-| name   | yes | string or function | Name of the resolver used to refer to the resolver from stack configuration files. Can be either a string or a function that returns a string. The function must not be asynchronous. |
+| name   | yes | string or function | Name of the resolver used to refer to the resolver from stack configuration files. It can be either a string or a function that returns a string. The function must not be asynchronous. |
 | init   | yes | function | A function that initializes the resolver with properties given in a stack configuration file. The function can be either normal or async, and must return an instantiated [parameter resolver](#parameter-resolver) object. |
-| schema | no  | function | An optional function that returns a [Joi](https://hapi.dev/module/joi/) schema that is used to validate configuration provided for the resolver from stack configuration files.<br/><br/>It takes two arguments: [Joi instance](https://hapi.dev/module/joi/api/?v=17.1.1) and [Joi object schema](https://hapi.dev/module/joi/api/?v=17.1.1#object). The former can be used to create new validation constraints and the latter is a pre-initialized object schema that you can modify to provide the validation schema for your resolver.<br/><br/>You can return the pre-initialized schema from the schema function, or you can use the Joi root instance to create a completely new schema |
+| schema | no  | function | An optional function that returns a [Joi](https://hapi.dev/module/joi/) schema that is used to validate configuration provided for the resolver from stack configuration files.<br/><br/>It takes two arguments: [Joi instance](https://hapi.dev/module/joi/api/?v=17.1.1) and [Joi object schema](https://hapi.dev/module/joi/api/?v=17.1.1#object). The former can be used to create new validation constraints. The latter is a pre-initialized object schema that you can modify to provide your resolver's validation schema.<br/><br/>You can return the pre-initialized schema from the schema function or use the Joi root instance to create an entirely new schema. |
 
 ### Parameter Resolver
 
-Parameter resolver has the following properties:
+The parameter resolver has the following properties:
 
 | Key | Required | Type | Description |
 | --- | -------- | ---- | ----------- |
-| resolve | yes | function | A function that resolves the actual parameter value. The resolved value can be of any type, and is converted to a string before it is passed to CloudFormation. If the value is an array, it is converted to a string by joining its values with comma.<br/><br/>The resolve function is invoked with a single argument that contains the following properties:<br/><br/><ul><li>ctx - Command context object </li><li>stack - The current stack</li><li>parameterName - The name of the parameter whose value is being resolved</li><li>listParameterIndex - If the parameter is of type `List<>` or `CommaDelimitedList`, this will hold the index of the value in the list</li><li>logger - Logger object for logging</li></ul>|
-| confidential | no  | boolean or function  | A boolean or a synchronous function that returns a boolean value determining if the resolved parameter value should be concealed from log messages. Defaults to `false`. The `confidential` property in a stack configuration file takes precedence over this value. |
+| resolve | yes | function | A function that resolves the actual parameter value. The resolved value can be of any type and is converted to a string before it is passed to CloudFormation. If the value is an array, it is converted to a string by joining its values with a comma.<br/><br/>The resolve function is invoked with a single argument that contains the following properties:<br/><br/><ul><li>ctx - Command context object </li><li>stack - The current stack</li><li>parameterName - The name of the parameter whose value is being resolved</li><li>listParameterIndex - If the parameter is of type `List<>` or `CommaDelimitedList`, this will hold the index of the value in the list</li><li>logger - Logger object for logging</li></ul>|
+| confidential | no  | boolean or function  | A boolean or a synchronous function that returns a boolean value determining if the resolved parameter value should be concealed from log messages. Defaults to **false**. The `confidential` property in a stack configuration file takes precedence over this value. |
 | dependencies | no  | string[] or function | A list of stack paths or a synchronous function that returns a list of stack paths of the stacks that the resolver depends on. Defaults to an empty list. |
 | iamRoleArns | no  | string[] or function | A list of IAM role ARNs or a synchronous function that returns a list of IAM role ARNs needed to resolve the value. Defaults to an empty list. |
 

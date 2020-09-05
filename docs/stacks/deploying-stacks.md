@@ -8,11 +8,11 @@ keywords:
   - deploy
 ---
 
-CloudFormation stacks described in the local configuration are managed with CLI commands. All commands first load the local configuration and then compare it to the current AWS infrastructure state in order to build an execution plan. The plan can then be reviewed to see what changes are to be executed.
+CloudFormation stacks described in the local configuration are managed with CLI commands. All commands first load the local configuration and then compare it to the current AWS infrastructure state to build an execution plan. The plan can then be reviewed to see what changes are to be executed.
 
 ## Creating and Updating Stacks
 
-The deploy stacks command creates new stacks and updates existing stacks. Locally configured stacks that are found from the target account are updated, and stacks that do not have an existing counterpart, are created. Stacks that exist in the target account but are not found from the local configuration are not touched.
+The deploy stacks command creates new stacks and updates existing stacks. Locally configured stacks found from the target account are updated, and stacks that do not have an existing counterpart are created. Stacks that exist in the target account but are not found from the local configuration are not touched.
 
 It is possible to deploy all stacks, just a single stack, or only stacks that belong under a specified stack group.
 
@@ -40,7 +40,7 @@ tkm stacks deploy /dev/vpc.yml
 
 ## Removing Stacks
 
-Undeploy stacks command is the counterpart of the deploy stacks command, and removes existing stacks. Locally configured stacks that are found from the target account are removed. Stacks that exist in the target account but are not found from the local configuration are not touched.
+Undeploy stacks command is the counterpart of the deploy stacks command and removes existing stacks. Locally configured stacks that are found from the target account are removed. Stacks that exist in the target account but are not found from the local configuration are not touched.
 
 It is possible to undeploy all stacks, just a single stack, or only stacks that belong under a specified stack group.
 
