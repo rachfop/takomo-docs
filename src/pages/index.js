@@ -12,7 +12,7 @@ const features = [
     // imageUrl: 'img/takomo-logo-sm.png',
     description: (
       <>
-          Easy to get started, powerful enough to implement large-scale deployments spanning across multiple AWS accounts and regions.
+          Easy to get started, powerful enough to implement large-scale deployments across multiple AWS accounts and regions.
       </>
     ),
   },

@@ -8,7 +8,7 @@ keywords:
   - stacks
 ---
 
-You create a configuration file to `stacks` directory for each stack you want to manage with Takomo. Configuration files are in **YAML** format and should contain configuration needed to deploy the corresponding stacks.
+You create a configuration file in the `stacks` directory for each stack you want to manage with Takomo. Configuration files are in **YAML** format and should contain the configuration needed to deploy the corresponding stacks.
 
 :::important
 Takomo uses **.yml** file extension with YAML files.
@@ -16,7 +16,7 @@ Takomo uses **.yml** file extension with YAML files.
 
 ## Use Stack Groups to Define Common Configuration 
 
-You can create more directories under `stacks` directory to group stacks by environment, region or by some other criterion. These directories are treated as stack groups and can be used to provide common configuration for stacks that belong to them by placing a `config.yml` file into the directory. Individual stacks can override some or all of the configuration they inherit from their stack group.
+You can create more directories under the `stacks` directory in order to group stacks by environment, region or by some other criterion. These directories are treated as stack groups and can be used to provide common configurations for stacks that belong to them by placing a `config.yml` file into the directory. Individual stacks can override some or all of the configuration they inherit from their stack group.
 
 :::note
 There are some stack properties, like stack name and template, that can't be defined at the stack group level. Where each property can be defined is documented in [the configuration reference](/docs/config-reference/stacks).
@@ -28,9 +28,9 @@ The `stacks` directory itself is the root stack group and configuration defined 
 
 #### Example: Project Structure 
 
-Here is an example of what a Takomo project could look like. In `stacks` directory we have a `config.yml` file that contains configuration shared between all stack groups and stacks.
+Here is an example of what a Takomo project could look like. In the `stacks` directory we have a `config.yml` file that contains configurations shared between all stack groups and stacks.
 
-Then, we have two stack groups for application environments: `dev` and `prod`. Both the environments contain two stacks which are defined in `application.yml` and `vpc.yml` files. The `dev` environment also has its own `config.yml` file for configuration shared only with its stacks.
+Then, we have two stack groups for application environments: `dev` and `prod`. Both the environments contain two stacks which are defined in `application.yml` and `vpc.yml` files. The `dev` environment also has its own `config.yml` file for configurations shared only with its stacks.
 
 CloudFormation templates for the stacks are found from `templates` directory - we'll get to that later.
 
@@ -52,15 +52,15 @@ CloudFormation templates for the stacks are found from `templates` directory - w
 
 ## Identifying Stacks and Stack Groups
 
-Stack groups and stacks are identified and can be referenced by their path. The paths are like file paths in *nix filesystem where `stacks` directory is the filesystem root. The path for the root stack group is `/`, and for any other stack group, it is the absolute file path to the stack group directory from `stacks` directory.
+Stack groups and stacks are identified and can be referenced by their path. The paths are like file paths in *nix filesystem where the `stacks` directory is the filesystem root. The path for the root stack group is `/`, and for any other stack group, it is the absolute file path to the stack group directory from the `stacks` directory.
 
-The stack paths follow this same logic with one important difference. The path for a stack is the absolute file path to its configuration file from `stacks` directory, appended with a region specifier, that is a forward slash followed by the stack’s region. The region specifier can be omitted if the stack has only one region.
+The stack paths follow this same logic with one important difference. The path for a stack is the absolute file path to its configuration file from the `stacks` directory, appended with a region specifier, that is a forward slash followed by the stack’s region. The region specifier can be omitted if the stack has only one region.
 
 :::info Stack regions
 A stack can have one or more regions. The regions are defined in the stack's configuration file, which means there can be more than one CloudFormation stack created from a single stack configuration file.
 :::
 
-A common name for both stack and stack group paths is **command path**. Command path is used in many places in Takomo's configuration files, and also accepted as input arguments by many CLI commands. Wherever a command path is required, you can always pass either a stack or stack group path.
+A common name for both stack and stack group paths is **command path**. Command path is used in many places in Takomo's configuration files, and also accepted as input arguments by many CLI commands. Wherever a command path is required, you can always use either a stack or stack group path.
 
 #### Example: Stack and Stack Group Paths
 

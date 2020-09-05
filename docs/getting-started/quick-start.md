@@ -6,7 +6,7 @@ keywords:
   - Takomo
 ---
 
-Before diving deeper into the documentation, Let's first see how to create a simple CloudFormation stack using Takomo.
+Before diving deeper into the documentation, let's first see how to create a simple CloudFormation stack using Takomo.
 
 ## Installation
 
@@ -31,7 +31,7 @@ You can also provide credentials using some other method described [here](/docs/
 
 :::tip Initializing a new Takomo project using CLI
 
-The rest of this quick start guide describes how to manually create all the needed directories and files. If you just want to try out how to deploy infra with Takomo, you can use initialize a new project command to create the files:
+The rest of this quick start guide describes how to manually create all the needed directories and files. If you just want to try out how to deploy infrastructure with Takomo, you can initialize a new project and create the files using the following command:
 
 ```bash
 npx tkm init --create-samples
@@ -41,7 +41,7 @@ npx tkm init --create-samples
 
 ## Stack Configuration
 
-Our stack contains a VPC whose CIDR range can be parameterized. First, we need to create the `stacks` directory that will host all stack configurations. Create the directory and add there a file named `vpc.yml` with the following contents:
+Our stack contains a VPC whose CIDR range can be parameterized. First, we need to create the `stacks` directory that will host all stack configurations. Create the directory and add a file named `vpc.yml` with the following contents:
 
 ```yaml title="stacks/vpc.yml"
 regions: eu-west-1
@@ -51,7 +51,7 @@ parameters:
 
 ## Stack Template
 
-Next, we need to provide a CloudFormation template for our stack. Create `templates` directory next to the stacks directory, and add there a file named `vpc.yml` with the following contents:
+Next, we need to provide a CloudFormation template for our stack. Create the `templates` directory next to the stacks directory, and add a file named `vpc.yml` with the following contents:
 
 ```yaml title="templates/vpc.yml"
 Description: My VPC
@@ -90,7 +90,7 @@ Review the changes and continue to deploy the stack.
 
 ## Clean Up
 
-You can delete the stack with command:
+You can delete the stack with this command:
 
 ```bash
 npx tkm stacks undeploy --profile takomo-example

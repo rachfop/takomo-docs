@@ -1,19 +1,13 @@
 import React from 'react';
 
 import Layout from '@theme/Layout';
-
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import versions from '../../versions.json';
-
+const versions = ["2.7.1", "1.5.0", "0.2.0"]
 function Version() {
-    const context = useDocusaurusContext();
-    const {siteConfig = {}} = context;
     const latestVersion = versions[0];
     const pastVersions = versions.filter((version) => version !== latestVersion);
-    const repoUrl = `https://github.com/${siteConfig.organizationName}/${siteConfig.projectName}`;
     return (
         <Layout
             title="Versions"
