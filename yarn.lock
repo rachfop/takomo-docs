@@ -1781,37 +1781,37 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@takomo/aws-clients@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@takomo/aws-clients/-/aws-clients-2.6.1.tgz#291920b807c742a65cad3455986722800cf3e740"
-  integrity sha512-jhu1MrOMgMY0FMh/5t9TL2vuSnMlZYoclEJVinowMIOHiICpv/CbF10F3OXmsh2iiHoaszyZ4vDnEWa+Ud0EYA==
+"@takomo/aws-clients@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@takomo/aws-clients/-/aws-clients-2.7.1.tgz#47bacb039d96c6c4ab518ac9960d17a0fae36d6a"
+  integrity sha512-jk34+GCDMBnz5tDlDR9pZOks1Wlt1mQ3s5M6Wjzi3sahrnK2J+XHK+ue06pp+Rv7j9fvh2vTbB4AzfKcVT8yqw==
   dependencies:
-    "@takomo/core" "2.6.1"
-    "@takomo/util" "2.5.0"
-    aws-sdk "2.736.0"
+    "@takomo/core" "2.7.1"
+    "@takomo/util" "2.7.0"
+    aws-sdk "2.745.0"
     lodash.flatten "4.4.0"
     lodash.last "3.0.0"
     lodash.takerightwhile "4.6.0"
     uuid "3.3.3"
 
-"@takomo/cli-io@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@takomo/cli-io/-/cli-io-2.6.1.tgz#d623e67c9cfd87a598a11ff335fcf92405f29f50"
-  integrity sha512-M1WXyKIf4l3FxZxQ9CzTg+6vJKvxFvKnLjjAGz5sfqosPxnf/FZ66Y97PrniftzUT6U5hOqoJQOivAbmS77mKQ==
+"@takomo/cli-io@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@takomo/cli-io/-/cli-io-2.7.1.tgz#bee698cf890d52ce74c1ca601144b21a6cb2612c"
+  integrity sha512-PGO73wu5JnlKcY0wQw9TGz5kbqgXTa1QYvN1qNFde/jiLagEMcrSMZzrYEp25U8C25xObRnQGvljD7ZQ271+MQ==
   dependencies:
     "@hapi/joi" "17.1.1"
-    "@takomo/aws-clients" "2.6.1"
-    "@takomo/config-sets" "2.6.1"
-    "@takomo/core" "2.6.1"
-    "@takomo/deployment-targets" "2.6.1"
-    "@takomo/init-command" "2.6.1"
-    "@takomo/organization-commands" "2.6.1"
-    "@takomo/organization-config" "2.6.1"
-    "@takomo/stacks-commands" "2.6.1"
-    "@takomo/stacks-context" "2.6.1"
-    "@takomo/stacks-model" "2.6.1"
-    "@takomo/util" "2.5.0"
-    aws-sdk "2.736.0"
+    "@takomo/aws-clients" "2.7.1"
+    "@takomo/config-sets" "2.7.1"
+    "@takomo/core" "2.7.1"
+    "@takomo/deployment-targets" "2.7.1"
+    "@takomo/init-command" "2.7.1"
+    "@takomo/organization-commands" "2.7.1"
+    "@takomo/organization-config" "2.7.1"
+    "@takomo/stacks-commands" "2.7.1"
+    "@takomo/stacks-context" "2.7.1"
+    "@takomo/stacks-model" "2.7.1"
+    "@takomo/util" "2.7.0"
+    aws-sdk "2.745.0"
     date-and-time "0.11.1"
     diff "4.0.1"
     easy-table "1.1.1"
@@ -1821,19 +1821,19 @@
     lodash.uniq "4.5.0"
     pretty-ms "5.1.0"
 
-"@takomo/cli@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@takomo/cli/-/cli-2.6.1.tgz#edd2fa476f8df6c227546d1d7133d43f0f570f4a"
-  integrity sha512-TqQt1HXsUu0j7tdTBF0SpAHSi5pE0o6s9FVke1Y1XxKDEJtbgw61+wcESw0iCQQQ8WRUWBuBEcYGegfUHo+lXg==
+"@takomo/cli@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@takomo/cli/-/cli-2.7.1.tgz#50f67adb69e33c01a6dd3e2e4fb62d89e39e3ed3"
+  integrity sha512-EkjPK0u/NH+ZtP7ya/uqALY/b8vLuqd2GEkR15cGoTNdWvNm/Esu4y+aTQmjJ5vsM6mVHMMCV3QblDXvqJE5Cw==
   dependencies:
-    "@takomo/cli-io" "2.6.1"
-    "@takomo/config-sets" "2.6.1"
-    "@takomo/core" "2.6.1"
-    "@takomo/deployment-targets" "2.6.1"
-    "@takomo/init-command" "2.6.1"
-    "@takomo/organization-commands" "2.6.1"
-    "@takomo/stacks-commands" "2.6.1"
-    "@takomo/util" "2.5.0"
+    "@takomo/cli-io" "2.7.1"
+    "@takomo/config-sets" "2.7.1"
+    "@takomo/core" "2.7.1"
+    "@takomo/deployment-targets" "2.7.1"
+    "@takomo/init-command" "2.7.1"
+    "@takomo/organization-commands" "2.7.1"
+    "@takomo/stacks-commands" "2.7.1"
+    "@takomo/util" "2.7.0"
     dotenv "8.2.0"
     dotenv-expand "5.1.0"
     easy-table "1.1.1"
@@ -1841,199 +1841,202 @@
     pretty-ms "5.1.0"
     yargs "13.3.0"
 
-"@takomo/config-sets@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@takomo/config-sets/-/config-sets-2.6.1.tgz#18c7600a0938e46e6b66d377499593953dbcdf8e"
-  integrity sha512-5iETOQ6RQbNBbVEE7Kku3x/XK0Qr6a65g+OuKNt86hCgakoKwU+wuGLTXebWcXD652ph8EXFFuj7Of0o5x+Vbg==
+"@takomo/config-sets@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@takomo/config-sets/-/config-sets-2.7.1.tgz#a9a718c16c7cd54a764caa4027d15f6b25844d38"
+  integrity sha512-jgdqojJbw4Yjqpx+uzXrPTDGC/9TQf2U4hFDDX8bo+Ast/QpUgflYc9isJdXMM8dJSTOZpIMCq9lZJxa6Z9g4A==
   dependencies:
     "@hapi/joi" "17.1.1"
-    "@takomo/core" "2.6.1"
-    "@takomo/stacks-commands" "2.6.1"
-    "@takomo/util" "2.5.0"
+    "@takomo/core" "2.7.1"
+    "@takomo/stacks-commands" "2.7.1"
+    "@takomo/util" "2.7.0"
 
-"@takomo/core@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@takomo/core/-/core-2.6.1.tgz#35653b06e9dc02d9260f36cab9d0828b922cdf76"
-  integrity sha512-8L9Z3MQJdp4t58wpAW3IE/ilKOyvu6Kcsr+7fjhX7Z/9QnVhinRrjnkY8tmnGcUQ8G4rfH60S9Cld+JEd5Klkg==
+"@takomo/core@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@takomo/core/-/core-2.7.1.tgz#f4fed757479310594cd2ab80ef67d5ebcdffedb5"
+  integrity sha512-tBHNNeiDSMJB5siqrSSMo4UZuHq3+V5Ion9LDYr7Rlnc4yvtfo0XumNKAKtcHnbDP4JlHnhvIHJpXZcRXjtB7A==
   dependencies:
     "@hapi/joi" "17.1.1"
-    "@takomo/util" "2.5.0"
-    aws-sdk "2.736.0"
+    "@takomo/util" "2.7.0"
+    aws-sdk "2.745.0"
     semver "7.3.2"
 
-"@takomo/deployment-targets@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@takomo/deployment-targets/-/deployment-targets-2.6.1.tgz#5427a495048ea45dd2854e39d83e0f4b823c9442"
-  integrity sha512-2KH7yhAscfdfPVZmdKKu7sA0dQ+SF6uhCORdgRhrncol2UKigsHjQOqvcy5yC3lMA2YgadLRZZzg2Hc7MzhQMQ==
+"@takomo/deployment-targets@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@takomo/deployment-targets/-/deployment-targets-2.7.1.tgz#7bf48241c607beb9321ea35893a1f894a7578ca4"
+  integrity sha512-mYRuAkdi/jmhp+lWI2eNzFCNAyuKDECMMdxV0VR/rS61pFO3oPgbuefcOIaVyZewCYhPCjo20UWedmsoGOtH4w==
   dependencies:
     "@hapi/joi" "17.1.1"
-    "@takomo/config-sets" "2.6.1"
-    "@takomo/core" "2.6.1"
-    "@takomo/stacks-commands" "2.6.1"
-    "@takomo/util" "2.5.0"
+    "@takomo/config-sets" "2.7.1"
+    "@takomo/core" "2.7.1"
+    "@takomo/stacks-commands" "2.7.1"
+    "@takomo/util" "2.7.0"
     lodash.flatten "4.4.0"
     lodash.merge "4.6.2"
     lodash.uniq "4.5.0"
     lodash.uniqby "4.7.0"
 
-"@takomo/init-command@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@takomo/init-command/-/init-command-2.6.1.tgz#bab5ae78333febe79b0635db2be05a92025a3273"
-  integrity sha512-vra2cOFLtsGKpMytAIh+H3RDo/vxYPP66WqdFMGXQfn0+bwTGZsfw6aWE6MYLjK7p97HVt3bWygtC6K7q9JDhQ==
+"@takomo/init-command@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@takomo/init-command/-/init-command-2.7.1.tgz#e01d0334f2dc3a45370eb648df405420f22078be"
+  integrity sha512-L8RyNRtOVVCfq8zkmW3Qu72j3/s1QYDddiHKwjDQjN18CxFDbTZc8qca0jAhk2Hn5jDLzAggpko/X1FDu6KtSQ==
   dependencies:
     "@hapi/joi" "17.1.1"
-    "@takomo/core" "2.6.1"
-    "@takomo/util" "2.5.0"
+    "@takomo/core" "2.7.1"
+    "@takomo/util" "2.7.0"
 
-"@takomo/organization-commands@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@takomo/organization-commands/-/organization-commands-2.6.1.tgz#b790fdafd595870fd85ce01ce5ac880996c81d88"
-  integrity sha512-1DKMEjyCQA+JJ9s4yIFEEcde1+JSloSbvZnuOdN0XZ0yydPllgEO56BfHnfm7TKbmYh54Pyb4dik4MI3Crw0JA==
+"@takomo/organization-commands@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@takomo/organization-commands/-/organization-commands-2.7.1.tgz#f5f4532413337be7d33fe7514f2a1705245b0bd6"
+  integrity sha512-j2IarlPXZYKlEV5wwuxT8lCWMAHLm6P6QyOv0250F+Mw8/lJF9Wdsuq/uKXIFhsnZAfa+jwVPR/D/tzi8ZLspw==
   dependencies:
     "@hapi/joi" "17.1.1"
-    "@takomo/aws-clients" "2.6.1"
-    "@takomo/config-sets" "2.6.1"
-    "@takomo/core" "2.6.1"
-    "@takomo/organization-config" "2.6.1"
-    "@takomo/organization-context" "2.6.1"
-    "@takomo/organization-schema" "2.6.1"
-    "@takomo/stacks-commands" "2.6.1"
-    "@takomo/util" "2.5.0"
-    aws-sdk "2.736.0"
+    "@takomo/aws-clients" "2.7.1"
+    "@takomo/config-sets" "2.7.1"
+    "@takomo/core" "2.7.1"
+    "@takomo/organization-config" "2.7.1"
+    "@takomo/organization-context" "2.7.1"
+    "@takomo/organization-schema" "2.7.1"
+    "@takomo/stacks-commands" "2.7.1"
+    "@takomo/util" "2.7.0"
+    aws-sdk "2.745.0"
     lodash.flatten "4.4.0"
     lodash.intersection "4.4.0"
     lodash.merge "4.6.2"
+    lodash.uniq "4.5.0"
     lodash.uniqby "4.7.0"
     lodash.without "4.4.0"
 
-"@takomo/organization-config@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@takomo/organization-config/-/organization-config-2.6.1.tgz#af52a5b468a2d050516679fb9e3b83e1ed956f4b"
-  integrity sha512-64xWfQqVkJF4/I5PQ5fZEIQtkyfCD74oao4TuOY/TeRwEipId/FMWAECNcfGC8G7xm40Vckq3Jq6M8pYyeIgyw==
+"@takomo/organization-config@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@takomo/organization-config/-/organization-config-2.7.1.tgz#9ade2432bcc1032149f1fc33bf4a6090ec183d0a"
+  integrity sha512-lWYhf6tJ6cbUboFRkWbga0Lt+EhspxqvXEN/o1v9LcIv515LhVbNCqtGDlNByXYGbOBwSP1zJiiHFWyXsIuj5w==
   dependencies:
     "@hapi/joi" "17.1.1"
-    "@takomo/config-sets" "2.6.1"
-    "@takomo/core" "2.6.1"
-    "@takomo/organization-schema" "2.6.1"
-    "@takomo/util" "2.5.0"
-    aws-sdk "2.736.0"
+    "@takomo/config-sets" "2.7.1"
+    "@takomo/core" "2.7.1"
+    "@takomo/organization-schema" "2.7.1"
+    "@takomo/util" "2.7.0"
+    aws-sdk "2.745.0"
     lodash.uniq "4.5.0"
 
-"@takomo/organization-context@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@takomo/organization-context/-/organization-context-2.6.1.tgz#95512752d6808c6bc6532246d82affaf74581ecc"
-  integrity sha512-BBSAcBl+Dpfl/K1OcJx8dJfyJdjlQDdrXAHkPKMO6wJIrVIhW8Qh2UaDguEuBcVZC/UeIXuR5G/JdKe/PvRxow==
+"@takomo/organization-context@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@takomo/organization-context/-/organization-context-2.7.1.tgz#1bdf62639c3ddfe1f063e1e3c0ff06fa07935d82"
+  integrity sha512-oPKM/1VOMlq2JVUK1OocosRYQxS34+YbwC66EcYrhoaT2q9NSQTDn9oGqqz7bj/smBOT+JDhliTv298zfMnDVw==
   dependencies:
-    "@takomo/aws-clients" "2.6.1"
-    "@takomo/config-sets" "2.6.1"
-    "@takomo/core" "2.6.1"
-    "@takomo/organization-config" "2.6.1"
-    "@takomo/util" "2.5.0"
-    aws-sdk "2.736.0"
+    "@takomo/aws-clients" "2.7.1"
+    "@takomo/config-sets" "2.7.1"
+    "@takomo/core" "2.7.1"
+    "@takomo/organization-config" "2.7.1"
+    "@takomo/util" "2.7.0"
+    aws-sdk "2.745.0"
     lodash.flatten "4.4.0"
     lodash.uniq "4.5.0"
     readdirp "3.3.0"
 
-"@takomo/organization-schema@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@takomo/organization-schema/-/organization-schema-2.6.1.tgz#31e8f80d6db686c13038511d6305b8ddb3a950ea"
-  integrity sha512-w2ws0V7FHgKx3APSmZQBb5HRuC/iUKgekHvQ9FA50CLuKNc7RnXa6+MWKJTmyd3T3nIqgEjtb5gBsELS/6yPkQ==
+"@takomo/organization-schema@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@takomo/organization-schema/-/organization-schema-2.7.1.tgz#f9dde281aa62891b54208b32839a144002a8a69f"
+  integrity sha512-DtcrbDawTPbEyhn006e1xZPuzkTzsTXe96RoP5kzaw2ytmFteafZu7Q0X98zP/cX4n3Kdje64jhUgfZJntczdA==
   dependencies:
     "@hapi/joi" "17.1.1"
-    "@takomo/config-sets" "2.6.1"
-    "@takomo/core" "2.6.1"
+    "@takomo/config-sets" "2.7.1"
+    "@takomo/core" "2.7.1"
 
-"@takomo/stacks-commands@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@takomo/stacks-commands/-/stacks-commands-2.6.1.tgz#9b2ca92fafcc3e4565513aa2325975599614677b"
-  integrity sha512-YmL1J7zvjxIqOUxd3HIKyhPyyJUa8pZvNsoSQrbsmv8InuRFCFqc9g/k8LtoDOx7ZOtANvNRWE+x+jwXWMzl1Q==
+"@takomo/stacks-commands@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@takomo/stacks-commands/-/stacks-commands-2.7.1.tgz#081856563a344ffdfea21a6ae6ae53e40e3ef7b5"
+  integrity sha512-oicRySOdqbGExXQiTTtC4lSvbcHsIWl1ubUpll3BIolPlyTWJ1r3XrzLuxMARZixuUETzrEK86O6+CkUlpTGqw==
   dependencies:
     "@hapi/joi" "17.1.1"
-    "@takomo/aws-clients" "2.6.1"
-    "@takomo/core" "2.6.1"
-    "@takomo/stacks-context" "2.6.1"
-    "@takomo/stacks-hooks" "2.6.1"
-    "@takomo/stacks-model" "2.6.1"
-    "@takomo/stacks-schema" "2.6.1"
-    "@takomo/util" "2.5.0"
-    aws-sdk "2.736.0"
+    "@takomo/aws-clients" "2.7.1"
+    "@takomo/core" "2.7.1"
+    "@takomo/stacks-context" "2.7.1"
+    "@takomo/stacks-hooks" "2.7.1"
+    "@takomo/stacks-model" "2.7.1"
+    "@takomo/stacks-schema" "2.7.1"
+    "@takomo/util" "2.7.0"
+    aws-sdk "2.745.0"
     uuid "3.3.3"
 
-"@takomo/stacks-config@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@takomo/stacks-config/-/stacks-config-2.6.1.tgz#2c519bab57c56d0174bc151ce1e2e75645885926"
-  integrity sha512-uLIRj/bpNV1P/rKqGc7OM63+OkryPlUJq+b275h6k/cdSJRcZ+v6cgixg4ed1/N1gNkgQOr5E44FI4Mo282r9Q==
+"@takomo/stacks-config@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@takomo/stacks-config/-/stacks-config-2.7.1.tgz#bf2ed3f97b44c1cd42d0715d495b46443dcfa939"
+  integrity sha512-idSuJlgr/djhK4FtGU6Vh05q8S0KcpHbnKmJEAB/BZvIOH2+IQeJdBt2uV0YR3gxdEmJR+AjYUeReImN1sY7fA==
   dependencies:
     "@hapi/joi" "17.1.1"
-    "@takomo/core" "2.6.1"
-    "@takomo/stacks-model" "2.6.1"
-    "@takomo/stacks-schema" "2.6.1"
-    "@takomo/util" "2.5.0"
-    aws-sdk "2.736.0"
+    "@takomo/core" "2.7.1"
+    "@takomo/stacks-model" "2.7.1"
+    "@takomo/stacks-schema" "2.7.1"
+    "@takomo/util" "2.7.0"
+    aws-sdk "2.745.0"
 
-"@takomo/stacks-context@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@takomo/stacks-context/-/stacks-context-2.6.1.tgz#e91a8eeaa056bc14c05c1a3726e007a5871cfca6"
-  integrity sha512-ZTpCD5aRQSGaKC0J2yjquNjWrJ+qJ1SrVcuB+WzlxhcGMkfop4XI5Qi8WCKjU5M7AdHgXoK4mIW+ab+8WxzwWQ==
+"@takomo/stacks-context@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@takomo/stacks-context/-/stacks-context-2.7.1.tgz#6952fe8172ef5408b2bcfb3bd99a77638483e9f3"
+  integrity sha512-ppbuk5w/NKCBGLC72AIC8Pu8TSgdKxelWTusnpP6pxMThPwa+j+vwCWsaVJujPdUu2uiUVJFaq2m7DBQIsYgug==
   dependencies:
-    "@takomo/aws-clients" "2.6.1"
-    "@takomo/core" "2.6.1"
-    "@takomo/stacks-config" "2.6.1"
-    "@takomo/stacks-hooks" "2.6.1"
-    "@takomo/stacks-model" "2.6.1"
-    "@takomo/stacks-resolvers" "2.6.1"
-    "@takomo/util" "2.5.0"
-    aws-sdk "2.736.0"
+    "@takomo/aws-clients" "2.7.1"
+    "@takomo/core" "2.7.1"
+    "@takomo/stacks-config" "2.7.1"
+    "@takomo/stacks-hooks" "2.7.1"
+    "@takomo/stacks-model" "2.7.1"
+    "@takomo/stacks-resolvers" "2.7.1"
+    "@takomo/util" "2.7.0"
+    aws-sdk "2.745.0"
+    cockatiel "1.1.1"
     lodash.flatten "4.4.0"
     lodash.uniq "4.5.0"
     readdirp "3.3.0"
 
-"@takomo/stacks-hooks@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@takomo/stacks-hooks/-/stacks-hooks-2.6.1.tgz#eff59f45cb8b3a5cf47b72fd36afaa61b7e6b4d8"
-  integrity sha512-aN4ybClumRZE1PBg848DdWQeAaaOIUEENtUv+fw0/M4yd+9Kd27wgyTQvlXUfVmwnDNHd3CKdFJ/4sfII+HPwg==
+"@takomo/stacks-hooks@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@takomo/stacks-hooks/-/stacks-hooks-2.7.1.tgz#a2f7778342a8f7bf254af02cc85d08435229fd33"
+  integrity sha512-HEQ4fM6lFR91fkcLPV96kAv2VsmVC2Ks1mxwLI0XFfALEj59wdnMETXNMeCvLyZrB02/5HGOOGmF2w5O7w6JLQ==
   dependencies:
-    "@takomo/core" "2.6.1"
-    "@takomo/stacks-model" "2.6.1"
-    "@takomo/util" "2.5.0"
-    aws-sdk "2.736.0"
+    "@takomo/core" "2.7.1"
+    "@takomo/stacks-model" "2.7.1"
+    "@takomo/util" "2.7.0"
+    aws-sdk "2.745.0"
 
-"@takomo/stacks-model@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@takomo/stacks-model/-/stacks-model-2.6.1.tgz#26e6734f46e5f6c2baa25972e982e26e029536b8"
-  integrity sha512-isQ3r4lBGm3zVbIyUPw9/7U/lKK1Pp45bEkd6uH1NGoeOfXj9n/V3+jYbGbtwaD2Y5QWtLsbO9l34nIrjMz8dQ==
+"@takomo/stacks-model@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@takomo/stacks-model/-/stacks-model-2.7.1.tgz#13c6635a7e3922764356f029f672ca9e0e35d04b"
+  integrity sha512-fYdYdcMvpLT+rf92XaFKFV0bhWyyX8uAOddrEla5KZHpR7C2ronY+p36rp753x/ogtAa7rLbHV1vIZjmlREfJg==
   dependencies:
     "@hapi/joi" "17.1.1"
-    "@takomo/core" "2.6.1"
-    "@takomo/util" "2.5.0"
-    aws-sdk "2.736.0"
+    "@takomo/aws-clients" "2.7.1"
+    "@takomo/core" "2.7.1"
+    "@takomo/util" "2.7.0"
+    aws-sdk "2.745.0"
 
-"@takomo/stacks-resolvers@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@takomo/stacks-resolvers/-/stacks-resolvers-2.6.1.tgz#1e6f8ab1e6d6ae5094d51c07a1e89f9136be62fa"
-  integrity sha512-FVZguQ2XUo8aQUPpVQ0znfMeld86tUMklfeSIbKFbnvj4xOSKLxNtywGn+DwIhhrsw28iLv3QnBr6n46j487+w==
+"@takomo/stacks-resolvers@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@takomo/stacks-resolvers/-/stacks-resolvers-2.7.1.tgz#714ebb2667651d470ab82d8c7600ad58054b03dc"
+  integrity sha512-XFZRcAvEJSfsBv0fS92/tn99GQCLtaSwCo1GNvNCy+wtyTuoLOEt6477qD/QM0OLSlgCB3nfgg4n3oZAikQKXQ==
   dependencies:
     "@hapi/joi" "17.1.1"
-    "@takomo/aws-clients" "2.6.1"
-    "@takomo/core" "2.6.1"
-    "@takomo/stacks-model" "2.6.1"
-    "@takomo/stacks-schema" "2.6.1"
-    "@takomo/util" "2.5.0"
+    "@takomo/aws-clients" "2.7.1"
+    "@takomo/core" "2.7.1"
+    "@takomo/stacks-model" "2.7.1"
+    "@takomo/stacks-schema" "2.7.1"
+    "@takomo/util" "2.7.0"
     lodash.flatten "4.4.0"
 
-"@takomo/stacks-schema@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@takomo/stacks-schema/-/stacks-schema-2.6.1.tgz#15d618ec0ef43c2e8a6b5368ca1633db03645b1b"
-  integrity sha512-IATbFMb+1ysL0vl5yCVePNtf3muMCJ3klFXmN4/HhsBMBjBZqpQdlxFAHKwWJ0VxHAleJPIGUrQdrhjcuWABbQ==
+"@takomo/stacks-schema@2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@takomo/stacks-schema/-/stacks-schema-2.7.1.tgz#f2edb4e1940f536ecc645205d638b037d716baac"
+  integrity sha512-2jZGBalKMeVeHO8e0l7PBGGDCGJtEzm9zYmsLAdEEFvzWKM/cto2Uau1nWcC+L1VR3Q2rjojQfh5NYIyya9/0w==
   dependencies:
     "@hapi/joi" "17.1.1"
-    "@takomo/core" "2.6.1"
-    "@takomo/stacks-model" "2.6.1"
+    "@takomo/core" "2.7.1"
+    "@takomo/stacks-model" "2.7.1"
 
-"@takomo/util@2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@takomo/util/-/util-2.5.0.tgz#61ebf4512e1fd779095b557ad3ef3a3ed6f58a89"
-  integrity sha512-AhA1Rbwe7A9NHDqe2yMc4QRBQA0YdZYsOU5USKOO9v8w06jAEyDq1TmTcybh1EyoogdPkdBKXBuSb1EvFDYphw==
+"@takomo/util@2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@takomo/util/-/util-2.7.0.tgz#1c071955b985ceaef2a5d30d9a1ff225154d89de"
+  integrity sha512-/ZL2mBgeKR8VipHI3L7vWe9WAg+SUN+Bc07LE+MLBV+bv5yl4rCbOUVPYDLevUv6M7B/fyI5WDJYPMs/Y4C9Dw==
   dependencies:
     "@hapi/joi" "17.1.1"
     chalk "3.0.0"
@@ -2633,10 +2636,10 @@ autoprefixer@^9.6.1:
     postcss "^7.0.32"
     postcss-value-parser "^4.1.0"
 
-aws-sdk@2.736.0:
-  version "2.736.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.736.0.tgz#7b9373d1a338288c5caeca01a6226efbade2e086"
-  integrity sha512-rDrLgxkiFX+9EksDx4Lc6qLA07Pf0xfqqXnM3CpLBL81aVOdmmXAiBPtz/KSgbcrR5Mxz38ah8x5RZ17stJQjw==
+aws-sdk@2.745.0:
+  version "2.745.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.745.0.tgz#543ae8487176da9a2d3b295aee51b0c5df42e8cd"
+  integrity sha512-YTmDvxb0foJC/iZOSsn+MdO4g9nPnlyRdhIpFqvPUkrFzWn5rP4mPtDJan2Eu0j4R02pdwfDhmvr82ckH2w7OQ==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -3394,6 +3397,11 @@ coa@^2.0.2:
     "@types/q" "^1.5.1"
     chalk "^2.4.1"
     q "^1.1.2"
+
+cockatiel@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/cockatiel/-/cockatiel-1.1.1.tgz#851fcee67df9a824c7946cb0927c9351b552d26b"
+  integrity sha512-YO02ZhTcK2HOZodksWfg4tS1GYYt1j7R6U1unAkwcQf1uoIYKSBqPrfqXlLNbsyMvkDXMwa2nuwZDHbUkB1VbQ==
 
 collapse-white-space@^1.0.0, collapse-white-space@^1.0.2:
   version "1.0.6"
@@ -9828,12 +9836,12 @@ svgo@^1.0.0, svgo@^1.2.2:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-takomo@2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/takomo/-/takomo-2.6.1.tgz#d881b91b90107d24c7678e4df7d5edb6c78d2ff6"
-  integrity sha512-nr9RZFCH2cEnHubCVekru+YB4aqSvZjqWvrt97esAqDv1fB8OawXeQMemUUqbqu1j0nud812unt7oO5c0+3GKQ==
+takomo@2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/takomo/-/takomo-2.7.1.tgz#036986c8286bf8ddb8308f2f09be86a19fa06d50"
+  integrity sha512-EKQgP1kbA/ef8u30NXvP8whj6GPShzGSayvH+ntgFEkYd6bJXS/HlCQ25iB10dXGQDNrjSBmQwi9oFCZz4Sklg==
   dependencies:
-    "@takomo/cli" "2.6.1"
+    "@takomo/cli" "2.7.1"
     semver "7.3.2"
 
 tapable@^1.0.0, tapable@^1.1.3:

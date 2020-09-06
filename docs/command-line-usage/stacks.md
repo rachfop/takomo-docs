@@ -49,7 +49,7 @@ Deploy stacks within the given command path:
 tkm stacks deploy /prod
 ```
 
-Deploy only `/dev/vpc.yml` stack and its dependencies:
+Deploy only **/dev/vpc.yml** stack and its dependencies:
 
 ```
 tkm stacks deploy /dev/vpc.yml
@@ -103,7 +103,7 @@ Undeploy within the given command path:
 tkm stacks undeploy /dev
 ```
 
-Undeploy only `/dev/vpc.yml` stack and its dependants:
+Undeploy only **/dev/vpc.yml** stack and its dependants:
 
 ```
 tkm stacks undeploy /dev/vpc.yml

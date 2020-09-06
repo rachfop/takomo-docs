@@ -11,7 +11,7 @@ Accounts that belong to an organization are called as member accounts. Each memb
 
 ## Adding Member Accounts to Organizational Units
 
-To specify member accounts that belong to an organizational unit, you list the accounts under organizational unit's `accounts` key. You can use plain account ids or key-value objects with `id` key for the account id.
+To specify member accounts that belong to an organizational unit, you list the accounts under the organizational unit's **accounts** key. You can use plain account ids or key-value objects with **id** key for the account id.
 
 #### Example: Setting member accounts
 
@@ -37,7 +37,7 @@ When configuring accounts with key-value objects, you can provide additional inf
 
 ### Description
 
-For documentation purposes, you can provide a short description for an account with `description` key.
+For documentation purposes, you can provide a short description for an account with the **description** key.
 
 #### Example: Setting account description
 
@@ -51,11 +51,11 @@ organizationalUnits:
 
 ### Name
 
-Each account has a name, and you can use `name` key to document it. 
+Each account has a name, and you can use the **name** key to document it. 
 
-When the account is deployed, Takomo validates that the name actually belongs to the same account as the account id does. If there's no match, the deployment is aborted with an error message.
+When the account is deployed, Takomo validates that the name belongs to the same account as the account id does. If there's no match, the deployment is aborted with an error message.
 
-The `name` key is used only for documentation and validation purposes - you can't change account's name by changing the account name in the local configuration.
+The name key is used only for documentation and validation purposes - you can't change the account's name by changing the account name in the local configuration.
 
 #### Example: Setting account name
 
@@ -69,11 +69,11 @@ organizationalUnits:
 
 ### Email
 
-Each account has an email (used also as an username of the account's root), and you can use `email` key to document it. 
+Each account has an email (also used as a username of the account's root), and you can use the **email** key to document it.
 
-When the account is deployed, Takomo validates that the email actually belongs to the same account as the account id does. If there's no match, the deployment is aborted with an error message.
+When the account is deployed, Takomo validates that the email belongs to the same account as the account id does. If there's no match, the deployment is aborted with an error message.
 
-The `email` key is used only for documentation and validation purposes - you can't change account's email by changing the account email in the local configuration.
+The email key is used only for documentation and validation purposes - you can't change the account's email by changing the account email in the local configuration.
 
 #### Example: Setting account email
 
@@ -87,11 +87,11 @@ organizationalUnits:
 
 ### Status
 
-Account `status` is used to control whether the account should be included in organization operations.
+Account **status** is used to control whether the account should be included in organization operations.
 
-If an account is [closed](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/close-account.html) but is still shown in the organization, its `status` needs to be set to `suspended`. This will exclude the account from all operations. Closed accounts will disappear from the organization after some days and can then be removed from the organization configuration.
+If an account is [closed](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/close-account.html) but is still shown in the organization, its status must be set as **suspended**, which will exclude the account from all operations. Closed accounts will disappear from the organization after some days and can then be removed from the organization configuration.
 
-If you don't want to [deploy stacks to the account](/docs/organizations/deploying-stacks-to-member-accounts), you can set its `status` to `disabled`.
+If you don't want to [deploy stacks to the account](/docs/organizations/deploying-stacks-to-member-accounts), you can set its status to **disabled**.
 
 #### Example: Setting account status
 

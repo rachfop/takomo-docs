@@ -15,7 +15,7 @@ Trusted AWS services are supported only when **all features** is enabled in the 
 
 ## Configuration
 
-Trusted AWS services are configured in `trustedAwsServices` list. All services present in the list are considered as trusted. By default, if `trustedAwsServices` is not defined, all services are considered as trusted.
+Trusted AWS services are configured in [trustedAwsServices](/docs/config-reference/organization#trustedawsservices) list. All services present in the list are considered as trusted. By default, if **trustedAwsServices** is not defined, all services are considered as trusted.
 
 #### Example: Configure trusted AWS services
 

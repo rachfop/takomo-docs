@@ -7,13 +7,13 @@ keywords:
   - organization
 ---
 
-It’s best practice to follow the principle of least privilege when deploying configuration to organization accounts. To achieve this, you should create an account administrator role with restricted permissions and use it to deploy configuration. Now, the next question is, how to create this restricted role in the first place?
+It's best practice to follow the principle of least privilege when deploying configuration to organization accounts. To achieve this, you should create an account administrator role with restricted permissions and use it to deploy configuration. Now, the next question is how to create this restricted role in the first place?
 
 ## Bootstrap Configuration
 
-You can have separate bootstrap configuration that creates the restricted role and other resources that are needed to deploy the rest of the configuration with scoped down permissions.
+You can have a separate bootstrap configuration that creates the restricted role and other resources needed to deploy the rest of the configuration with scoped down permissions.
  
-Bootstrap configuration is defined using config sets but attached to organizational units and accounts with `bootstrapConfigSets` property. 
+Bootstrap configuration is defined using config sets but attached to organizational units and accounts with the **bootstrapConfigSets** property. 
 
 ### Example: Attaching bootstrap config sets
 
@@ -48,14 +48,14 @@ You use accountBootstrapRoleName to specify which role to use to deploy the boot
 
 ## Setting Bootstrap Role
 
-Just like with the regular config sets, when the bootstrap config sets are deployed to member accounts, Takomo assumes a role from each account and uses that for deployment. By default, Takomo attempts to assume a role named **OrganizationAccountAccessRole** which is the default role created for each account when the account is itself created and added to the organization.
+Like with the regular config sets, when the bootstrap config sets are deployed to member accounts, Takomo assumes a role from each account and uses it for deployment. By default, Takomo attempts to assume a role named OrganizationAccountAccessRole, which is the default role created for each account when the account is created and added to the organization.
 
-You can also provide a custom bootstrap role. The custom bootstrap role name can be specifiedin many places within the organization configuration. When bootstrap config sets are deployed to a member account, the bootstrap role is looked in the following order:
+You can also provide a custom bootstrap role. The custom bootstrap role name can be specified in many places within the organization configuration. When bootstrap config sets are deployed to a member account, the bootstrap role is looked in the following order:
 
-1. `accountBootstrapRoleName` key under the current account
-2. `accountBootstrapRoleName` key under the current organizational unit
-3. `accountBootstrapRoleName` key at the top-level of the organization configuration
-4. `accountCreation.defaults.roleName` key in the account creation configuration 
+1. **accountBootstrapRoleName** key under the current account
+2. **accountBootstrapRoleName** key under the current organizational unit
+3. **accountBootstrapRoleName** key at the top-level of the organization configuration
+4. **accountCreation.defaults.roleName** key in the account creation configuration 
 
 If none of the above is defined, the default role name **OrganizationAccountAccessRole** is used.
 

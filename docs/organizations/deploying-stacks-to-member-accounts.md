@@ -7,17 +7,17 @@ keywords:
   - organization
 ---
 
-When you have an organization with a number of member accounts you soon want to deploy some common infrastructure like VPCs and transit gateway routings across the accounts. To accomplish this, Takomo provides config sets that let you choose which stacks should be deployed and to which accounts. Config sets build on top of Takomo’s standard stack configuration and deployment features. 
+When you have an organization with some member accounts, you soon want to deploy some common infrastructure like VPCs and transit gateway routings across the accounts. To accomplish this, Takomo provides config sets that let you choose which stacks to deploy and which accounts to target. Config sets build on top of Takomo’s standard stack configuration and deployment features.
 
 ## Configuring Stacks
 
-You configure the stacks to be deployed to your organization’s member accounts the same way you would normally configure stacks with Takomo, i.e. you create stack groups, stack configurations and templates. If you are unfamiliar with how to do this, you might want to consult [the documentation](/docs/stacks/introduction) before moving on.
+You configure the stacks to be deployed to your organization's member accounts the same way you would normally configure stacks with Takomo, i.e., you create stack groups, stack configurations and templates. If you are unfamiliar with how to do this, you might want to consult [the documentation](/docs/stacks/introduction) before moving on.
 
 ## Config Sets
 
-Once you have your stacks configuration ready, you use config sets to specify which of the stacks should be deployed together. You can have multiple config sets and each config set can have one or more command paths that specify which stacks to deploy.
+Once you have the configuration of your stacks ready, you use config sets to specify which of the stacks should be deployed together. You can have multiple config sets, and each config set can have one or more command paths that specify which stacks to deploy.
 
-You define config sets with `configSets` property. It's an object where keys are config set names and values objects containing configuration for the corresponding config set. Each config set must have a `name` that is used to refer to it from other parts of the organization configuration, and a `description` to document its purpose. The command paths are specified with `commandPaths` key.
+You define config sets with the [configSets](/docs/config-reference/organization#configsets) property. It's an object where keys are config set names and values objects containing configuration for the corresponding config set. Each config set must have a **name** used to refer to it from other parts of the organization configuration, and a **description** to document its purpose. The command paths are specified with the **commandPaths** key.
 
 ### Example: Defining config sets
 
@@ -41,7 +41,7 @@ We have the following directory structure:
 
 For brevity, only the essential files are listed above. The stacks are grouped by their role - there are stacks for networking, logging and application.
  
-Next, we defined some config sets in `organization.yml` file:
+Next, we defined some config sets in the **organization.yml** file:
  
 ```yaml title="organization.yml"
 configSets:
@@ -57,11 +57,11 @@ configSets:
 
 There is one config set for networking and another for logging. The former includes **/networking/vpc.yml** stack and the latter **/logs/access-logs.yml** and **/logs/audit-logs.yml**.
 
-Note also that we didn't create a config set for application related stacks.
+Note also that we didn't create a config set for application-related stacks.
 
 ## Attaching Config Sets to Organizational Units and Member Accounts
 
-Once you have the config sets thought out and configured, you need to determine to which member accounts you want to deploy them. You do this by attaching config sets to organizational units and member accounts. When you attach a config set to an organizational unit, it becomes attached to all accounts that belong to the organizational unit, and is also inherited by all child organizational units. 
+Once you have the config sets thought out and configured, you need to determine which member accounts you want to deploy them. You do this by attaching config sets to organizational units and member accounts. When you attach a config set to an organizational unit, it becomes attached to all accounts that belong to the organizational unit. All child organizational units also inherit it.
 
 ### Example: Attaching config sets
 
@@ -87,14 +87,14 @@ We attached **logging** config set to **Root** organizational unit from where it
 
 ## Setting Deployment Role
 
-When config sets are deployed to member accounts, Takomo assumes a role from each account and uses that for deployment. By default, Takomo attempts to assume a role named **OrganizationAccountAccessRole** which is the default role created for each account when the account is itself created and added to the organization.
+When config sets are deployed to member accounts, Takomo assumes a role from each account and uses that for deployment. By default, Takomo attempts to assume a role named **OrganizationAccountAccessRole**, which is the default role created for each account when the account is created and added to the organization.
 
 You can also provide a custom deployment role. The custom deployment role name can be specified in many places within the organization configuration. When config sets are deployed to a member account, the deployment role is looked in the following order:
 
-1. `accountAdminRoleName` key under the current account
-2. `accountAdminRoleName` key under the current organizational unit
-3. `accountAdminRoleName` key at the top-level of the organization configuration
-4. `accountCreation.defaults.roleName` key in the account creation configuration 
+1. **accountAdminRoleName** key under the current account
+2. **accountAdminRoleName** key under the current organizational unit
+3. **accountAdminRoleName** key at the top-level of the organization configuration
+4. **accountCreation.defaults.roleName** key in the account creation configuration 
 
 If none of the above is defined, the default role name **OrganizationAccountAccessRole** is used.
 
@@ -121,7 +121,7 @@ organizationalUnits:
 
 ## Using Variables
 
-You can define variables that will be passed to stacks when config sets are deployed. Variables can be defined at the top-level of the organization configuration, and under organizational units and accounts.
+You can define variables that will be passed to stacks when config sets are deployed. Variables can be defined at the top-level of the organization configuration and under organizational units and accounts.
 
 Organizational units inherit and can override variables from the top-level, and accounts, in turn, inherit and can override variables from the organizational unit they belong to.
 
@@ -174,9 +174,9 @@ data:
 
 ## Controlling Deployment Order
 
-When the config sets are deployed, the organization hierarchy is traversed recursively starting from the Root organizational unit. By default, the child organizational units are sorted by their name. For each organizational unit, the accounts that belong to it are processed one at a time, in the order they are defined, and stacks specified by the config sets attached to the account are deployed. 
+When the config sets are deployed, the organization hierarchy is traversed recursively, starting from the Root organizational unit. By default, the child organizational units are sorted by their name. For each organizational unit, the accounts that belong to it are processed one at a time, in the order they are defined, and stacks specified by the config sets attached to the account are deployed. 
 
-You can use `priority` property to control the order organizational unit's children are processed. It accepts a number that is used to sort the children to ascending order. Organizational units without `priority` are sorted by their name and processed after the ones with `priority` set.
+You can use **priority** property to control the order organizational unit's children are processed. It accepts a number that is used to sort the children to ascending order. Organizational units without priority are sorted by their name and processed after the ones with priority set.
 
 ### Example: Setting organizational unit priority
 
@@ -194,7 +194,7 @@ organizationalUnits:
 
 ## Excluding Member Accounts from Deployment
 
-Sometimes you might want to exclude some member accounts from deployment. You can exclude an account from deployment by setting its `status` to `disabled`. You can also exclude a whole organizational unit and all its children by setting the organizational unit `status` to `disabled`. 
+Sometimes you might want to exclude some member accounts from deployment. You can exclude an account from deployment by setting its **status** to **disabled**. You can also exclude a whole organizational unit and all its children by setting the organizational unit status to **disabled**. 
 
 ### Example: Excluding member accounts
 

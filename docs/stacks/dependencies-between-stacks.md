@@ -14,7 +14,7 @@ When CLI commands are run, Takomo first builds a plan containing run order for t
 
 ## Defining Dependencies
 
-You can use the `depends` property to explicitly specify dependencies for a stack by providing a single command path or a list of command paths. Dependencies can span multiple accounts and regions as long as there are no circular dependencies.
+You can use the [depends](/docs/config-reference/stacks#depends) property to explicitly specify dependencies for a stack by providing a single command path or a list of command paths. Dependencies can span multiple accounts and regions as long as there are no circular dependencies.
 
 #### Examples
 
@@ -40,8 +40,8 @@ depends:
 
 ## Dependencies from Parameter Resolvers
 
-Parameter resolvers can also introduce dependencies between stacks. A good example is the [stack-output parameter resolver](/docs/stacks/parameter-resolvers#stack-output) that reads a value from stack output and then passes it as an input parameter for another stack. When a parameter resolver creates the dependency between stacks, there's no need to specify it using the `depends` property.
+Parameter resolvers can also introduce dependencies between stacks. A good example is the [stack-output parameter resolver](/docs/stacks/parameter-resolvers#stack-output) that reads a value from stack output and then passes it as an input parameter for another stack. When a parameter resolver creates the dependency between stacks, there's no need to specify it using the **depends** property.
 
 ## See Also
 
-- [depends property in config reference](/docs/config-reference/stacks#depends)
+- [Config reference > depends property](/docs/config-reference/stacks#depends)

@@ -17,7 +17,7 @@
     "clsx": "^1.1.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "takomo": "2.6.1"
+    "takomo": "2.7.1"
   },
   "browserslist": {
     "production": [

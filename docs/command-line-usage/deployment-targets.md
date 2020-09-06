@@ -18,7 +18,7 @@ Deploy infrastructure configured with config sets to the specified deployment ta
 
 ### Usage
 
-By default, this command loads configuration from `deployment/targets.yml` file and deploys all deployment targets that have config sets associated with them. Use `--config-file` option to specify alternative configuration file in the `deployment` directory.
+By default, this command loads configuration from **deployment/targets.yml** file and deploys all deployment targets that have config sets associated with them. Use `--config-file` option to specify alternative configuration file in the **deployment** directory.
 
 You can pass one or more deployment group paths to deploy only the deployment targets located under the given deployment groups. Alternatively, you can choose to deploy only specific deployment target using the `--target` option.
 
@@ -30,9 +30,9 @@ tkm targets deploy [deployment_group_path...] \
 
 ### Collecting Deployment Targets for Deploy
 
-In order to create a list of deployment targets for the deployment, the hierarchy of deployment groups is traversed recursively and deployment targets from each visited deployment group are added to the list in the order in which they are defined in the group's `targets` list.
+In order to create a list of deployment targets for the deployment, the hierarchy of deployment groups is traversed recursively and deployment targets from each visited deployment group are added to the list in the order in which they are defined in the group's **targets** list.
 
-Deployment group siblings, that is deployment groups at the root level of the hierarchy or with the same parent, are sorted primarily by their `priority`, then by their `name`. Deployment groups not selected for deployment or with `disabled` status are skipped. Also, the deployment targets not selected for deployment, with `disabled` status or without any config sets are skipped.
+Deployment group siblings, that is deployment groups at the root level of the hierarchy or with the same parent, are sorted primarily by their **priority**, then by their **name**. Deployment groups not selected for deployment or with **disabled** status are skipped. Also, the deployment targets not selected for deployment, with **disabled** status or without any config sets are skipped.
 
 ### Deployment Process
 
@@ -98,13 +98,13 @@ Undeploy all deployment targets:
 tkm targets undeploy
 ```
 
-Undeploy only targets that belong to a deployment group `MyGroup` or to any other deployment group under it:
+Undeploy only targets that belong to a deployment group **MyGroup** or to any other deployment group under it:
 
 ```bash
 tkm targets undeploy MyGroup
 ```
 
-Undeploy only the deployment target named `my-target`:
+Undeploy only the deployment target named **my-target**:
 
 ```bash
 tkm targets undeploy --target my-target

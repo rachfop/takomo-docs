@@ -26,7 +26,7 @@ If the **partials** directory contains a file named **my-partial.hbs**, you can 
 
 ## Helpers
 
-Custom Handlebars helpers can be registered by adding **.js** files to the **helpers** directory. These files must be valid JavaScript files and export two properties: `name` and `fn`. The former is the name for the helper, and the latter is the actual helper function.
+Custom Handlebars helpers can be registered by adding **.js** files to the **helpers** directory. These files must be valid JavaScript files and export two properties: **name** and **fn**. The former is the name for the helper, and the latter is the actual helper function.
 
 #### Example
 
@@ -61,7 +61,7 @@ Resources:
 
 ## Variables from Command Line
 
-You can pass variables from command line using `--var` and `--var-file` options. Both options can be used multiple times. Variables are exposed via `var` variable.
+You can pass variables from command line using `--var` and `--var-file` options. Both options can be used multiple times. Variables are exposed via **var** variable.
 
 ### Simple Named Variables
 
@@ -69,7 +69,7 @@ Use `--var` option to pass a single named variable from the command line.
  
 #### Example: Named Variable
 
-Provide a single variable named `myVariable` with value **hello**:
+Provide a single variable named **myVariable** with value **hello**:
 
 ```
 --var myVariable=hello
@@ -92,7 +92,7 @@ The variable name can be omitted for **.yml** and **.json** files as long as the
 
 #### Example: Read File Contents to a Variable  
 
-If the project directory contains a file named **commit.txt**, we can read its contents into a variable named `commitHash` like so:
+If the project directory contains a file named **commit.txt**, we can read its contents into a variable named **commitHash** like so:
 
 ```bash
 --var-file commitHash=commit.txt
@@ -111,7 +111,7 @@ permissions:
   - update
 ```
 
-We can deserialize its contents to a variable named `myVariable` like so:
+We can deserialize its contents to a variable named **myVariable** like so:
 
 ```
 --var-file person=/home/variables.yml
@@ -201,11 +201,11 @@ The final variables object would look like this:
 
 ## Environment Variables
 
-All system environment variables are exposed via the `env` variable.
+All system environment variables are exposed via the **env** variable.
 
 #### Example
 
-Printing the `HOME` environment variable somewhere in the configuration:
+Printing the **HOME** environment variable somewhere in the configuration:
 
 ```yaml
 Home dir is {{ env.HOME }}
@@ -227,7 +227,7 @@ The following variables are available in stack group configuration files.
 | context.projectDir | string | Current project directory. |
 | stackGroup | object | An object representing the current stack group. |
 | stackGroup.path | string | Path of the stack group. |
-| stackGroup.pathSegments | string[] | Path of the stack group split into an array using `/` as a separator. |
+| stackGroup.pathSegments | string[] | Path of the stack group split into an array using **/** as a separator. |
 | stackGroup.name | string | Name of the stack group. |
 
 ### Stack Configuration
@@ -242,7 +242,7 @@ The following variables are available in stack configuration files.
 | context.projectDir | string | Current project directory. |
 | stackGroup | object | An object representing the stack group where the stack belongs to. |
 | stackGroup.path | string | Path of the stack group. |
-| stackGroup.pathSegments | string[] | Path of the stack group split into an array using `/` as a separator. |
+| stackGroup.pathSegments | string[] | Path of the stack group split into an array using **/** as a separator. |
 | stackGroup.name | string | Name of the stack group. |
 | stackGroup.project | string | Project of the stack group. |
 | stackGroup.regions | string | Regions of the stack group. |
@@ -260,7 +260,7 @@ The following variables are available in stack configuration files.
 | stackGroup.accountIds | string[] | Account ids of the stack group. |
 | stack | object | An object representing the stack. |
 | stack.path | string | Path of the stack without the region specified. |
-| stack.pathSegments | string[] | Path of the stack without the region specified split into an array using `/` as a separator.  |
+| stack.pathSegments | string[] | Path of the stack without the region specified split into an array using **/** as a separator.  |
 | stack.configFile | object | An object representing configuration file of the stack. |
 | stack.configFile.name | string | Name of the stack configuration file without the file extension. |
 | stack.configFile.basename | string | Name of the stack configuration file including the file extension |
@@ -280,7 +280,7 @@ The following variables are available in CloudFormation template files with **.h
 | hooks | object | An object containing values returned by hooks |
 | stack | object | An object representing the current stack |
 | stack.path | string | Path of the stack. |
-| stack.pathSegments | string[] | Path of the stack split into an array using `/` as a separator. |
+| stack.pathSegments | string[] | Path of the stack split into an array using **/** as a separator. |
 | stack.project | string | Project of the stack. |
 | stack.name | string | Name of the stack. |
 | stack.region | string | Region of the stack. |

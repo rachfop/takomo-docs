@@ -106,7 +106,7 @@ tkm stacks secrets get <stack path> <secret name>
 
 ### Examples
 
-Get secret `password` configured in stack with path `/dev/rds.yml`:
+Get secret **password** configured in a stack with path **/dev/rds.yml**:
 
 ```
 tkm stacks secrets get /dev/rds.yml password
@@ -124,7 +124,7 @@ tkm stacks secrets set <stack path> <secret name>
 
 ### Examples
 
-Set value of secret `password` configured in stack with path `/dev/rds.yml`:
+Set value of secret **password** configured in stack with path **/dev/rds.yml**:
 
 ```
 tkm stacks secrets set /dev/rds.yml password

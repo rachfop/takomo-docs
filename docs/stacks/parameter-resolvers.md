@@ -6,9 +6,9 @@ keywords:
   - Takomo
 ---
 
-Parameter resolvers are used to get values for stack parameters at deployment time. Each parameter resolver has a name that can be used to refer to it from stack parameters configuration with `resolver` property.
+Parameter resolvers are used to get values for stack parameters at deployment time. Each parameter resolver has a name that can be used to refer to it from stack parameters configuration with the **resolver** property.
 
-Takomo outputs parameter values to logs when lower logging levels are used. When using parameter resolvers, you can prevent this by setting the `confidential` property to `true`.
+Takomo outputs parameter values to logs when lower logging levels are used. You can prevent this by setting the **confidential** property to **true**.
 
 Each parameter resolver can have properties of their own.
 
@@ -33,7 +33,7 @@ If you need to read outputs of stacks that are not configured in the same Takomo
 
 #### Properties
 
-Here are the properties available for `stack-output` resolver.
+Here are the properties available for the **stack-output** resolver.
 
 | Key | Required | Type | Description |
 | --- | -------- | ---- | ----------- |
@@ -58,7 +58,7 @@ The directory structure looks like this:
    └─ security-groups.yml
 ```
 
-In `security-groups.yml` stack configuration we use the `stack-output` resolver to read the value for the **VpcId** parameter like so:
+In **security-groups.yml** stack configuration we use the **stack-output** resolver to read the value for the **VpcId** parameter like so:
 
 ```yaml title="stacks/security-groups.yml"
 parameters:
@@ -76,7 +76,7 @@ The source stack does not have to be configured within the same Takomo project w
 
 #### Properties
 
-Here are the properties available for `external-stack-output` resolver.
+Here are the properties available for the **external-stack-output** resolver.
 
 | Key | Required | Type | Description |
 | --- | -------- | ---- | ----------- |
@@ -95,7 +95,7 @@ The account **123456789012** has one stack: **src-bucket**. It is located in the
 
 The **888888888888** account has two stacks: **assets-bucket** and **build-infra**. The stacks are located in the **us-east-1** and **eu-west-1** regions, respectively. The **assets-bucket** stack exposes the name of an assets bucket in a stack output named **AssetsBucket**.
 
-Only the **build-infra** stack is managed in our Takomo project. The two other stacks are configured elsewhere. The **build-infra** stack has two parameters: **SrcBucket** and **AssetsBucket**. To get the values for them, we use the `external-stack-output` resolver to read the two other stacks' outputs.
+Only the **build-infra** stack is managed in our Takomo project. The two other stacks are configured elsewhere. The **build-infra** stack has two parameters: **SrcBucket** and **AssetsBucket**. To get the values for them, we use the **external-stack-output** resolver to read the two other stacks' outputs.
 
 The directory structure looks like this:
 
@@ -124,9 +124,9 @@ parameters:
     region: eu-west-1
 ```
 
-For the **SrcBucket** parameter, we need to specify the `commandRole` property because the source stack is located in a different account. We don't need to specify the `region` because both stacks are located in the same region.
+For the **SrcBucket** parameter, we need to specify the **commandRole** property because the source stack is located in a different account. We don't need to specify the **region** because both stacks are located in the same region.
 
-For the **AssetsBucket** parameter, we must specify the `region` but not the `commandRole` because the stacks are located in the same account but different regions.
+For the **AssetsBucket** parameter, we must specify the **region** but not the **commandRole** because the stacks are located in the same account but different regions.
 
 ### Secret
 
@@ -138,7 +138,7 @@ The secret value is read using credentials associated with the source stack.
 
 #### Properties
 
-Here are the properties available for `secret` resolver.
+Here are the properties available for the **secret** resolver.
 
 | Key | Required | Type | Description |
 | --- | -------- | ---- | ----------- |
@@ -153,7 +153,7 @@ The command resolver reads a value from the output of a shell command.
 
 #### Properties
 
-Here are the properties available for `command` resolver.
+Here are the properties available for the **command** resolver.
 
 | Key | Required | Type | Description |
 | --- | -------- | ---- | ----------- |
@@ -181,8 +181,8 @@ The parameter resolver has the following properties:
 
 | Key | Required | Type | Description |
 | --- | -------- | ---- | ----------- |
-| resolve | yes | function | A function that resolves the actual parameter value. The resolved value can be of any type and is converted to a string before it is passed to CloudFormation. If the value is an array, it is converted to a string by joining its values with a comma.<br/><br/>The resolve function is invoked with a single argument that contains the following properties:<br/><br/><ul><li>ctx - Command context object </li><li>stack - The current stack</li><li>parameterName - The name of the parameter whose value is being resolved</li><li>listParameterIndex - If the parameter is of type `List<>` or `CommaDelimitedList`, this will hold the index of the value in the list</li><li>logger - Logger object for logging</li></ul>|
-| confidential | no  | boolean or function  | A boolean or a synchronous function that returns a boolean value determining if the resolved parameter value should be concealed from log messages. Defaults to **false**. The `confidential` property in a stack configuration file takes precedence over this value. |
+| resolve | yes | function | A function that resolves the actual parameter value. The resolved value can be of any type and is converted to a string before it is passed to CloudFormation. If the value is an array, it is converted to a string by joining its values with a comma.<br/><br/>The resolve function is invoked with a single argument that contains the following properties:<br/><br/><ul><li>ctx - Command context object </li><li>stack - The current stack</li><li>parameterName - The name of the parameter whose value is being resolved</li><li>listParameterIndex - If the parameter is of type **List&lt;&gt;** or **CommaDelimitedList**, this will hold the index of the value in the list</li><li>logger - Logger object for logging</li></ul>|
+| confidential | no  | boolean or function  | A boolean or a synchronous function that returns a boolean value determining if the resolved parameter value should be concealed from log messages. Defaults to **false**. The **confidential** property in a stack configuration file takes precedence over this value. |
 | dependencies | no  | string[] or function | A list of stack paths or a synchronous function that returns a list of stack paths of the stacks that the resolver depends on. Defaults to an empty list. |
 | iamRoleArns | no  | string[] or function | A list of IAM role ARNs or a synchronous function that returns a list of IAM role ARNs needed to resolve the value. Defaults to an empty list. |
 
@@ -202,7 +202,7 @@ Our file structure looks like this:
    └- my-stack.yml
 ```
 
-The parameter resolver provider defined in `resolvers/uppercase.js` looks like this:
+The parameter resolver provider defined in **resolvers/uppercase.js** looks like this:
 
 ```javascript title="resolvers/uppercase.js"
 module.exports = {

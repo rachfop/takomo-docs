@@ -10,13 +10,13 @@ Stacks to deploy to deployment targets are defined with config sets. Config sets
 
 ## Configuring Stacks
 
-You configure the stacks to be deployed to your deployment targets the same way you would normally configure stacks with Takomo, i.e. you create stack groups, stack configurations and templates. If you are unfamiliar with how to do this, you might want to consult [the documentation](/docs/stacks/introduction) before moving on.
+You configure the stacks to be deployed to your deployment targets the same way you would normally configure stacks with Takomo, i.e., you create stack groups, stack configurations, and templates. If you are unfamiliar with how to do this, you might want to consult [the documentation](/docs/stacks/introduction) before moving on.
 
 ## Config Sets
 
-Once you have your stacks configuration ready, you use config sets to specify which of the stacks should be deployed together. You can have multiple config sets and each config set can have one or more command paths that specify which stacks to deploy.
+Once you have the configuration of your stacks ready, you use config sets to specify which of the stacks should be deployed together. You can have multiple config sets, and each config set can have one or more command paths that specify which stacks to deploy.
 
-You define config sets with `configSets` property. It's an object where keys are config set names and values objects containing configuration for the corresponding config set. Each config set must have a `name` that is used to refer to it from other parts of the organization configuration, and a `description` to document its purpose. The command paths are specified with `commandPaths` key.
+You define config sets with the [configSets](/docs/config-reference/deployment-targets#configsets) property. It's an object where keys are config set names and values objects containing configuration for the corresponding config set. The config set name is used to refer to it from other parts of the organization configuration, and a description to document its purpose. The command paths are specified with commandPaths key.
 
 ### Example: Defining config sets
 
@@ -55,7 +55,7 @@ There is one config set for networking and another for application. The former i
 
 ## Attaching Config Sets to Deployment Groups and Targets
 
-Once you have the config sets thought out and configured, you need to determine to which deployment targets you want to deploy them. You do this by attaching config sets to deployment groups and targts. When you attach a config set to a deployment target, it becomes attached to all deployment targets that belong to the deployment group, and is also inherited by all child deployment groups. 
+Once you have the config sets thought out and configured, you need to determine which deployment targets you want to deploy them. You do this by attaching config sets to deployment groups and targets. When you attach a config set to a deployment target, it becomes attached to all deployment targets that belong to the deployment group and is also inherited by all child deployment groups.
 
 ### Example: Attaching config sets
 
@@ -84,7 +84,7 @@ We attached **networking** config set to **SharedService** and **Environments** 
 
 By default, the config sets are deployed to deployment targets using AWS credentials in the current terminal session. You can specify a separate deployment role that Takomo will assume and use to deploy config sets to the deployment targets.
 
-You specify the deployment role either in deployment targets or in deployment groups using `deploymentRole` key. The deployment role given in a deployment group is inherited by its children and deployment targets that belong to it.
+You specify the deployment role either in deployment targets or in deployment groups using **deploymentRole** key. The deployment role given in a deployment group is inherited by its children and deployment targets that belong to it.
 
 It's important to notice that the deployment role must be a full IAM role ARN.
 
@@ -111,7 +111,7 @@ deploymentGroups:
 
 You can define variables that will be passed to stacks when config sets are deployed. Variables can be defined at the top-level of the deployment configuration, and under deployment groups units and targets.
 
-Deployment groups units inherit and can override variables from the top-level, and deplyment targets, in turn, inherit and can override variables from the deployment group they belong to.
+Deployment groups inherit and can override variables from the top-level, and deployment targets inherit and can override variables from the deployment group they belong to.
 
 ### Example: Defining Variables
 
@@ -162,9 +162,9 @@ data:
 
 ## Controlling Deployment Order
 
-When the config sets are deployed, the deployment groups hierarchy is traversed recursively starting from the root deployment groups. By default, the child deployment groups are sorted by their name. For each deployment group, the deployment targets that belong to it are processed one at a time, in the order they are defined, and stacks specified by the config sets attached to the account are deployed. 
+When the config sets are deployed, the deployment groups hierarchy is traversed recursively, starting from the root deployment groups. By default, the child deployment groups are sorted by their name. For each deployment group, the deployment targets that belong to it are processed one at a time, in the order they are defined, and stacks specified by the config sets attached to the account are deployed. 
 
-You can use `priority` property to control the order deployment groups' children are processed. It accepts a number that is used to sort the children to ascending order. Deployment groups without `priority` are sorted by their name and processed after the ones with `priority` set.
+You can use **priority** property to control the order deployment groups' children are processed. It accepts a number that is used to sort the children to ascending order. Deployment groups without priority are sorted by their name and processed after the ones with priority set.
 
 ### Example: Setting deployment group priority
 
@@ -179,7 +179,7 @@ deploymentGroups:
 
 ## Excluding Deployment Targets from Deployment
 
-Sometimes you might want to exclude some deployment targets from deployment. You can exclude a deployment targets from deployment by setting its `status` to `disabled`. You can also exclude a whole deployment group and all its children by setting the deployment group `status` to `disabled`. 
+Sometimes you might want to exclude some deployment targets from deployment. You can exclude a deployment target from deployment by setting its **status** to **disabled**. You can also exclude a whole deployment group and all its children by setting the deployment group **status** to **disabled**. 
 
 ### Example: Excluding deployment targets
 

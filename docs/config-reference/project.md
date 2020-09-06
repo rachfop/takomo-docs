@@ -6,7 +6,7 @@ keywords:
   - Takomo
   - configuration
 ---
-Project configuration file `takomo.yml` is placed in the project root directory and contains general configuration for the project.
+Project configuration file **takomo.yml** is placed in the project root directory and contains general configuration for the project.
 
 ## requiredVersion
 

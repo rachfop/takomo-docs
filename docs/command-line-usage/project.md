@@ -40,7 +40,7 @@ Initialize a new project to the current directory and create sample stacks:
 tkm init --create-samples
 ```
 
-Initialize a new project to `/var/projects` directory:
+Initialize a new project to **/var/projects** directory:
 
 ```
 tkm init -d /var/projects

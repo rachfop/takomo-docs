@@ -39,7 +39,7 @@ DB_PASS=s1mpl3
 
 ## Load AWS SDK Config
 
-Use --load-aws-sdk-config to prefer loading credentials from configuration file over the credentials file. Passing this option will enable loading the profile from `~/.aws/config` file.
+Use --load-aws-sdk-config to prefer loading credentials from configuration file over the credentials file. Passing this option will enable loading the profile from **~/.aws/config** file.
 
 ## Log Confidential Information
 

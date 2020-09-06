@@ -13,7 +13,7 @@ Managing secrets, such as database credentials and various authorization tokens,
 
 Secret configuration contains only name and description for the secrets, but the actual values are never stored to the local disk.
 
-You use the `secret` property to declare stack secrets. It's an object whose keys are secret names, and values are objects containing descriptions for the corresponding secrets.
+You use the [secrets](/docs/config-reference/stacks#secrets) property to declare stack secrets. It's an object whose keys are secret names, and values are objects containing descriptions for the corresponding secrets.
 
 #### Example
 
@@ -80,14 +80,15 @@ tkm stacks secrets sync /my-stack.yml
 The declaring stack always owns secrets, and when the stack is deleted, so are the secrets it declared. Secrets are stored to the Parameter Store with stack's secrets path generated from the stack path using the following formula:
 
 1. Append a forward slash to the stack path
-2. If the `project` property is defined, prepend it with a forward slash
+2. If the [project](/docs/config-reference/stacks#project) property is defined, prepend it with a forward slash
 
-For example, if the stack path is `/dev/rds.yml/eu-west-1` and the project is `example`, then the secrets path will be `/example/dev/rds.yml/eu-west-1/`. If the stack declares a secret named **myPassword**, it will be stored to the Parameter Store with the name `/example/dev/rds.yml/eu-west-1/myPassword`.
+For example, if the stack path is **/dev/rds.yml/eu-west-1** and the project is **example**, then the secrets path will be **/example/dev/rds.yml/eu-west-1/**. If the stack declares a secret named **myPassword**, it will be stored to the Parameter Store with the name **/example/dev/rds.yml/eu-west-1/myPassword**.
 
 This way, all the stack secrets are found from the Parameter Store under the same path prefix, enabling Takomo to detect differences between the local configuration and the secrets stored in Parameter Store.
 
 ## See Also
 
+- [Config reference > secrets property](/docs/config-reference/stacks#secrets) 
 - [Command line usage > Set secret](/docs/command-line-usage/stack-secrets#set-secret)
 - [Command line usage > Get secret](/docs/command-line-usage/stack-secrets#get-secret)
 - [Command line usage > Sync secrets](/docs/command-line-usage/stack-secrets#sync-secrets)

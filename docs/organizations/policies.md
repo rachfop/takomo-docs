@@ -15,7 +15,7 @@ Policies are supported only when **all features** is enabled in the organization
 
 ## Policy Types
 
-There are four policy types. Policies for each policy type are configured under its own key in `organization.yml` file and the actual policy files are located in the corresponding directories under `organization` directory.
+There are four policy types. Policies for each policy type are configured under its key in **organization.yml** file, and the actual policy files are located in the corresponding directories under the **organization** directory.
 
 | Policy type | Key | Policy file directory | 
 | ----------- | --- | --------------------- |
@@ -26,7 +26,7 @@ There are four policy types. Policies for each policy type are configured under 
 
 ## Enabling Policy Types
 
-By default all policy types are disabled. To enable a policy type, you just need to configure at least one policy for it and the policy type is automatically enabled when the organization is deployed. If you don't have policies configured but still want to enable the policy type, you can set `true` for its value.
+By default, all policy types are disabled. To enable a policy type, you need to configure at least one policy for it, and the policy type is automatically enabled when the organization is deployed. If you don't have policies configured but still want to enable the policy type, you can set **true** for its value.
 
 ### Example: Enabling a Policy Type
 
@@ -38,7 +38,7 @@ tagPolicies: true
 
 ## Disabling Policy Types
 
-A policy type is disabled if it doesn't have any policies configured. So, to disable a policy that has policies in it, you just need to remove policy type's configuration from `organization.yml` file and the policy type is disabled when the organization is deployed. You can also disable a policy type by setting `false` to its value. 
+A policy type is disabled if it doesn't have any policies configured. So, to disable a policy that has policies in it, you need to remove the policy type's configuration from **organization.yml** file, and the policy type is disabled when the organization is deployed. You can also disable a policy type by setting **false** to its value.
 
 ### Example: Disabling a Policy Type
 
@@ -50,7 +50,7 @@ backupPolicies: true
 
 ## Policy Configuration
 
-Configuration structure for each policy type is identical and is given in an object whose keys are policy names and values are policy objects containing configuration for the corresponding policies.
+The configuration structure for each policy type is identical and is given in an object whose keys are policy names and values are policy objects containing configuration for the corresponding policies.
 
 A policy object has the following keys:
 
@@ -74,11 +74,11 @@ tagPolicies:
     description: My tag policy
 ```
 
-In the above example, we configure two service control policies and one tag policy. The service control policies are named `my-policy` and `allowedRegions`. The tag policy is named as `taggingPolicy`.
+In the above example, we configure two service control policies and one tag policy. The service control policies are named **my-policy** and **allowedRegions**. The tag policy is called as **taggingPolicy**.
 
 ## Policy Files
 
-For each policy defined in the policy configuration, there must be a corresponding `.json` file with the same name containing the actual policy in the policy file directory.
+For each policy defined in the policy configuration, there must be a corresponding **.json** file with the same name and containing the actual policy in the policy file directory.
 
 ### Example: Adding policy files
 
@@ -99,7 +99,7 @@ As you can see, we have created the policy files under the correct policy type d
 
 ## AWS Managed Policies
 
-There is a default service control policy that is managed by AWS and named as `FullAWSAccess`. You can't provide your own policy with this name. You can still use this policy with your organizational units and accounts by defining it with `awsManaged: true`. Because the policy is managed by AWS, you donn't need to provide a policy file for it.
+There is a default service control policy that is managed by AWS and named as **FullAWSAccess**. You can't provide your own policy with this name. You can still use this policy with your organizational units and accounts by defining it with **awsManaged: true**. Because AWS manages the policy, you don't need to provide a policy file for it.
 
 ### Example: Configure the AWS managed default policy 
 

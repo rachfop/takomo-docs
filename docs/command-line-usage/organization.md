@@ -15,7 +15,7 @@ Commands to manage organizations.
 
 ## Create Organization
 
-Create a new organization and initialize a minimum organization configuration file in `organization/organization.yml`.
+Create a new organization and initialize a minimum organization configuration file in **organization/organization.yml**.
 
 ### Usage
 

@@ -60,7 +60,7 @@ Undeploy within the given command path:
 tkm stacks undeploy /dev
 ```
 
-Undeploy only /dev/vpc.yml stack and its dependants:
+Undeploy only **/dev/vpc.yml** stack and its dependants:
 
 ```
 tkm stacks undeploy /dev/vpc.yml

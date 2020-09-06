@@ -7,7 +7,7 @@ keywords:
   - organization
 ---
 
-You use [deploy organization](/docs/command-line-usage/organization#deploy-organization) command to deploy the local configuration defined in `organization.yml` file. This includes policies, trusted aws services, organizational units hierarchy and member accounts’ placement in it.
+You use the [deploy organization](/docs/command-line-usage/organization#deploy-organization) command to deploy the local configuration defined in the **organization.yml** file, including policies, trusted AWS services, organizational units hierarchy, and member accounts’ placement in it.
 
 ## Command Line Usage
 
@@ -32,7 +32,7 @@ The deployment process is divided in the following phases that are executed sequ
 | Enable trusted AWS services | Enable access to the trusted AWS services that are enabled in the local configuration but not in the organization. |
 | Enable policy types | Enable policy types that are enabled in the local configuration but not in the organization. |
 | Create or update policies | Create policies that are found from the local configuration but not from the organization. Update policies that are found from the organization and modified in the local configuration.  |
-| Arrange organizational units and accounts | Add or remove organizational units, and move member accounts to correct organizational units in order to make the organizational units hierarchy to match with the one found from the local configuration. |
+| Arrange organizational units and accounts | Add or remove organizational units and move member accounts to correct organizational units to make the organizational units hierarchy match with the one found from the local configuration. |
 | Delete policies | Delete policies found from the organization but not from the local configuration. | 
 | Disable policy types | Disable policy types that are enabled in the organization but not in the local configuration. | 
 | Disable trusted AWS services | Disable access to trusted AWS services that are enabled in the organization but not in the local configuration. | 

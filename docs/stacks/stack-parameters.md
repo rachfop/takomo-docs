@@ -8,7 +8,7 @@ keywords:
   - stack
 ---
 
-Input parameters for a CloudFormation stack are given with the `parameters` property. It's an object of key-value pairs where the keys are parameter names, and the values are configuration for the parameter value. The value configuration can be a single static value, an object, or a list of the two aforementioned types. The object form is used when the parameter value is resolved at deployment time using a parameter resolver.
+Input parameters for a CloudFormation stack are given with the [parameters](/docs/config-reference/stacks#parameters) property. It's an object of key-value pairs where the keys are parameter names, and the values are configuration for the parameter value. The value configuration can be a single static value, an object, or a list of the two aforementioned types. The object form is used when the parameter value is resolved at deployment time using a parameter resolver.
 
 ## Static Parameters
 
@@ -36,13 +36,13 @@ parameters:
 
 In many cases, it's not wise or even possible to hard code all parameter values. When you need to assign parameter values dynamically at deployment time, you can use parameter resolvers. There are a few built-in parameter resolvers, and you can also implement your own.
 
-You use the `resolver` property to specify which parameter resolver should be used to resolve the value for a parameter.
+You use the **resolver** property to specify which parameter resolver should be used to resolve the value for a parameter.
 
 Below, you can find some examples of built-in parameter resolvers. In [the next section](/docs/stacks/parameter-resolvers) we'll learn more about parameter resolvers. 
 
 #### Example: Reading Value for a Parameter from Another Stack's Outputs
 
-If we have two stacks configured within the same Takomo project, we can use a stack-output resolver to read the first stack's output value and use it as a parameter value in the second stack.
+If we have two stacks configured within the same Takomo project, we can use the [stack-output resolver](/docs/stacks/parameter-resolvers#stack-output) to read the first stack's output value and use it as a parameter value in the second stack.
 
 ```yaml
 parameters:
@@ -52,7 +52,7 @@ parameters:
     output: vpcId
 ```
 
-If the stacks are not configured within the same Takomo project, we need to use an external-stack-output resolver.
+If the stacks are not configured within the same Takomo project, we need to use the [external-stack-output resolver](/docs/stacks/parameter-resolvers#external-stack-output).
 
 ```yaml
 parameters:
@@ -78,5 +78,5 @@ parameters:
 
 ## See Also
 
-- [parameters property in config reference](/docs/config-reference/stacks#parameters)
+- [Config reference > parameters property](/docs/config-reference/stacks#parameters)
 - [Parameter resolvers](/docs/stacks/parameter-resolvers)

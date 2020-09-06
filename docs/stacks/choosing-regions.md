@@ -9,7 +9,7 @@ keywords:
   - deploy
 ---
 
-A stack can be deployed to one or more regions. You specify the stack region with the `regions` property. It accepts a single region or a list of regions.
+A stack can be deployed to one or more regions. You specify the stack region with the [regions](/docs/config-reference/stacks#regions) property. It accepts a single region or a list of regions.
 
 #### Examples: Specifying the Region
 
@@ -38,4 +38,4 @@ If you want to remove regions, you must first remove the stack from the regions 
 
 ## See Also
 
-- [regions property in config reference](/docs/config-reference/stacks#regions)
+- [Config reference > regions property](/docs/config-reference/stacks#regions)

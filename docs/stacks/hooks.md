@@ -41,7 +41,7 @@ There is one built-in hook:
 
 ### Command Hook
 
-Executes a shell command given in `command` property. Exposes the following environment variables to the shell command:
+Executes a shell command given in **command** property. Exposes the following environment variables to the shell command:
 
 | Name | Description |
 | ---- | ----------- |
@@ -64,7 +64,7 @@ Here are the properties available for Command hook:
 
 ## Implementing Custom Hooks
 
-You can provide custom hooks by placing plain JavaScript files, with `.js` file extension, into `hooks` directory. Each file must export a [hook provider](#hook-provider) object that is used to initialize the actual hook. You can use all language features available in Node 14.4.0.
+You can provide custom hooks by placing plain JavaScript files, with **.js** file extension, into the **hooks** directory. Each file must export a [hook provider](#hook-provider) object that is used to initialize the actual hook. You can use all language features available in Node 14.4.0.
 
 ### Hook Provider
 
@@ -91,13 +91,13 @@ Hook input has the following properties:
 | --- | -------- | ---- | ----------- |
 | stage     | yes | string | Current stack operation stage. Possible values are:<br/><br/><ul><li>before - The hook is being executed before the stack operation</li><li>after - The hook is being executed after the stack operation</li></ul> |
 | operation | yes | string | Current stack operation. Possible values are:<br/><br/><ul><li>create - The hook is being executed when a new stack is being created</li><li>update - The hook is being executed when an existing stack is being updated</li><li>delete - The hook is being executed when an existing stack is being deleted</li></ul> |
-| status    | yes | string | Current stack operation status. Possible values are:<br/><br/><ul><li>success - The hook is being executed after a successful stack operation</li><li>failure - The hook is being executed after a failed stack operation</li><li>skipped - The hook is being executed after a skipped stack operation</li><li>cancelled - The hook is being executed after a cancelled stack operation</li></ul>This is defined only when the stage is `after`.  |
-| variables | yes | object | Mutable variables object containing command line and environment variables. The hook can modify existing variables and add new ones. After the hook is completed, the same variables object is passed to the subsequent hooks which can then access its contents. If the stack's template is `.hbs` file, the same variables are also usable there. |
+| status    | yes | string | Current stack operation status. Possible values are:<br/><br/><ul><li>success - The hook is being executed after a successful stack operation</li><li>failure - The hook is being executed after a failed stack operation</li><li>skipped - The hook is being executed after a skipped stack operation</li><li>cancelled - The hook is being executed after a cancelled stack operation</li></ul>This is defined only when the stage is **after**.  |
+| variables | yes | object | Mutable variables object containing command line and environment variables. The hook can modify existing variables and add new ones. After the hook is completed, the same variables object is passed to the subsequent hooks which can then access its contents. If the stack's template is **.hbs** file, the same variables are also usable there. |
 | ctx       | yes | string | Command context object |
  
 ### Hook Output
 
-Hook output is used to determine if the hook execution was successful and to share data between hooks. It can be either a `boolean`, an `Error` which is always considered as failure, or a detailed object with the following properties:
+Hook output is used to determine if the hook execution was successful and to share data between hooks. It can be either a **boolean**, an **Error** which is always considered as failure, or a detailed object with the following properties:
 
  | Key | Required | Type | Description |
  | --- | -------- | ---- | ----------- |
@@ -107,7 +107,7 @@ Hook output is used to determine if the hook execution was successful and to sha
  
 ### Example
 
-This example hook prints some debug information to console.
+This example hook prints some debug information to the console.
 
 Our file structure looks like this:
 
@@ -121,7 +121,7 @@ Our file structure looks like this:
    └- my-stack.yml
 ```
 
-The hook provider defined in `hooks/debug.js` looks like this:
+The hook provider defined in **hooks/debug.js** looks like this:
 
 ```javascript title="hooks/debug.js"
 module.exports = {
@@ -159,4 +159,4 @@ When executed, the hook exposes string **"Did some debugging"** in the mutable v
 
 ## See Also
 
-- [hooks property in config reference](/docs/config-reference/stacks#hooks)
+- [Config reference > hooks property](/docs/config-reference/stacks#hooks)
