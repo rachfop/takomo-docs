@@ -60,7 +60,7 @@ module.exports = {
     "Examples": [
       "examples/about",
       "examples/stack-output-resolvers",
-      "examples/custom-resolvers",
+      "examples/simple-custom-resolvers",
       "examples/managing-organization",
     ],
     "Upgrade Guide": [

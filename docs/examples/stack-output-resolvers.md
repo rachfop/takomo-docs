@@ -26,11 +26,11 @@ The example consists of the following files:
 
 ## Stacks
 
-There are two stacks: `vpc.yml` and `security-groups.yml`. The former creates a VPC and the latter takes the VPC's id as a parameter and uses it to create a security group.
+There are two stacks: **vpc.yml** and **security-groups.yml**. The former creates a VPC and the latter takes the VPC's id as a parameter and uses it to create a security group.
 
 ### vpc.yml
 
-The template of `vpc.yml` stack contains the VPC resource whose id is exposed through stack outputs:
+The template of **vpc.yml** stack contains the VPC resource whose id is exposed through stack outputs:
 
 ```yaml title="stacks/vpc.yml"
 Resources:
@@ -46,7 +46,7 @@ Outputs:
 
 ### security-groups.yml
 
-The configuration file of `security-groups.yml` stack uses `stack-output` resolver to read the value for the `VpcId` parameter:
+The configuration file of **security-groups.yml** stack uses the [stack-output](/docs/stacks/parameter-resolvers#stack-output) resolver to read the value for the **VpcId** parameter:
 
 ```yaml title="stacks/security-groups.yml"
 parameters:
@@ -60,7 +60,7 @@ parameters:
 
 To deploy the example stacks, run command:
 
-```bash
+```
 tkm stacks deploy
 ```
 
@@ -68,7 +68,7 @@ tkm stacks deploy
 
 To remove the created stacks, run command:
 
-```bash
+```
 tkm stacks undeploy
 ```
 

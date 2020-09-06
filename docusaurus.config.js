@@ -94,9 +94,7 @@ module.exports = {
       {
         docs: {
           path: 'docs',
-          homePageId: 'getting-started/introduction',
           sidebarPath: require.resolve('./sidebars.js'),
-         // disableVersioning: true,
         },
         blog: {
           showReadingTime: false,

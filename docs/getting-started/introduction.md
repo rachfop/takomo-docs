@@ -1,6 +1,7 @@
 ---
 id: introduction
 title: Introduction
+slug: '/'
 description: Takomo makes it easy to organize, parameterize and deploy your CloudFormation stacks across multiple regions and accounts
 keywords:
   - Takomo
