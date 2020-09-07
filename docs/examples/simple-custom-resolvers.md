@@ -16,11 +16,11 @@ The example consists of the following files:
 ```
 .
 ├─ stacks
-│  └- stack.yml
+│  └─ stack.yml
 ├─ templates
 │  └─ stack.yml
-└- resolvers
-   ├- timestamp.js
+└─ resolvers
+   ├─ timestamp.js
    └─ uppercase.js
 ```
 
@@ -50,7 +50,7 @@ In an implementation file, a provider object must be exported. The provider obje
 is used to refer to the resolver in stack configuration files using **resolver** property, and **init**
 function that is used to initialize and return the resolver object. Finally, when the stack is deployed,
 the actual parameter value is resolved using **resolve** function of the resolver object. For the other
-properties, see [custom resolvers documentation"](/docs/stacks/parameter-resolvers#implementing-custom-parameter-resolvers).
+properties, see [custom resolvers documentation](/docs/stacks/parameter-resolvers#implementing-custom-parameter-resolvers).
 
 ### timestamp
 
@@ -107,5 +107,5 @@ tkm stacks undeploy
 
 Find more information from the documentation:
 
-- [Custom Parameter Resolvers"](/docs/stacks/parameter-resolvers#implementing-custom-parameter-resolvers)
-- [Configuring Resolvers"](/docs/config-reference/stacks#parameters)
+- [Custom Parameter Resolvers](/docs/stacks/parameter-resolvers#implementing-custom-parameter-resolvers)
+- [Configuring Resolvers](/docs/config-reference/stacks#parameters)

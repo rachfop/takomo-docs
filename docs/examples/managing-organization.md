@@ -14,22 +14,22 @@ The example consists of the following files:
 ```
 .
 ├─ organization
-│  ├- organization.yml
-|  └- service-control-policies
-│     └- AllowedRegions.json
+│  ├─ organization.yml
+|  └─ service-control-policies
+│     └─ AllowedRegions.json
 ├─ stacks
-│  ├- examples
-│  │  └- budgets.yml
-│  ├- master
-│  │  ├- budgets.yml
-│  │  └- cloudtrail.yml
+│  ├─ examples
+│  │  └─ budgets.yml
+│  ├─ master
+│  │  ├─ budgets.yml
+│  │  └─ cloudtrail.yml
 │  └- config.yml
 └─ templates
-   ├- examples
-   │  └- budgets.yml
-   └- master
-      ├- budgets.yml
-      └- cloudtrail.yml
+   ├─ examples
+   │  └─ budgets.yml
+   └─ master
+      ├─ budgets.yml
+      └─ cloudtrail.yml
 ```
 
 ## Organization Configuration
@@ -161,6 +161,6 @@ In this example, stacks **/master/budgets.yml** and **/master/cloudtrail.yml** a
 
 Find more information from the documentation:
 
-- [Organization commands"](/docs/command-line-usage/organization)
-- [Organization accounts command"](/docs/command-line-usage/organization-accounts)
-- [Organization configuration reference"](/docs/config-reference/organization)
+- [Organization commands](/docs/command-line-usage/organization)
+- [Organization accounts command](/docs/command-line-usage/organization-accounts)
+- [Organization configuration reference](/docs/config-reference/organization)

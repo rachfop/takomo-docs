@@ -12,5 +12,6 @@ For the sake of brevity, some details are omitted from the examples. You can fin
 ## List of Examples
 
 - [Simple Custom Resolvers](/docs/examples/simple-custom-resolvers)
+- [Custom Resolver with Stack Dependencies](/docs/examples/custom-resolver-with-stack-dependencies)
 - [Stack Output Resolvers](/docs/examples/stack-output-resolvers)
 - [Managing Organization](/docs/examples/managing-organization)
