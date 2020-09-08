@@ -2,6 +2,9 @@ const currentRelease = process.env.CURRENT_RELEASE || 'next'
 
 module.exports = {
   title: 'Takomo',
+  customFields: {
+    currentRelease,
+  },
   tagline: 'Organize, parameterize and deploy CloudFormation stacks',
   url: 'https://takomo.io',
   baseUrl: process.env.DOCS_BASE || '/',
