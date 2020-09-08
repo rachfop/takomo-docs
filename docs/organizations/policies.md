@@ -86,13 +86,13 @@ Let's continue from the previous example where we defined some service control a
 
 ```
 .
-└- organization
-   ├- organization.yml
-   ├- service-control-policies
-   |  ├- my-policy.json
-   |  └- allowedRegions.json
-   └- tag-policies
-      └- taggingPolicy.json
+└─ organization
+   ├─ organization.yml
+   ├─ service-control-policies
+   |  ├─ my-policy.json
+   |  └─ allowedRegions.json
+   └─ tag-policies
+      └─ taggingPolicy.json
 ```
 
 As you can see, we have created the policy files under the correct policy type directories.

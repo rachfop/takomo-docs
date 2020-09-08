@@ -21,9 +21,9 @@ Say, our project's file structure looks like this:
 ```
 .
 ├─ stacks
-|  └- application.yml
-└- templates
-   └- application-template.yml
+|  └─ application.yml
+└─ templates
+   └─ application-template.yml
 ```
 
 In **application.yml** stack configuration file we define the **template** property like so:

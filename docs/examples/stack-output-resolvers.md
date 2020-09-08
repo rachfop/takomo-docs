@@ -1,6 +1,11 @@
 ---
 id: stack-output-resolvers
 title: Stack Output Resolvers
+description: An example demonstrating how to use stack output parameter resolver to set values for stack input parameters.
+keywords:
+  - Examples
+  - Parameters
+  - Takomo
 ---
 
 This example demonstrates how to use [stack output resolver](/docs/stacks/parameter-resolvers#stack-output) to read outputs from one stack and use them as input parameters in another stack.
@@ -17,11 +22,11 @@ The example consists of the following files:
 ```
 .
 ├─ stacks
-│  ├- security-groups.yml
-│  └- vpc.yml
+│  ├─ security-groups.yml
+│  └─ vpc.yml
 └─ templates
-   ├- security-groups.yml
-   └- vpc.yml
+   ├─ security-groups.yml
+   └─ vpc.yml
 ```
 
 ## Stacks

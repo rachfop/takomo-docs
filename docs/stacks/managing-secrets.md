@@ -21,8 +21,8 @@ We have a single stack defined in file **my-stack.yml** and our file structure l
 
 ```
 .
-└- stacks
-   └- my-stack.yml
+└─ stacks
+   └─ my-stack.yml
 ```
 
 In the stack configuration we define two secrets named **privateKey** and **password**.

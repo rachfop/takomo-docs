@@ -18,10 +18,10 @@ Organization configuration is located in the **organization** directory, right n
 
 ```
 .
-└- organization
-   ├- organization.yml
-   ├- ai-services-opt-out-policies
-   ├- backup-policies
-   ├- service-control-policies
-   └- tag-policies
+└─ organization
+   ├─ organization.yml
+   ├─ ai-services-opt-out-policies
+   ├─ backup-policies
+   ├─ service-control-policies
+   └─ tag-policies
 ```

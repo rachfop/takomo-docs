@@ -13,8 +13,8 @@ The deployment configuration is defined in the **targets.yml** file located in t
 
 ```
 .
-└- deployment
-   └- targets.yml
+└─ deployment
+   └─ targets.yml
 ```
 
 ## Deployment Groups

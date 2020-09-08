@@ -1,6 +1,11 @@
 ---
 id: custom-resolver-with-stack-dependencies
 title: Custom Resolver with Stack Dependencies
+description: An example demonstrating how to implement a custom parameter resolver that utilizes stack dependencies.
+keywords:
+  - Examples
+  - Dependencies
+  - Takomo
 ---
 
 This example demonstrates how to implement a custom resolver that depends on other stacks.

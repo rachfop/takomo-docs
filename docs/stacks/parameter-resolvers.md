@@ -51,10 +51,10 @@ The directory structure looks like this:
 ```
 .
 ├─ stacks
-│  ├- vpc.yml
+│  ├─ vpc.yml
 │  └─ security-groups.yml
-└- templates
-   ├- vpc.yml
+└─ templates
+   ├─ vpc.yml
    └─ security-groups.yml
 ```
 
@@ -102,8 +102,8 @@ The directory structure looks like this:
 ```
 .
 ├─ stacks
-│  └- build-infra.yml
-└- templates
+│  └─ build-infra.yml
+└─ templates
    └─ build-infra.yml
 ```
 
@@ -195,11 +195,11 @@ Our file structure looks like this:
 ```
 .
 ├─ stacks
-|  └- my-stack.yml
-├- resolvers
-|  └- uppercase.js
-└- templates
-   └- my-stack.yml
+|  └─ my-stack.yml
+├─ resolvers
+|  └─ uppercase.js
+└─ templates
+   └─ my-stack.yml
 ```
 
 The parameter resolver provider defined in **resolvers/uppercase.js** looks like this:

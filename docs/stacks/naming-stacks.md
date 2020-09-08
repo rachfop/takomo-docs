@@ -34,9 +34,9 @@ Say, our project's file structure looks like this:
 ```
 .
 └─ stacks
-   └- dev
-      └- webapp
-         └- application.yml
+   └─ dev
+      └─ webapp
+         └─ application.yml
 ```
 
 There's a single stack whose configuration is given in **application.yml**. Let's assume that there is no **name** property defined in this file. Then, based on the logic presented above, the stack's generated name will be **dev-webapp-application**. 

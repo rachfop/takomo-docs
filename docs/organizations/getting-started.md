@@ -23,8 +23,8 @@ After running the command, you will have the following file structure:
 
 ```
 .
-└- organization
-   └- organization.yml
+└─ organization
+   └─ organization.yml
 ```
 
 Contents of the generated **organization.yml** file will look like this:

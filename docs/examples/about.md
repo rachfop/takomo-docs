@@ -1,6 +1,10 @@
 ---
 id: about
 title: About Examples
+description: Examples demonstrating how to build infrastructure with Takomo.
+keywords:
+  - Examples
+  - Takomo
 ---
 
 Under this section, you can find some real-life examples of Takomo configuration. Use them to get a better understanding of how you can use Takomo to configure your AWS infrastructure.

@@ -1,6 +1,11 @@
 ---
 id: managing-organization
 title: Managing Organization
+description: An example demonstrating how manage AWS organization with Takomo.
+keywords:
+  - Examples
+  - Organization
+  - Takomo
 ---
 
 This example demonstrates how to manage an AWS organization with [organization](/docs/command-line-usage/organization) and [organization accounts](/docs/command-line-usage/organization-accounts) commands.

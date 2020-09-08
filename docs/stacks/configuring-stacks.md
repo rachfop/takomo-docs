@@ -37,17 +37,17 @@ CloudFormation templates for the stacks are found from the **templates** directo
 ```
 .
 ├─ stacks
-|  ├- config.yml
-|  ├- dev
-|  |  ├- config.yml
-|  |  ├- application.yml
-|  |  └- vpc.yml
+|  ├─ config.yml
+|  ├─ dev
+|  |  ├─ config.yml
+|  |  ├─ application.yml
+|  |  └─ vpc.yml
 |  └- prod
-|     ├- application.yml
-|     └- vpc.yml
-└- templates
-   ├- application-template.yml
-   └- vpc-template.yml
+|     ├─ application.yml
+|     └─ vpc.yml
+└─ templates
+   ├─ application-template.yml
+   └─ vpc-template.yml
 ```
 
 ## Identifying Stacks and Stack Groups
@@ -71,17 +71,17 @@ Let's continue from the previous example and say that the root stack configurati
 ```
 .
 ├─ stacks                         # root stack group path: /
-|  ├- config.yml                  
-|  ├- dev                         # dev stack group path: /dev
-|  |  ├- config.yml               
-|  |  ├- application.yml          # dev application stack path: /dev/application.yml/us-east-1
-|  |  └- vpc.yml                  # dev vpc stack path: /dev/vpc.yml/us-east-1
-|  └- prod                        # prod stack group path: /prod
-|     ├- application.yml          # prod application stack path: /prod/application.yml/eu-west-1
-|     └- vpc.yml                  # prod vpc stack path: /prod/vpc.yml/eu-west-1
-└- templates
-   ├- application-template.yml
-   └- vpc-template.yml
+|  ├─ config.yml                  
+|  ├─ dev                         # dev stack group path: /dev
+|  |  ├─ config.yml               
+|  |  ├─ application.yml          # dev application stack path: /dev/application.yml/us-east-1
+|  |  └─ vpc.yml                  # dev vpc stack path: /dev/vpc.yml/us-east-1
+|  └─ prod                        # prod stack group path: /prod
+|     ├─ application.yml          # prod application stack path: /prod/application.yml/eu-west-1
+|     └─ vpc.yml                  # prod vpc stack path: /prod/vpc.yml/eu-west-1
+└─ templates
+   ├─ application-template.yml
+   └─ vpc-template.yml
 ```
 
 ## Available Properties

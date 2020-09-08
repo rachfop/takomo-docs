@@ -28,11 +28,11 @@ We have the following directory structure:
 .
 ├─ stacks
 |  ├─ networking
-|  |  └- vpc.yml
-|  └- application
-|     └- beanstalk-app.yml
-└- deployment
-   └- targets.yml
+|  |  └─ vpc.yml
+|  └─ application
+|     └─ beanstalk-app.yml
+└─ deployment
+   └─ targets.yml
 ```
 
 For brevity, only the essential files are listed above. The stacks are grouped by their role - there are stacks for networking and logging.

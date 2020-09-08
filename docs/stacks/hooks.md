@@ -114,11 +114,11 @@ Our file structure looks like this:
 ```
 .
 ├─ stacks
-|  └- my-stack.yml
-├- hooks
-|  └- debug.js
-└- templates
-   └- my-stack.yml
+|  └─ my-stack.yml
+├─ hooks
+|  └─ debug.js
+└─ templates
+   └─ my-stack.yml
 ```
 
 The hook provider defined in **hooks/debug.js** looks like this:

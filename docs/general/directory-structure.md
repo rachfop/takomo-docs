@@ -14,11 +14,11 @@ The directory where Takomo configuration files are placed is called **project di
 ├─ stacks
 ├─ templates
 ├─ helpers
-├- partials
-├- resolvers
-├- hooks
-├- deployment
-└- organization
+├─ partials
+├─ resolvers
+├─ hooks
+├─ deployment
+└─ organization
 ```
 
 At a minimum, the project directory needs to contain two subdirectories: **stacks** where configuration files for CloudFormation stacks go, and **templates**, where template files for the stacks are located.

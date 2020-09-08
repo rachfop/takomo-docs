@@ -42,12 +42,12 @@ We can also present this hierarchy as follows:
 
 ```
 Root
-├- Sandbox
-├- Environments
-|  ├- Dev
-|  ├- Test
-|  └- Prod
-└- Customer Accounts
+├─ Sandbox
+├─ Environments
+|  ├─ Dev
+|  ├─ Test
+|  └─ Prod
+└─ Customer Accounts
 ```
 
 As seen in this example, you don't have to provide configuration for all organizational units explicitly. The organizational unit **Root/Environments** has three children but doesn't have other configuration of its own. It's also worth noting that the path needs to be quoted if some organizational unit name has spaces.

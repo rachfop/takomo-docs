@@ -29,14 +29,14 @@ We have the following directory structure:
 .
 ├─ stacks
 |  ├─ application
-|  |  └- beanstalk-app.yml
+|  |  └─ beanstalk-app.yml
 |  ├─ networking
-|  |  └- vpc.yml
-|  └- logs
+|  |  └─ vpc.yml
+|  └─ logs
 |     ├─ access-logs.yml
-|     └- audit-logs.yml
-└- organization
-   └- organization.yml
+|     └─ audit-logs.yml
+└─ organization
+   └─ organization.yml
 ```
 
 For brevity, only the essential files are listed above. The stacks are grouped by their role - there are stacks for networking, logging and application.

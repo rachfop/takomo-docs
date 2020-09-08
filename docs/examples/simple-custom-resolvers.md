@@ -1,6 +1,11 @@
 ---
 id: simple-custom-resolvers
 title: Simple Custom Resolvers
+description: An example demonstrating how to implement simple custom parameter resolvers.
+keywords:
+  - Examples
+  - Resolver
+  - Takomo
 ---
 
 This example shows how to implement your own custom resolvers with JavaScript.
