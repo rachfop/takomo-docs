@@ -5,6 +5,8 @@ description: Parameter resolvers are used to get values for stack parameters at 
 keywords:
   - Takomo
 ---
+import ApiLink from '@site/src/components/ApiLink';
+
 
 Parameter resolvers are used to get values for stack parameters at deployment time. Each parameter resolver has a name that can be used to refer to it from stack parameters configuration with the **resolver** property.
 
@@ -177,7 +179,7 @@ The parameter resolver provider has the following properties:
 
 ### Parameter Resolver
 
-The parameter resolver has the following properties:
+The parameter resolver must implement <ApiLink uri={'/interfaces/resolver.html'}>Resolver</ApiLink> interface which consists of the following properties:
 
 | Key | Required | Type | Description |
 | --- | -------- | ---- | ----------- |
@@ -237,3 +239,9 @@ parameters:
 ```
 
 When the stack is deployed, the value for **MyParameter** parameter is resolved using **uppercase** custom parameter resolver. The actual value that is assigned to the parameter is **"HELLO"**.
+
+## See Also
+
+- [Examples > Simple custom resolver](/docs/examples/simple-custom-resolvers)
+- [Examples > Custom resolver with stack dependencies](/docs/examples/custom-resolver-with-stack-dependencies)
+- [Examples > Custom resolver with an IAM role](/docs/examples/custom-resolver-with-iam-role)

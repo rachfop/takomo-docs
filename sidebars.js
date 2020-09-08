@@ -62,7 +62,7 @@ module.exports = {
       "examples/stack-output-resolvers",
       "examples/simple-custom-resolvers",
       "examples/custom-resolver-with-stack-dependencies",
-      //"examples/custom-resolver-with-iam-role",
+      "examples/custom-resolver-with-iam-role",
       "examples/managing-organization",
     ],
     "Upgrade Guide": [

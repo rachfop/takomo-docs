@@ -45,7 +45,7 @@ parameters:
 
 ## Custom Resolver
 
-The custom resolver takes the name of a stack in **otherStack** property and uses it to query the stack's creation time. The stack name is also assigned to the resolver's dependencies property, making the stack a dependency for the stack where the resolver is used.
+The custom resolver takes the stack path of a stack in **otherStack** property and uses it to query the stack's creation time. The given stack path is also assigned to the resolver's dependencies property, making the stack a dependency of the stack where the resolver is used.
 
 ```javascript title="resolvers/stack-creation-time.js"
 module.exports = {
