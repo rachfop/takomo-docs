@@ -4,7 +4,7 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-const versions = ["2.7.1", "1.5.0", "0.2.0"]
+const versions = ["2.7.2", "1.5.1", "0.2.0"]
 function Version() {
     const latestVersion = versions[0];
     const pastVersions = versions.filter((version) => version !== latestVersion);
@@ -12,7 +12,7 @@ function Version() {
         <Layout
             title="Versions"
             permalink="/versions"
-            description="Docusaurus 2 Versions page listing all documented site versions">
+            description="Takomo documentation">
             <main className="container margin-vert--lg">
                 <h1>Takomo documentation versions</h1>
                 <div className="margin-bottom--lg">
