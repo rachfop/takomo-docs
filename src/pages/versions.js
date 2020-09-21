@@ -4,7 +4,7 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-const versions = ["2.7.2", "1.5.1", "0.2.0"]
+const versions = ["2.7.3", "1.5.1", "0.2.0"]
 function Version() {
     const latestVersion = versions[0];
     const pastVersions = versions.filter((version) => version !== latestVersion);
